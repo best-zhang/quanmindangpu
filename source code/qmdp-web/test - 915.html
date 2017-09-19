@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>About Us</title>
+
+<!-- core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/prettyPhoto.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+<link rel="shortcut icon" href="images/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+<!--/head-->
+
+<body>
+	<header id="header">
+		<nav class="navbar navbar-inverse" role="banner">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+				</div>
+
+				<div class="collapse navbar-collapse navbar-right">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about-us.html">About Us</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="portfolio.html">Portfolio</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="blog-item.html">Blog Single</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+								<li><a href="404.html">404</a></li>
+								<li><a href="shortcodes.html">Shortcodes</a></li>
+							</ul></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact-us.html">Contact</a></li>
+						<li class="active"><a href="test.html">Test</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--/.container-->
+		</nav>
+		<!--/nav-->
+	</header>
+	<!--/header-->
+
+	<section id="about-us">
+		<div class="container">
+			<div class="row">
+				<div id="treediv" style="position: relative; height: 200px;">					
+				</div>
+			</div>
+		</div>
+		<!--/.container-->
+	</section>
+	<!--/about-us-->
+
+	<section id="bottom">
+		<div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+			<div class="row">11111</div>
+		</div>
+	</section>
+	<!--/#bottom-->
+
+	<footer id="footer" class="midnight-blue">
+		<div class="container">
+			<div class="row">22222</div>
+		</div>
+	</footer>
+	<!--/#footer-->
+
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript">
+		var tree = $("#treediv");
+
+		var str = '';
+		drawrect(350, 0, '习近平');
+		drawvline(390, 40);
+		drawhline(40, 60, 450);
+		drawvline(40, 60);
+		drawvline(140, 60);
+		drawvline(490, 60);
+		drawrect(0, 80, '李克强');
+		drawrect(100, 80, '王岐山');
+		drawrect(450, 80, '刘云山');
+		
+		drawvline(490, 120);
+		drawhline(240, 140, 500);
+		drawvline(240, 140);
+		drawvline(340, 140);
+		drawvline(440, 140);
+		drawvline(540, 140);
+		drawvline(640, 140);
+		drawvline(740, 140);
+		
+		drawrect(200, 160, '钟山');
+		drawrect(300, 160, '傅自应');
+		drawrect(400, 160, '高燕');
+		drawrect(500, 160, '房爱卿');
+		drawrect(600, 160, '俞建华');
+		drawrect(700, 160, '王受文');
+		
+		
+		
+		tree.html(str);
+
+		function drawrect(x, y, text) {
+			str += '<div style="position: absolute; top: ' + y + 'px; left: ' + x + 'px; width: 80px; height: 40px; border: 1px solid #000000; text-align: center; padding-top: 10px;">'
+					+ text + '</div>';
+		}
+		function drawhline(x, y, width) {
+			str += '<div style="position: absolute; top: '+y+'px; left: '+x+'px; width: '+width+'px; height: 1px; border-top: 1px solid #000000;"></div>';
+		}
+		function drawvline(x, y) {
+			str += '<div style="position: absolute; top: '+y+'px; left: '+x+'px; width: 1px; height: 20px; border-left: 1px solid #000000;"></div>';
+		}
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.prettyPhoto.js"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/wow.min.js"></script>
+</body>
+</html>
