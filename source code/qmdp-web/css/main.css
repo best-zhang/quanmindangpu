@@ -7,7 +7,7 @@
 
 body {
   background: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Microsoft YaHei,'Open Sans', sans-serif;
   color:#4e4e4e;
   line-height: 22px;
 }
@@ -19,7 +19,7 @@ h4,
 h5,
 h6 {
   font-weight: 600; 
-  font-family: 'Open Sans', sans-serif;
+  font-family: Microsoft YaHei,'Open Sans', sans-serif;
   color:#4e4e4e;
 }
 
@@ -272,7 +272,7 @@ input.search-form:hover {
   border-radius: 0;
   margin-bottom: 0;
   background: #151515;
-  padding: 15px 0;
+  padding: 5px 0;
   padding-bottom: 0;
 }
 
@@ -282,7 +282,7 @@ input.search-form:hover {
 
 .navbar-nav>li{
   margin-left: 35px;
-  padding-bottom: 28px;
+  padding-bottom: 10px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -292,6 +292,7 @@ input.search-form:hover {
   color: #fff;
   line-height: 24px;
   display: inline-block;
+  font-size:14pt;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover{
@@ -415,7 +416,7 @@ input.search-form:hover {
   position: absolute;
   width: 100%;
   display: block !important;
-  height: 730px;
+  height: 650px;
   -webkit-transition: opacity ease-in-out 500ms;
   -moz-transition: opacity ease-in-out 500ms;
   -o-transition: opacity ease-in-out 500ms;
@@ -440,7 +441,7 @@ input.search-form:hover {
 #main-slider .next {
   position: absolute;
   top: 50%;
-  background-color: #c52d2f;
+  /*background-color: #c52d2f;*/
   color: #fff;
   display: inline-block;
   margin-top: -25px;
@@ -467,8 +468,8 @@ input.search-form:hover {
 }
 
 #main-slider .carousel-indicators li {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background-color: #fff;
   margin: 0 15px 0 0;
   position: relative;
@@ -477,32 +478,32 @@ input.search-form:hover {
 #main-slider .carousel-indicators li:after {
   position: absolute;
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   border-radius: 100%;
   background: rgba(0, 0, 0, 0);
-  border: 1px solid #FFF;
+  /* border: 1px solid #FFF; */
   left: -3px;
   top: -3px;
 }
 
 #main-slider .carousel-indicators .active{
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background-color: #c52d2f;
    margin: 0 15px 0 0;
-   border: 1px solid #c52d2f;
+   /* border: 1px solid #c52d2f; */
    position: relative;
 }
 
 #main-slider .carousel-indicators .active:after {
   position: absolute;
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   border-radius: 100%;
   background: #c52d2f;
-  border: 1px solid #c52d2f;
+  /* border: 1px solid #c52d2f; */
   left: -3px;
   top: -3px;
 }
