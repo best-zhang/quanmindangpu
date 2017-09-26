@@ -12,6 +12,7 @@
 <!-- core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/jquery-picZoomer.css">
 <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -21,6 +22,37 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+<style type="text/css">
+.piclist {
+	margin-top: 20px;
+}
+
+.piclist li {
+	display: inline-block;
+	width: 110px;
+	height: 110px;
+}
+
+.piclist li img {
+	width: 100%;
+	height: auto;
+}
+
+/* custom style */
+.picZoomer-pic-wp, .picZoomer-zoom-wp {
+	background-color: #ddd;
+}
+
+.piclist {
+	padding: 0px;
+	padding-left: 20px;
+}
+
+.piclist li {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+</style>
 </head>
 <!--/head-->
 
@@ -44,24 +76,19 @@
 		<div class="container">
 			<div class="row clearfix">
 				<div class="col-md-4 col-sm-4">
-					<div class="single-profile-top">
-						<div class="media">
-							<a href=""><img class="media-object carousel-inner img-responsive" src="images/goods/2.jpg" alt=""></a>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-sm-4">
-								<a href=""><img class="media-object carousel-inner img-responsive" src="images/goods/2.jpg" alt=""></a>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<a href=""><img class="media-object carousel-inner img-responsive" src="images/goods/2.jpg" alt=""></a>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<a href=""><img class="media-object carousel-inner img-responsive" src="images/goods/2.jpg" alt=""></a>
-							</div>
-						</div>
-						<!--/.media -->
+					<div class="picZoomer">
+						<img class="media-object carousel-inner img-responsive" src="images/goods/2.jpg" alt="">
+					</div>
+					<div class="row">
+						<ul class="piclist">
+							<li><img src="images/goods/2.jpg" alt=""></li>
+							<li><img src="images/goods/3.jpg" alt=""></li>
+							<li><img src="images/goods/4.jpg" alt=""></li>
+							<li><img src="images/goods/6.jpg" alt=""></li>
+						</ul>
 					</div>
 				</div>
+
 				<div class="col-md-5 col-sm-5">
 					<div class="single-profile-top">
 						<div>
@@ -81,15 +108,9 @@
 				</div>
 				<div class="col-md-3 col-sm-3">
 					<div class="single-profile-top">
-						<div>
-							长安街当铺
-						</div>
-						<div>
-							平台自营
-						</div>
-						<div>
-							诚信商家
-						</div>
+						<div>长安街当铺</div>
+						<div>平台自营</div>
+						<div>诚信商家</div>
 					</div>
 				</div>
 				<!--/.row -->
@@ -171,5 +192,17 @@
 	<script src="js/jquery.isotope.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/jquery.picZoomer.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.picZoomer').picZoomer();
+
+			$('.piclist li').on('click', function(event) {
+				var $pic = $(this).find('img');
+				$('.picZoomer-pic').attr('src', $pic.attr('src'));
+			});
+
+		})
+	</script>
 </body>
 </html>
