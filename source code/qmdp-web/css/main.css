@@ -853,41 +853,7 @@ input.search-form:hover {
 	margin-bottom: 25px;
 }
 
-.panel-default {
-	border-color: transparent;
-}
 
-.panel-default>.panel-heading, .panel {
-	background-color: #e6e6e6;
-	border: 0 none;
-	box-shadow: none;
-}
-
-.panel-default>.panel-heading+.panel-collapse .panel-body {
-	background: #fff;
-	color: #858586;
-}
-
-.panel-body {
-	padding: 20px 20px 10px;
-}
-
-.panel-group .panel+.panel {
-	margin-top: 0;
-	border-top: 1px solid #d9d9d9;
-}
-
-.panel-group .panel {
-	border-radius: 0;
-}
-
-.panel-heading {
-	border-radius: 0;
-}
-
-.panel-title>a {
-	color: #4e4e4e;
-}
 
 .accordion-inner img {
 	border-radius: 4px;
@@ -897,13 +863,7 @@ input.search-form:hover {
 	margin-top: 0;
 }
 
-.panel-heading.active {
-	background: #1f1f20;
-}
 
-.panel-heading.active .panel-title>a {
-	color: #fff;
-}
 
 a.accordion-toggle  i {
 	width: 45px;
@@ -915,15 +875,6 @@ a.accordion-toggle  i {
 	background: #c9c9c9;
 }
 
-.panel-heading.active a.accordion-toggle i {
-	background: #c52d2f;
-	color: #fff;
-}
-
-.panel-heading.active a.accordion-toggle.collapsed i {
-	background: #c52d2f;
-	color: #fff;
-}
 
 .nav-tabs>li {
 	margin-bottom: 0px;
