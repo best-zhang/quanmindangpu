@@ -1,67 +1,61 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jumee
- * Date: 2016/9/22
- * Time: 15:20
- */
-
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<!--Head-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../styles/img/favicon.ico">
+    <meta charset="utf-8"/>
+    <title>全民当铺后台管理系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="login page"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-    <title>欢迎来到逸洁管理系统</title>
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet"/>
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../styles/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet"/>
+    <link href="assets/css/demo.min.css" rel="stylesheet"/>
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+    <link id="skin-link" href="" rel="stylesheet" type="text/css"/>
 
-    <!-- Custom styles for this template -->
-    <link href="../../styles/css/signin.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]>
-    <script src="../../styles/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../styles/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="../../styles/js/html5shiv.min.js"></script>
-    <script src="../../styles/js/respond.min.js"></script>
-    <![endif]-->
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
 </head>
-
+<!--Head Ends-->
+<!--Body-->
 <body>
+<div class="login-container animated fadeInDown">
+    <div class="loginbox bg-white">
+        <div class="loginbox-title">登 录</div>
 
-<div class="container">
-
-    <div class="form-signin">
-        <h3 class="form-signin-heading">用户登录</h3>
-        <input type="text" id="username" name="username" class="form-control" placeholder="用户名" required
-               autofocus>
-        <br/>
-        <input type="password" id="password" name="password" class="form-control" placeholder="密码" required>
-        <div class="checkbox">
-            <label>
-                <!--<input type="checkbox" name="chk[]" value="1"> 记住我-->
-            </label>
+        <div class="loginbox-textbox">
+            <input id="username" type="text" class="form-control" placeholder="用户名"/>
         </div>
-        <button id="btnLogin" class="btn btn-lg btn-primary btn-block">登 录</button>
+        <div class="loginbox-textbox">
+            <input id="password" type="password" class="form-control" placeholder="密码"/>
+        </div>
+
+        <div class="loginbox-submit">
+            <input id="btnLogin" type="button" class="btn btn-primary btn-block" value="登 录">
+        </div>
     </div>
+</div>
 
-</div> <!-- /container -->
+<!--Basic Scripts-->
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 
+<!--Beyond Scripts-->
+<script src="assets/js/beyond.js"></script>
 
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../styles/assets/js/ie10-viewport-bug-workaround.js"></script>
-<script src="../../styles/js/jquery-1.9.1.min.js"></script>
-<script src="../../styles/js/login.js"></script>
+<script src="assets/js/_js/login.js"></script>
 </body>
+<!--Body Ends-->
 </html>

@@ -253,7 +253,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="../../styles/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../../styles/assets/js/ie10-viewport-bug-workaround.js"></script>
-<script src="../../styles/js/customer.js"></script>
+<script src="../../styles/js/custoer.js"></script>
 <script src="../../styles/js/common.js"></script>
 </body>
 </html>

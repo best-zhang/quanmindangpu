@@ -36,7 +36,7 @@ class Login extends CI_Controller
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         if ($username && $password) {
-            $sqlselect = "SELECT * FROM EjoyUser WHERE username = '{$username}'  AND password = '{$password}'";
+            $sqlselect = "SELECT * FROM user WHERE username = '{$username}'  AND password = '{$password}'";
             $query = $this->db->query($sqlselect);
             $row = $query->row();
             if ($row > 0) {
