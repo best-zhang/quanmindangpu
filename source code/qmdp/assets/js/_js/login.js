@@ -29,7 +29,7 @@ function login(name, pwd) {
             if (data && data.indexOf('成功') < 0) {
                 alert(data);
             } else {
-                window.location.href = '../main';
+                window.location.href = '../proset';
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
