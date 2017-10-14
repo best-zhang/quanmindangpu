@@ -139,12 +139,12 @@ Purchase: http://wrapbootstrap.com
 
                     <ul class="submenu">
                         <li>
-                            <a href="elements.html">
+                            <a href="#">
                                 <span class="menu-text">项目设置</span>
                             </a>
                         </li>
                         <li>
-                            <a href="tabs.html">
+                            <a href="../prostatus">
                                 <span class="menu-text">项目状态</span>
                             </a>
                         </li>
