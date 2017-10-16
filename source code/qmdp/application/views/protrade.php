@@ -1,7 +1,6 @@
 ﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
@@ -13,7 +12,7 @@ Purchase: http://wrapbootstrap.com
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>项目状态</title>
+    <title>交易录入</title>
 
     <meta name="description" content="form editors"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -38,7 +37,7 @@ Purchase: http://wrapbootstrap.com
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
     <style type="text/css">
-        .page-body {
+        body:before, .page-body {
             background: #ffffff;
         }
 
@@ -47,38 +46,17 @@ Purchase: http://wrapbootstrap.com
         }
 
         .input-group-addon {
-            padding: 6px 5px;
+            padding: 10px 5px;
             border: 1px solid #fff;
         }
 
         .input-group-qm .row {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .widget-header > .widget-caption {
             font-size: 18px;
             font-weight: bold !important;
-        }
-
-        .img-project {
-            width: 100%;
-            height: 0px;
-            padding-bottom: 100%;
-            background-size: 100% 100%;
-            background-image: url('assets/img/avatars/Stephanie-Walter.jpg');
-            background-repeat: no-repeat;
-        }
-
-        .blank-img-label {
-            height: 0px;
-            padding-bottom: 75%;
-        }
-
-        .label-img {
-            float: left;
-            padding: 5px;
-            margin-right: 50px;
-            font-size: 15px;
         }
     </style>
 </head>
@@ -230,137 +208,122 @@ Purchase: http://wrapbootstrap.com
                     <li>
                         <a href="#">众筹管理</a>
                     </li>
-                    <li class="active">项目状态</li>
+                    <li class="active">交易录入</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
 
             <!-- Page Body -->
             <div class="page-body">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">筹备中</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
+                <form id="inputForm" method="post" class="form-horizontal"
+                      data-bv-message="必填项"
+                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget flat radius-bordered">
+                                <div class="widget-header bordered-bottom">
+                                    <span class="widget-caption">信息录入</span>
+                                </div>
+                                <div class="widget-body input-group-qm">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span>
+                                                <select class="form-control" name="country" data-bv-field="pname">
+                                                    <option value="">请选择</option>
+                                                    <option value="zs">张三</option>
+                                                    <option value="ls">李四</option>
+                                                </select><i class="form-control-feedback" data-bv-field="pname"
+                                                            style="display: none;"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">项目名称：</span>
+                                                <select class="form-control" name="country" data-bv-field="proname">
+                                                    <option value="">请选择</option>
+                                                    <option value="1">长安街当铺</option>
+                                                    <option value="2">春熙路当铺</option>
+                                                </select><i class="form-control-feedback" data-bv-field="proname"
+                                                            style="display: none;"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                                <span class="input-group-addon">万</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：</span>
+                                                <input type="text" class="form-control input-sm" disabled="disabled"
+                                                       name="jifen" value="50,000" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：</span>
+                                                <input class="form-control date-picker" id="id-date-picker-1"
+                                                       type="text" data-date-format="yyyy-mm-dd">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">交易地点：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">经办人员：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">计划中</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-3 col-lg-6">
+                            <input class="btn btn-palegreen" type="submit" value=" 提  交 "/>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">已完成</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                </form>
             </div>
             <!-- /Page Body -->
         </div>
@@ -377,6 +340,9 @@ Purchase: http://wrapbootstrap.com
 <!--Beyond Scripts-->
 <script src="assets/js/beyond.min.js"></script>
 
+<!--Bootstrap Date Picker-->
+<script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+
 <!--Page Related Scripts-->
 <!--Bootstrap  wysiwig Scripts-->
 <script src="assets/js/editors/wysiwyg/jquery.hotkeys.js"></script>
@@ -386,6 +352,9 @@ Purchase: http://wrapbootstrap.com
 <!--Summernote Scripts-->
 <script src="assets/js/editors/summernote/summernote.js"></script>
 <script>
+    //--Bootstrap Date Picker--
+    $('.date-picker').datepicker();
+
     $(document).ready(function () {
 
     });

@@ -8,13 +8,13 @@ Version: 1.0.0
 Purchase: http://wrapbootstrap.com
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>项目设置</title>
+    <title>商品设置</title>
 
-    <meta name="description" content="project setting"/>
+    <meta name="description" content="form editors"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -36,9 +36,6 @@ Purchase: http://wrapbootstrap.com
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
-	
-	<link href="assets/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
-	
     <style type="text/css">
         .page-body {
             background: #ffffff;
@@ -62,8 +59,13 @@ Purchase: http://wrapbootstrap.com
             font-weight: bold !important;
         }
 
-        .input-textarea {
+        .img-goods-main {
             width: 100%;
+            height: 0px;
+            padding-bottom: 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-image: url('assets/img/avatars/Stephanie-Walter.jpg');
         }
     </style>
 </head>
@@ -215,7 +217,7 @@ Purchase: http://wrapbootstrap.com
                     <li>
                         <a href="#">众筹管理</a>
                     </li>
-                    <li class="active">项目设置</li>
+                    <li class="active">商品设置</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
@@ -239,7 +241,7 @@ Purchase: http://wrapbootstrap.com
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
                                             <div class="input-group">
-                                                <span class="input-group-addon">项目名称：</span>
+                                                <span class="input-group-addon">商品名称：</span>
                                                 <input type="text" class="form-control input-sm" id="sminput"
                                                        placeholder="">
                                             </div>
@@ -250,7 +252,19 @@ Purchase: http://wrapbootstrap.com
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
                                             <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品牌：</span>
+                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价格：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                                <span class="input-group-addon">万</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：</span>
                                                 <input type="text" class="form-control input-sm" id="sminput"
                                                        placeholder="">
                                             </div>
@@ -261,9 +275,16 @@ Purchase: http://wrapbootstrap.com
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
                                             <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标题：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
+                                                <span class="input-group-addon">商品种类：</span>
+                                                <select class="form-control" name="country" data-bv-field="pname">
+                                                    <option value="">请选择</option>
+                                                    <option value="yq">玉器</option>
+                                                    <option value="zb">珠宝</option>
+                                                    <option value="zo">钟表</option>
+                                                    <option value="zs">钻石</option>
+                                                    <option value="hj">黄金</option>
+                                                </select><i class="form-control-feedback" data-bv-field="pname"
+                                                            style="display: none;"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -272,9 +293,30 @@ Purchase: http://wrapbootstrap.com
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
                                             <div class="input-group">
-                                                <span class="input-group-addon">商品简介：</span>
-                                                <textarea class="input-textarea" rows="3" name="S1"
-                                                          cols="60"></textarea>
+                                                <span class="input-group-addon">商品归类：</span>
+                                                <select class="form-control" name="country" data-bv-field="pname">
+                                                    <option value="0">最新</option>
+                                                    <option value="1">热门</option>
+                                                    <option value="2">积分</option>
+                                                </select><i class="form-control-feedback" data-bv-field="pname"
+                                                            style="display: none;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;店铺：</span>
+                                                <select class="form-control" name="country" data-bv-field="pname">
+                                                    <option value="">请选择</option>
+                                                    <option value="ca">长安街店铺</option>
+                                                    <option value="wh">武侯祠店铺</option>
+                                                    <option value="cx">春熙路店铺</option>
+                                                    <option value="tg">太古里店铺</option>
+                                                </select><i class="form-control-feedback" data-bv-field="pname"
+                                                            style="display: none;"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -289,12 +331,30 @@ Purchase: http://wrapbootstrap.com
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget flat radius-bordered">
+                                <div class="widget-header bordered-bottom">
+                                    <span class="widget-caption">商品规格</span>
+                                </div>
+                                <div class="widget-body input-group-qm">
                                     <div class="row">
                                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
                                             <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;微信：</span>
+                                                <span class="input-group-addon">编号：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">大小：</span>
                                                 <input type="text" class="form-control input-sm" id="sminput"
                                                        placeholder="">
                                             </div>
@@ -303,9 +363,34 @@ Purchase: http://wrapbootstrap.com
                                     <div class="row">
                                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
                                             <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ：</span>
+                                                <span class="input-group-addon">店铺：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">重量：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">证书：</span>
+                                                <input type="text" class="form-control input-sm" id="sminput"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">材质：</span>
                                                 <input type="text" class="form-control input-sm" id="sminput"
                                                        placeholder="">
                                             </div>
@@ -319,18 +404,31 @@ Purchase: http://wrapbootstrap.com
                         <div class="col-lg-12 col-sm-12 col-xs-12">
                             <div class="widget flat radius-bordered">
                                 <div class="widget-header bordered-bottom">
-                                    <span class="widget-caption">项目金额</span>
+                                    <span class="widget-caption">商品主图</span>
                                 </div>
                                 <div class="widget-body input-group-qm">
                                     <div class="row">
                                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
+                                            <div class="img-goods-main"></div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
+                                            <div class="img-goods-main"></div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
+                                            <div class="img-goods-main"></div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
+                                            <div class="img-goods-main"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        </div>
                                         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">众筹金额：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                                <span class="input-group-addon">万</span>
+                                            <div>
+                                                <input type="file" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -338,43 +436,7 @@ Purchase: http://wrapbootstrap.com
                                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">起投金额：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                                <span class="input-group-addon">万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">剩余时间：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                                <span class="input-group-addon">天</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <div class="widget flat radius-bordered">
-                                <div class="widget-header bordered-bottom">
-                                    <span class="widget-caption">项目主图</span>
-                                </div>
-                                <div class="widget-body input-group-qm">
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-                                            <input type="file" class="file" id="img_url1" name="image_data[]"
-                                                   accept="image/*" multiple>
+                                            限定上传4张图片
                                         </div>
                                     </div>
                                 </div>
@@ -536,26 +598,8 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/editors/summernote/summernote.js"></script>
 <script>
     $(document).ready(function () {
-        //$("#inputForm").bootstrapValidator();
+        $("#inputForm").bootstrapValidator();
     });
-	$("#img_url1").fileinput({
-        language: 'zh',
-        showCaption: false,             //不显示文字表述
-        uploadUrl: "upload", //上传后台操作的方法
-        uploadAsync: false, //设置上传同步异步 此为同步
-        maxFileSize: 200, //单位为kb，如果为0表示不限制文件大小
-        allowedFileExtensions: ['jpg', 'png', 'gif'], //限制上传文件后缀
-        layoutTemplates: {
-            actionUpload: "" //设置为空可去掉上传按钮
-            //actionDelete:"" //设置为空可去掉删除按钮
-        }
-        //minImageWidth: 50, //图片的最小宽度
-        //minImageHeight: 50,//图片的最小高度
-        //maxImageWidth: 1000,//图片的最大宽度
-        //maxImageHeight: 1000,//图片的最大高度
-        //minFileCount: 0,
-        , maxFileCount: 4 //表示允许同时上传的最大文件个数
-    });//初始化 后 上传插件的样子
 </script>
 
 </body>

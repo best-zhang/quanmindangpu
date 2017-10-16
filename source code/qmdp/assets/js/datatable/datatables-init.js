@@ -6,25 +6,26 @@ var InitiateSimpleDataTable = function () {
                 "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
                 "iDisplayLength": 5,
                 "oTableTools": {
-                    "aButtons": [
-                        "copy", "csv", "xls", "pdf", "print"
-                    ],
+                    "aButtons": [],
                     "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
                     "search": "",
                     "sLengthMenu": "_MENU_",
                     "oPaginate": {
-                        "sPrevious": "Prev",
-                        "sNext": "Next"
+                        "sPrevious": "往前",
+                        "sNext": "往后"
                     }
                 },
                 "aoColumns": [
-                  { "bSortable": false },
-                  null,
-                  { "bSortable": false },
-                  null,
-                  { "bSortable": false }
+                    {"bSortable": false},
+                    {"bSortable": false},
+                    {"bSortable": false},
+                    {"bSortable": false},
+                    {"bSortable": false},
+                    {"bSortable": false},
+                    {"bSortable": false},
+                    null
                 ],
                 "aaSorting": []
             });
@@ -67,13 +68,13 @@ var InitiateEditableDataTable = function () {
                 "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
                 "oTableTools": {
                     "aButtons": [
-				        "copy",
-				        "print",
-				        {
-				            "sExtends": "collection",
-				            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
-				            "aButtons": ["csv", "xls", "pdf"]
-				        }],
+                        "copy",
+                        "print",
+                        {
+                            "sExtends": "collection",
+                            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
+                            "aButtons": ["csv", "xls", "pdf"]
+                        }],
                     "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
@@ -85,11 +86,11 @@ var InitiateEditableDataTable = function () {
                     }
                 },
                 "aoColumns": [
-                  null,
-                  null,
-                  null,
-                  null,
-                  { "bSortable": false }
+                    null,
+                    null,
+                    null,
+                    null,
+                    {"bSortable": false}
                 ]
             });
 
@@ -99,7 +100,7 @@ var InitiateEditableDataTable = function () {
             $('#editabledatatable_new').click(function (e) {
                 e.preventDefault();
                 var aiNew = oTable.fnAddData(['', '', '', '',
-                        '<a href="#" class="btn btn-success btn-xs save"><i class="fa fa-edit"></i> Save</a> <a href="#" class="btn btn-warning btn-xs cancel"><i class="fa fa-times"></i> Cancel</a>'
+                    '<a href="#" class="btn btn-success btn-xs save"><i class="fa fa-edit"></i> Save</a> <a href="#" class="btn btn-warning btn-xs cancel"><i class="fa fa-times"></i> Cancel</a>'
                 ]);
                 var nRow = oTable.fnGetNodes(aiNew[0]);
                 editRow(oTable, nRow);
@@ -239,24 +240,24 @@ var InitiateExpandableDataTable = function () {
             var oTable = $('#expandabledatatable').dataTable({
                 "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
                 "aoColumnDefs": [
-                    { "bSortable": false, "aTargets": [0] },
-                    { "bVisible": false, "aTargets": [6] }
+                    {"bSortable": false, "aTargets": [0]},
+                    {"bVisible": false, "aTargets": [6]}
                 ],
                 "aaSorting": [[1, 'asc']],
                 "aLengthMenu": [
-                   [5, 15, 20, -1],
-                   [5, 15, 20, "All"]
+                    [5, 15, 20, -1],
+                    [5, 15, 20, "All"]
                 ],
                 "iDisplayLength": 5,
                 "oTableTools": {
                     "aButtons": [
-				        "copy",
-				        "print",
-				        {
-				            "sExtends": "collection",
-				            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
-				            "aButtons": ["csv", "xls", "pdf"]
-				        }],
+                        "copy",
+                        "print",
+                        {
+                            "sExtends": "collection",
+                            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
+                            "aButtons": ["csv", "xls", "pdf"]
+                        }],
                     "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
@@ -279,7 +280,8 @@ var InitiateExpandableDataTable = function () {
                 }
                 else {
                     /* Open this row */
-                    $(this).addClass("fa-minus-square-o").removeClass("fa-plus-square-o");;
+                    $(this).addClass("fa-minus-square-o").removeClass("fa-plus-square-o");
+                    ;
                     oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
                 }
             });
@@ -303,19 +305,19 @@ var InitiateSearchableDataTable = function () {
                 "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
                 "aaSorting": [[1, 'asc']],
                 "aLengthMenu": [
-                   [5, 15, 20, -1],
-                   [5, 15, 20, "All"]
+                    [5, 15, 20, -1],
+                    [5, 15, 20, "All"]
                 ],
                 "iDisplayLength": 10,
                 "oTableTools": {
                     "aButtons": [
-				        "copy",
-				        "print",
-				        {
-				            "sExtends": "collection",
-				            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
-				            "aButtons": ["csv", "xls", "pdf"]
-				        }],
+                        "copy",
+                        "print",
+                        {
+                            "sExtends": "collection",
+                            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
+                            "aButtons": ["csv", "xls", "pdf"]
+                        }],
                     "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {

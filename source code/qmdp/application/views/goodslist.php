@@ -1,7 +1,6 @@
 ﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
@@ -13,7 +12,7 @@ Purchase: http://wrapbootstrap.com
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>项目状态</title>
+    <title>商品列表</title>
 
     <meta name="description" content="form editors"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -35,10 +34,13 @@ Purchase: http://wrapbootstrap.com
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
     <link id="skin-link" href="" rel="stylesheet" type="text/css"/>
 
+    <!--Page Related styles-->
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet"/>
+
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
     <style type="text/css">
-        .page-body {
+        body:before, .page-body {
             background: #ffffff;
         }
 
@@ -60,25 +62,8 @@ Purchase: http://wrapbootstrap.com
             font-weight: bold !important;
         }
 
-        .img-project {
-            width: 100%;
-            height: 0px;
-            padding-bottom: 100%;
-            background-size: 100% 100%;
-            background-image: url('assets/img/avatars/Stephanie-Walter.jpg');
-            background-repeat: no-repeat;
-        }
-
-        .blank-img-label {
-            height: 0px;
-            padding-bottom: 75%;
-        }
-
-        .label-img {
-            float: left;
-            padding: 5px;
-            margin-right: 50px;
-            font-size: 15px;
+        #simpledatatable_filter, #simpledatatable_length, #simpledatatable_info {
+            display: none;
         }
     </style>
 </head>
@@ -228,9 +213,9 @@ Purchase: http://wrapbootstrap.com
                         <a href="#">首页</a>
                     </li>
                     <li>
-                        <a href="#">众筹管理</a>
+                        <a href="#">商品管理</a>
                     </li>
-                    <li class="active">项目状态</li>
+                    <li class="active">商品列表</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
@@ -241,126 +226,102 @@ Purchase: http://wrapbootstrap.com
                     <div class="col-lg-12 col-sm-12 col-xs-12">
                         <div class="widget flat radius-bordered">
                             <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">筹备中</span>
+                                <span class="widget-caption">商品列表</span>
                             </div>
                             <div class="widget-body input-group-qm">
                                 <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <table class="table table-striped table-bordered table-hover"
+                                               id="simpledatatable">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    店铺
+                                                </th>
+                                                <th>
+                                                    商品
+                                                </th>
+                                                <th>
+                                                    商品编码
+                                                </th>
+                                                <th>
+                                                    价格
+                                                </th>
+                                                <th>
+                                                    积分
+                                                </th>
+                                                <th>
+                                                    商品种类
+                                                </th>
+                                                <th>
+                                                    归类
+                                                </th>
+                                                <th>
+                                                    操作
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    shuxer
+                                                </td>
+                                                <td>
+                                                    <a href="mailto:shuxer@gmail.com">shuxer@gmail.com</a>
+                                                </td>
+                                                <td>
+                                                    fsafd
+                                                </td>
+                                                <td>
+                                                    fsadfs
+                                                </td>
+                                                <td class="center ">
+                                                    2017年10月10日
+                                                </td>
+                                                <td>
+                                                    wedas
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">删除</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    2
+                                                </td>
+                                                <td>
+                                                    looper
+                                                </td>
+                                                <td>
+                                                    <a href="mailto:looper90@gmail.com">looper90@gmail.com</a>
+                                                </td>
+                                                <td>
+                                                    ytryterty
+                                                </td>
+                                                <td>
+                                                    yrtr
+                                                </td>
+                                                <td class="center ">
+                                                    2017年10月14日
+                                                </td>
+                                                <td>
+                                                    fsafdsaf
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">删除</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">计划中</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">已完成</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             <!-- /Page Body -->
         </div>
@@ -378,17 +339,64 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/beyond.min.js"></script>
 
 <!--Page Related Scripts-->
-<!--Bootstrap  wysiwig Scripts-->
-<script src="assets/js/editors/wysiwyg/jquery.hotkeys.js"></script>
-<script src="assets/js/editors/wysiwyg/prettify.js"></script>
-<script src="assets/js/editors/wysiwyg/bootstrap-wysiwyg.js"></script>
-
-<!--Summernote Scripts-->
-<script src="assets/js/editors/summernote/summernote.js"></script>
+<script src="assets/js/datatable/jquery.dataTables.min.js"></script>
+<script src="assets/js/datatable/ZeroClipboard.js"></script>
+<script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
+<script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
 <script>
     $(document).ready(function () {
-
+        inittable();
     });
+
+    function inittable() {
+        //Datatable Initiating
+        var oTable = $('#simpledatatable').dataTable({
+            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            "iDisplayLength": 5,
+            "oTableTools": {
+                "aButtons": [],
+                "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+            },
+            "language": {
+                "search": "",
+                "sLengthMenu": "_MENU_",
+                "oPaginate": {
+                    "sPrevious": "往前",
+                    "sNext": "往后"
+                }
+            },
+            "aoColumns": [
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                null
+            ],
+            "aaSorting": []
+        });
+
+        //Check All Functionality
+        jQuery('#simpledatatable .group-checkable').change(function () {
+            var set = $(".checkboxes");
+            var checked = jQuery(this).is(":checked");
+            jQuery(set).each(function () {
+                if (checked) {
+                    $(this).prop("checked", true);
+                    $(this).parents('tr').addClass("active");
+                } else {
+                    $(this).prop("checked", false);
+                    $(this).parents('tr').removeClass("active");
+                }
+            });
+
+        });
+        jQuery('#simpledatatable tbody tr .checkboxes').change(function () {
+            $(this).parents('tr').toggleClass("active");
+        });
+    }
 </script>
 
 </body>
