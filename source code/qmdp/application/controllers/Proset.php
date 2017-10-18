@@ -63,11 +63,17 @@ class Proset extends CI_Controller
         $qq = trim($_POST['qq']);
         $wantall = trim($_POST['wantall']);
         $minimum = trim($_POST['frommoney']);
-        $img = trim($_POST['imgs']);
+        $imgs = trim($_POST['imgs']);
         $remainday = trim($_POST['remainday']);
         $discrible = trim($_POST['discrible']);
 
-        $img = ltrim($img, ",");
+        $imgs = ltrim($imgs, ",");
+        $img = "";
+        if (!empty($imgs)) {
+            //如果图片很多，只保留第一张
+            $temp = explode(',', $imgs);
+            $img = $temp[0];
+        }
 
         $user = $this->session->userdata('user_info');
 
