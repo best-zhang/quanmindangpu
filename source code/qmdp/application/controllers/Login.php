@@ -21,6 +21,8 @@ class Login extends CI_Controller
      */
     public function index()
     {
+        if ($this->session->has_userdata('user_info'))
+            $this->session->unset_userdata('user_info');
         $this->load->view('login');
     }
 

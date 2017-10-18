@@ -38,26 +38,20 @@ Purchase: http://wrapbootstrap.com
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
     <style type="text/css">
+        body:before {
+            background-color: #ffffff;
+        }
+
         .page-body {
             background: #ffffff;
         }
 
-        .input-group .input-group-addon {
-            background-image: linear-gradient(to bottom, #fff 0, #fff 100%);
-        }
-
-        .input-group-addon {
-            padding: 6px 5px;
-            border: 1px solid #fff;
-        }
-
-        .input-group-qm .row {
-            margin-bottom: 10px;
-        }
-
-        .widget-header > .widget-caption {
+        .input-group-title {
             font-size: 18px;
-            font-weight: bold !important;
+            font-weight: bold;
+            padding: 20px;
+            line-height: 34px;
+            color: #555;
         }
 
         .img-project {
@@ -76,7 +70,7 @@ Purchase: http://wrapbootstrap.com
 
         .label-img {
             float: left;
-            padding: 5px;
+            padding: 10px 5px;
             margin-right: 50px;
             font-size: 15px;
         }
@@ -120,7 +114,7 @@ Purchase: http://wrapbootstrap.com
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="login.html">
+                                    <a href="../login">
                                         退 出
                                     </a>
                                 </li>
@@ -238,129 +232,23 @@ Purchase: http://wrapbootstrap.com
             <!-- Page Body -->
             <div class="page-body">
                 <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">筹备中</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">计划中</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">已完成</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <div class="img-project">
-                                            <div class="blank-img-label"></div>
-                                            <span class="label label-azure graded label-img">项目名称dadafsda</span>
-                                            <span class="clearfix"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="input-group-title">众筹中</div>
+                    <div id="raising">
 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group-title">计划中</div>
+                    <div id="plan">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group-title">已完成</div>
+                    <div id="completed">
+
+                    </div>
+                </div>
             </div>
             <!-- /Page Body -->
         </div>
@@ -387,8 +275,109 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/editors/summernote/summernote.js"></script>
 <script>
     $(document).ready(function () {
-
+        getraising();
+        getplan();
+        getcompleted();
     });
+
+    function getraising() {
+        $.ajax({
+            type: 'POST',
+            url: '../prostatus/getRaising',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    console.log(data);
+                    var str = "";
+                    for (i = 0; i < data.length; i++) {
+                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
+                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
+                            '<div class="blank-img-label"></div>' +
+                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
+                            '<span class="clearfix"></span>' +
+                            '</div>' +
+                            '<div>' +
+
+                            '</div>' +
+                            '</div>'
+                    }
+                    if (!str) {
+                        str = "暂无数据";
+                    }
+                    $("#raising").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getplan() {
+        $.ajax({
+            type: 'POST',
+            url: '../prostatus/getPlan',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    console.log(data);
+                    var str = "";
+                    for (i = 0; i < data.length; i++) {
+                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
+                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
+                            '<div class="blank-img-label"></div>' +
+                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
+                            '<span class="clearfix"></span>' +
+                            '</div>' +
+                            '<div>' +
+
+                            '</div>' +
+                            '</div>'
+                    }
+                    if (!str) {
+                        str = "暂无数据";
+                    }
+                    $("#plan").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getcompleted() {
+        $.ajax({
+            type: 'POST',
+            url: '../prostatus/getCompleted',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    console.log(data);
+                    var str = "";
+                    for (i = 0; i < data.length; i++) {
+                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
+                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
+                            '<div class="blank-img-label"></div>' +
+                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
+                            '<span class="clearfix"></span>' +
+                            '</div>' +
+                            '<div>' +
+
+                            '</div>' +
+                            '</div>'
+                    }
+                    if (!str) {
+                        str = "暂无数据";
+                    }
+                    $("#completed").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
 </script>
 
 </body>
