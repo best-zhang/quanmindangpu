@@ -59,7 +59,6 @@ Purchase: http://wrapbootstrap.com
             height: 0px;
             padding-bottom: 100%;
             background-size: 100% 100%;
-            background-image: url('assets/img/avatars/Stephanie-Walter.jpg');
             background-repeat: no-repeat;
         }
 
@@ -291,18 +290,21 @@ Purchase: http://wrapbootstrap.com
                     var str = "";
                     for (i = 0; i < data.length; i++) {
                         str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
+                            '<div class="well padding-5">' +
                             '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
                             '<div class="blank-img-label"></div>' +
                             '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
                             '<span class="clearfix"></span>' +
                             '</div>' +
-                            '<div>' +
-
-                            '</div>' +
-                            '</div>'
+                            '<div class="text-align-right margin-top-5">' +
+                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
+                            '<i class="fa fa-trash-o"></i>' +
+                            '</a>' +
+                            '</div>' + '</div>' +
+                            '</div>';
                     }
                     if (!str) {
-                        str = "暂无数据";
+                        str = '<div class="padding-left-50">暂无数据</div>';
                     }
                     $("#raising").html(str);
                 }
@@ -324,18 +326,24 @@ Purchase: http://wrapbootstrap.com
                     var str = "";
                     for (i = 0; i < data.length; i++) {
                         str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
+                            '<div class="well padding-5">' +
                             '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
                             '<div class="blank-img-label"></div>' +
                             '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
                             '<span class="clearfix"></span>' +
                             '</div>' +
-                            '<div>' +
-
-                            '</div>' +
-                            '</div>'
+                            '<div class="text-align-right margin-top-5">' +
+                            '<a href="javascript:void(0);" title="发布" onclick="issue(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5">' +
+                            '<i class="fa fa-cloud-upload"></i>' +
+                            '</a>' +
+                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
+                            '<i class="fa fa-trash-o"></i>' +
+                            '</a>' +
+                            '</div>' + '</div>' +
+                            '</div>';
                     }
                     if (!str) {
-                        str = "暂无数据";
+                        str = '<div class="padding-left-50">暂无数据</div>';
                     }
                     $("#plan").html(str);
                 }
@@ -357,18 +365,21 @@ Purchase: http://wrapbootstrap.com
                     var str = "";
                     for (i = 0; i < data.length; i++) {
                         str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
+                            '<div class="well padding-5">' +
                             '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
                             '<div class="blank-img-label"></div>' +
                             '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
                             '<span class="clearfix"></span>' +
                             '</div>' +
-                            '<div>' +
-
-                            '</div>' +
-                            '</div>'
+                            '<div class="text-align-right margin-top-5">' +
+                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
+                            '<i class="fa fa-trash-o"></i>' +
+                            '</a>' +
+                            '</div>' + '</div>' +
+                            '</div>';
                     }
                     if (!str) {
-                        str = "暂无数据";
+                        str = '<div class="padding-left-50">暂无数据</div>';
                     }
                     $("#completed").html(str);
                 }
@@ -378,6 +389,49 @@ Purchase: http://wrapbootstrap.com
             }
         });
     }
+
+    function issue(id) {
+        $.ajax({
+            type: 'POST',
+            url: '../prostatus/issue',//路径
+            data: {"id": id},
+            success: function (data) {
+                if (data) {
+                    console.log(data);
+                    getraising();
+                    getplan();
+                    getcompleted();
+                    alert(data);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("发布出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function del(id) {
+        if (confirm("确定删除该项目?")) {
+            $.ajax({
+                type: 'POST',
+                url: '../prostatus/delpro',//路径
+                data: {"id": id},
+                success: function (data) {
+                    if (data) {
+                        console.log(data);
+                        getraising();
+                        getplan();
+                        getcompleted();
+                        alert(data);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("删除失败：" + XMLHttpRequest.status + "," + textStatus);
+                }
+            });
+        }
+    }
+
 </script>
 
 </body>

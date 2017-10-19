@@ -33,4 +33,22 @@ class Protradelist extends CI_Controller
         $this->load->database();
     }
 
+    function getProTradeList()
+    {
+        $query = $this->db->query('SELECT t1.id,t1.person,t1.money,t1.integral,t1.tradetime,t1.address,t1.jingban,t2.name FROM raisedeal t1 LEFT JOIN raise t2 ON t1.projectid = t2.id ORDER BY t1.dtinsert DESC;');
+
+        $this->response_data($query->result());
+    }
+
+    /**
+     * @param $data 数组
+     * 构造json字符串并返回
+     */
+    function response_data($data)
+    {
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);//该方法中第二个参数，必须php5.4版本以上才支持
+    }
+
+
 }

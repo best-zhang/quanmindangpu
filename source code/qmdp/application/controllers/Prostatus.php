@@ -35,14 +35,14 @@ class Prostatus extends CI_Controller
 
     function getRaising()
     {
-        $query = $this->db->query('SELECT id,name,cover FROM raise WHERE prostatus=0 ORDER BY dtinsert DESC;');
+        $query = $this->db->query('SELECT id,name,cover FROM raise WHERE prostatus=1 ORDER BY dtinsert DESC;');
 
         $this->response_data($query->result());
     }
 
     function getPlan()
     {
-        $query = $this->db->query('SELECT id,name,cover FROM raise WHERE prostatus=1 ORDER BY dtinsert DESC;');
+        $query = $this->db->query('SELECT id,name,cover FROM raise WHERE prostatus=0 ORDER BY dtinsert DESC;');
 
         $this->response_data($query->result());
     }
@@ -52,6 +52,32 @@ class Prostatus extends CI_Controller
         $query = $this->db->query('SELECT id,name,cover FROM raise WHERE prostatus=2 ORDER BY dtinsert DESC;');
 
         $this->response_data($query->result());
+    }
+
+    function issue()
+    {
+        $id = trim($_POST['id']);
+
+        $sqlupdate = "UPDATE raise SET prostatus=1 WHERE id='{$id}'";
+        $this->db->query($sqlupdate);
+        if ($this->db->affected_rows() > 0) {
+            echo "发布成功";
+        } else {
+            echo "发布失败";
+        }
+    }
+
+    function delpro()
+    {
+        $id = trim($_POST['id']);
+
+        $sqldelete = "DELETE FROM raise WHERE id='{$id}'";
+        $this->db->query($sqldelete);
+        if ($this->db->affected_rows() > 0) {
+            echo "删除成功";
+        } else {
+            echo "发布失败";
+        }
     }
 
     /**

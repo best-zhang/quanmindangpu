@@ -352,7 +352,7 @@ Purchase: http://wrapbootstrap.com
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                 <input id="imgs" class="select2-display-none" name="imgs" value="">
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-4 col-md-5 col-sm-8 col-xs-10">
                                 <input type="file" class="file" id="img_url" name="image_data"
                                        accept="image/jpg,image/jpeg,image/png,image/gif" multiple>
                             </div>
@@ -525,18 +525,19 @@ Purchase: http://wrapbootstrap.com
         showUpload: false, //不显示上传按钮
         uploadUrl: "../proset/uploadimg", //上传后台操作的方法
 //        uploadAsync: false, //设置上传同步异步 此为同步
-        maxFileSize: 4 * 1024, //单位为kb，如果为0表示不限制文件大小
+        maxFileSize: 8 * 1024, //单位为kb，如果为0表示不限制文件大小
         allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'], //限制上传文件后缀
         layoutTemplates: {
             actionUpload: "" //设置为空可去掉上传按钮
             //actionDelete:"" //设置为空可去掉删除按钮
-        }
-        //minImageWidth: 50, //图片的最小宽度
-        //minImageHeight: 50,//图片的最小高度
-        //maxImageWidth: 1000,//图片的最大宽度
-        //maxImageHeight: 1000,//图片的最大高度
+        },
+        dropZoneTitle: '图片上传',
+        minImageWidth: 50, //图片的最小宽度
+        minImageHeight: 50,//图片的最小高度
+        maxImageWidth: 2000,//图片的最大宽度
+        maxImageHeight: 2000,//图片的最大高度
         //minFileCount: 0,
-        , maxFileCount: 1 //表示允许同时上传的最大文件个数
+        maxFileCount: 1 //表示允许同时上传的最大文件个数
     }).on("filebatchselected", function (event, files) {
         $(this).fileinput("upload");
     }).on("fileuploaded", function (event, data) {

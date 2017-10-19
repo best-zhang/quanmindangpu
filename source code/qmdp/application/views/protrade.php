@@ -41,22 +41,12 @@ Purchase: http://wrapbootstrap.com
             background: #ffffff;
         }
 
-        .input-group .input-group-addon {
-            background-image: linear-gradient(to bottom, #fff 0, #fff 100%);
-        }
-
-        .input-group-addon {
-            padding: 10px 5px;
-            border: 1px solid #fff;
-        }
-
-        .input-group-qm .row {
-            margin-bottom: 15px;
-        }
-
-        .widget-header > .widget-caption {
+        .input-group-title {
             font-size: 18px;
-            font-weight: bold !important;
+            font-weight: bold;
+            padding: 20px;
+            line-height: 34px;
+            color: #555;
         }
     </style>
 </head>
@@ -215,115 +205,100 @@ Purchase: http://wrapbootstrap.com
 
             <!-- Page Body -->
             <div class="page-body">
-                <form id="inputForm" method="post" class="form-horizontal"
-                      data-bv-message="必填项"
-                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <div class="widget flat radius-bordered">
-                                <div class="widget-header bordered-bottom">
-                                    <span class="widget-caption">信息录入</span>
-                                </div>
-                                <div class="widget-body input-group-qm">
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span>
-                                                <select class="form-control" name="country" data-bv-field="pname">
-                                                    <option value="">请选择</option>
-                                                    <option value="zs">张三</option>
-                                                    <option value="ls">李四</option>
-                                                </select><i class="form-control-feedback" data-bv-field="pname"
-                                                            style="display: none;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">项目名称：</span>
-                                                <select class="form-control" name="country" data-bv-field="proname">
-                                                    <option value="">请选择</option>
-                                                    <option value="1">长安街当铺</option>
-                                                    <option value="2">春熙路当铺</option>
-                                                </select><i class="form-control-feedback" data-bv-field="proname"
-                                                            style="display: none;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                                <span class="input-group-addon">万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：</span>
-                                                <input type="text" class="form-control input-sm" disabled="disabled"
-                                                       name="jifen" value="50,000" placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：</span>
-                                                <input class="form-control date-picker" id="id-date-picker-1"
-                                                       type="text" data-date-format="yyyy-mm-dd">
-                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">交易地点：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">经办人员：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="row">
+                    <form id="inputform" method="post" action="../protrade/save"
+                          class="form-horizontal"
+                          data-bv-message="填写不正确"
+                          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                        <div class="input-group-title">信息录入</div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">姓名:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="pname" id="pname"
+                                       placeholder=""
+                                       data-bv-message="姓名格式不正确"
+                                       data-bv-notempty="true"
+                                       data-bv-notempty-message="姓名不能为空"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="30"
+                                       data-bv-stringlength-message="姓名长度范围为1-30"/>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-offset-3 col-lg-6">
-                            <input class="btn btn-palegreen" type="submit" value=" 提  交 "/>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">项目名称:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <select class="form-control" id="project" name="project" data-bv-field="project">
+                                    <option value="">请选择</option>
+                                </select>
+                                <i class="form-control-feedback" data-bv-field="project" style="display: none;"></i>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">金额:</label>
+                            <div class="col-lg-2 col-md-2 col-sm-3 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="money" id="money"
+                                       placeholder=""
+                                       data-bv-message="金额填写不正确"
+                                       data-bv-notempty="true"
+                                       data-bv-notempty-message="金额不能为空"
+                                       data-bv-regexp="true"
+                                       data-bv-regexp-regexp="(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)"
+                                       data-bv-regexp-message="金额填写不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="10"
+                                       data-bv-stringlength-message="金额长度范围为1-10"/>
+                            </div>
+                            <label class="col-lg-1 col-md-1 col-sm-1 control-label no-padding-left text-align-left">万</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">积分:</label>
+                            <div class="col-lg-2 col-md-2 col-sm-3 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="jifen" id="jifen"
+                                       readonly="readonly" value="0" placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">交易时间:</label>
+                            <div class="col-lg-2 col-md-2 col-sm-3 padding-left-5 no-padding-right">
+                                <input class="form-control date-picker" name="tradetime" id="tradetime" type="text"
+                                       data-date-format="yyyy-mm-dd">
+                            </div>
+                            <label class="col-lg-1 col-md-1 col-sm-1 control-label no-padding-left text-align-left">
+                                <i class="fa fa-calendar"></i>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">地点:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="address" id="address"
+                                       placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">经办人:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="jingban" id="jingban"
+                                       placeholder=""
+                                       data-bv-message="经办人格式不正确"
+                                       data-bv-notempty="true"
+                                       data-bv-notempty-message="经办人不能为空"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="30"
+                                       data-bv-stringlength-message="经办人长度范围为1-30"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-4 col-lg-8">
+                                <input class="btn btn-palegreen" type="button" onclick="toVaild();" value="提 交"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- /Page Body -->
         </div>
@@ -351,13 +326,78 @@ Purchase: http://wrapbootstrap.com
 
 <!--Summernote Scripts-->
 <script src="assets/js/editors/summernote/summernote.js"></script>
+<script src="assets/js/validation/bootstrapValidator.js"></script>
 <script>
-    //--Bootstrap Date Picker--
-    $('.date-picker').datepicker();
-
     $(document).ready(function () {
+        getpros();
+        //--Bootstrap Date Picker--
+        $('.date-picker').datepicker();
+        $("#inputform").bootstrapValidator();
 
+        $('#money').bind('input propertychange', function () {
+            var m = $('#money').val();
+            var value = m * 1000;
+            $('#jifen').val(isNaN(value) ? 0 : value);
+        });
     });
+
+    function getpros() {
+        $.ajax({
+            type: 'POST',
+            url: '../protrade/getProjects',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '<option value="">请选择</option>';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<option value="' + data[i]["id"] + '">' + data[i]["name"] + '</option>';
+                    }
+
+                    $("#project").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function toVaild() {
+        $('#inputform').data('bootstrapValidator').validate();
+        if (!$('#inputform').data('bootstrapValidator').isValid()) {
+            alert("数据填写不正确,请检查");
+        } else {
+            save();
+        }
+    }
+
+    function save() {
+        var m = $('#money').val();
+        var value = m * 1000;
+        $('#jifen').val(isNaN(value) ? 0 : value);
+        $.ajax({
+            type: 'POST',
+            url: '../protrade/save',//路径
+            data: {
+                "pname": $("#pname").val(),
+                "project": $("#project").val(),
+                "money": $("#money").val(),
+                "jifen": $("#jifen").val(),
+                "tradetime": $("#tradetime").val(),
+                "address": $("#address").val(),
+                "jingban": $("#jingban").val()
+            },
+            success: function (data) {
+                if (data) {
+                    alert(data);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("保存数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
 </script>
 
 </body>

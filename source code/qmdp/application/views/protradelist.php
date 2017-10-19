@@ -44,22 +44,12 @@ Purchase: http://wrapbootstrap.com
             background: #ffffff;
         }
 
-        .input-group .input-group-addon {
-            background-image: linear-gradient(to bottom, #fff 0, #fff 100%);
-        }
-
-        .input-group-addon {
-            padding: 6px 5px;
-            border: 1px solid #fff;
-        }
-
-        .input-group-qm .row {
-            margin-bottom: 10px;
-        }
-
-        .widget-header > .widget-caption {
+        .input-group-title {
             font-size: 18px;
-            font-weight: bold !important;
+            font-weight: bold;
+            padding: 20px;
+            line-height: 34px;
+            color: #555;
         }
 
         #simpledatatable_filter, #simpledatatable_length, #simpledatatable_info {
@@ -223,103 +213,41 @@ Purchase: http://wrapbootstrap.com
             <!-- Page Body -->
             <div class="page-body">
                 <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bordered-bottom">
-                                <span class="widget-caption">众筹交易列表</span>
-                            </div>
-                            <div class="widget-body input-group-qm">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <table class="table table-striped table-bordered table-hover"
-                                               id="simpledatatable">
-                                            <thead>
-                                            <tr>
-                                                <th>
-                                                    序号
-                                                </th>
-                                                <th>
-                                                    姓名
-                                                </th>
-                                                <th>
-                                                    项目名称
-                                                </th>
-                                                <th>
-                                                    金额
-                                                </th>
-                                                <th>
-                                                    积分
-                                                </th>
-                                                <th>
-                                                    时间
-                                                </th>
-                                                <th>
-                                                    地点
-                                                </th>
-                                                <th>
-                                                    经办人
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>
-                                                    shuxer
-                                                </td>
-                                                <td>
-                                                    <a href="mailto:shuxer@gmail.com">shuxer@gmail.com</a>
-                                                </td>
-                                                <td>
-                                                    fsafd
-                                                </td>
-                                                <td>
-                                                    fsadfs
-                                                </td>
-                                                <td class="center ">
-                                                    2017年10月10日
-                                                </td>
-                                                <td>
-                                                    wedas
-                                                </td>
-                                                <td>
-                                                    ewqr
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    2
-                                                </td>
-                                                <td>
-                                                    looper
-                                                </td>
-                                                <td>
-                                                    <a href="mailto:looper90@gmail.com">looper90@gmail.com</a>
-                                                </td>
-                                                <td>
-                                                    ytryterty
-                                                </td>
-                                                <td>
-                                                    yrtr
-                                                </td>
-                                                <td class="center ">
-                                                    2017年10月14日
-                                                </td>
-                                                <td>
-                                                    fsafdsaf
-                                                </td>
-                                                <td>
-                                                    dafsdfsa
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="input-group-title">信息录入</div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                            <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    姓名
+                                </th>
+                                <th>
+                                    项目名称
+                                </th>
+                                <th>
+                                    金额(万)
+                                </th>
+                                <th>
+                                    积分
+                                </th>
+                                <th>
+                                    时间
+                                </th>
+                                <th>
+                                    交易地点
+                                </th>
+                                <th>
+                                    经办人
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="list">
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -346,6 +274,7 @@ Purchase: http://wrapbootstrap.com
 <script>
     $(document).ready(function () {
         inittable();
+        getlist();
     });
 
     function inittable() {
@@ -373,7 +302,7 @@ Purchase: http://wrapbootstrap.com
                 {"bSortable": false},
                 {"bSortable": false},
                 {"bSortable": false},
-                null
+                {"bSortable": false}
             ],
             "aaSorting": []
         });
@@ -397,6 +326,40 @@ Purchase: http://wrapbootstrap.com
             $(this).parents('tr').toggleClass("active");
         });
     }
+
+    function getlist() {
+        $.ajax({
+            type: 'POST',
+            url: '../protradelist/getProTradeList',//路径
+            data: {},
+            success: function (data) {
+                var str = "";
+                if (data) {
+                    for (i = 0; i < data.length; i++) {
+                        str += '<tr lid="' + data[i]["id"] + '">' +
+                            '<td>' + (i + 1) + '</td>' +
+                            '<td>' + data[i]["person"] + '</td>' +
+                            '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
+                            '<td>' + data[i]["money"] + ' </td>' +
+                            '<td>' + data[i]["integral"] + '</td>' +
+                            '<td>' + data[i]["tradetime"].replace('00:00:00', '') + '</td>' +
+                            '<td>' + data[i]["address"] + '</td>' +
+                            '<td>' + data[i]["jingban"] + '</td>' +
+                            '</tr>';
+                    }
+                }
+                if (!str) {
+                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">无数据</td></tr>';
+                }
+
+                $("#list").html(str);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
 </script>
 
 </body>
