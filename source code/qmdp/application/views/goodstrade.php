@@ -98,7 +98,7 @@ Purchase: http://wrapbootstrap.com
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="login.html">
+                                    <a href="../login">
                                         退 出
                                     </a>
                                 </li>

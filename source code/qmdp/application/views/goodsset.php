@@ -8,13 +8,13 @@ Version: 1.0.0
 Purchase: http://wrapbootstrap.com
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
     <title>商品设置</title>
 
-    <meta name="description" content="form editors"/>
+    <meta name="description" content="project setting"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -36,36 +36,24 @@ Purchase: http://wrapbootstrap.com
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
+
+    <link href="assets/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
+
     <style type="text/css">
         .page-body {
             background: #ffffff;
         }
 
-        .input-group .input-group-addon {
-            background-image: linear-gradient(to bottom, #fff 0, #fff 100%);
-        }
-
-        .input-group-addon {
-            padding: 6px 5px;
-            border: 1px solid #fff;
-        }
-
-        .input-group-qm .row {
-            margin-bottom: 10px;
-        }
-
-        .widget-header > .widget-caption {
+        .input-group-title {
             font-size: 18px;
-            font-weight: bold !important;
+            font-weight: bold;
+            padding: 20px;
+            line-height: 34px;
+            color: #555;
         }
 
-        .img-goods-main {
+        .input-textarea {
             width: 100%;
-            height: 0px;
-            padding-bottom: 100%;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-image: url('assets/img/avatars/Stephanie-Walter.jpg');
         }
     </style>
 </head>
@@ -107,7 +95,7 @@ Purchase: http://wrapbootstrap.com
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="login.html">
+                                    <a href="../login">
                                         退 出
                                     </a>
                                 </li>
@@ -215,7 +203,7 @@ Purchase: http://wrapbootstrap.com
                         <a href="#">首页</a>
                     </li>
                     <li>
-                        <a href="#">众筹管理</a>
+                        <a href="#">商品管理</a>
                     </li>
                     <li class="active">商品设置</li>
                 </ul>
@@ -224,301 +212,243 @@ Purchase: http://wrapbootstrap.com
 
             <!-- Page Body -->
             <div class="page-body">
-                <form id="inputForm" method="post" class="form-horizontal"
-                      data-bv-message="必填项"
-                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <div class="widget flat radius-bordered">
-                                <div class="widget-header bordered-bottom">
-                                    <span class="widget-caption">基本信息</span>
+                <div class="row">
+                    <form id="inputform" method="post" action="../proset/save"
+                          class="form-horizontal"
+                          data-bv-message="填写不正确"
+                          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                        <div class="input-group-title">基本信息</div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">商品名称:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="gname" id="gname"
+                                       placeholder=""
+                                       data-bv-message="商品名称格式不正确"
+                                       data-bv-notempty="true"
+                                       data-bv-notempty-message="商品名称不能为空"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="50"
+                                       data-bv-stringlength-message="商品名称长度范围为1-50"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">商品编号:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="gcode" id="gcode"
+                                       placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">价格:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="price" id="price"
+                                       placeholder=""
+                                       data-bv-message="价格填写不正确"
+                                       data-bv-notempty="true"
+                                       data-bv-notempty-message="价格不能为空"
+                                       data-bv-regexp="true"
+                                       data-bv-regexp-regexp="(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)"
+                                       data-bv-regexp-message="价格填写不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="10"
+                                       data-bv-stringlength-message="价格长度范围为1-10"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">积分:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="jifen" id="jifen"
+                                       placeholder=""
+                                       data-bv-message="积分填写不正确"
+                                       data-bv-notempty="false"
+                                       data-bv-notempty-message="积分不能为空"
+                                       data-bv-regexp="true"
+                                       data-bv-regexp-regexp="[1-9][0-9]*"
+                                       data-bv-regexp-message="积分只允许填写数字"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="10"
+                                       data-bv-stringlength-message="积分长度范围为1-10"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">商品种类:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <select class="form-control" id="gtype" name="gtype" data-bv-field="gtype">
+                                    <option value="">请选择</option>
+                                </select>
+                                <i class="form-control-feedback" data-bv-field="gtype" style="display: none;"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">归类:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <select class="form-control" id="basetype" name="basetype" data-bv-field="basetype">
+                                    <option value="">请选择</option>
+                                </select>
+                                <i class="form-control-feedback" data-bv-field="basetype" style="display: none;"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">店铺:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <select class="form-control" id="project" name="project" data-bv-field="project">
+                                    <option value="">请选择</option>
+                                </select>
+                                <i class="form-control-feedback" data-bv-field="project" style="display: none;"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">联系电话:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="tel" id="tel"
+                                       placeholder=""
+                                       data-bv-message="联系电话格式不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="30"
+                                       data-bv-stringlength-message="联系电话长度范围为1-30"/>
+                            </div>
+                        </div>
+                        <div class="input-group-title">商品规格</div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">证书:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="certificate" id="certificate"
+                                       placeholder=""
+                                       data-bv-message="证书填写不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="0"
+                                       data-bv-stringlength-max="100"
+                                       data-bv-stringlength-message="证书长度范围为0-100"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">大小:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="size" id="size"
+                                       placeholder=""
+                                       data-bv-message="大小填写不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="0"
+                                       data-bv-stringlength-max="100"
+                                       data-bv-stringlength-message="大小长度范围为0-100"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">重量:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="weight" id="weight"
+                                       placeholder=""
+                                       data-bv-message="重量填写不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="0"
+                                       data-bv-stringlength-max="100"
+                                       data-bv-stringlength-message="重量长度范围为0-100"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">材质:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="material" id="material"
+                                       placeholder=""
+                                       data-bv-message="材质填写不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="0"
+                                       data-bv-stringlength-max="100"
+                                       data-bv-stringlength-message="材质长度范围为0-100"/>
+                            </div>
+                        </div>
+                        <div class="input-group-title">商品主图</div>
+                        <div class="form-group">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <input id="imgs" class="select2-display-none" name="imgs" value="">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <input type="file" class="file" id="img_url" name="image_data"
+                                       accept="image/jpg,image/jpeg,image/png,image/gif" multiple>
+                            </div>
+                        </div>
+                        <div class="input-group-title">商品描述</div>
+                        <div class="form-group">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10">
+                                <div id="alerts"></div>
+                                <div class="btn-toolbar wysiwyg-toolbar" data-role="editor-toolbar"
+                                     data-target="#editor">
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                           title="字体"><i class="fa fa-font"></i><b class="caret"></b></a>
+                                        <ul class="dropdown-menu"></ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                           title="字号"><i class="fa fa-text-height"></i>&nbsp;<b
+                                                    class="caret"></b></a>
+                                        <ul class="dropdown-menu dropdown-default">
+                                            <li><a data-edit="fontSize 5"><font size="5">大</font></a></li>
+                                            <li><a data-edit="fontSize 3"><font size="3">中</font></a></li>
+                                            <li><a data-edit="fontSize 1"><font size="1">小</font></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="bold" title="粗体 (Ctrl/Cmd+B)"><i
+                                                    class="fa fa-bold"></i></a>
+                                        <a class="btn btn-default" data-edit="italic" title="斜体 (Ctrl/Cmd+I)"><i
+                                                    class="fa fa-italic"></i></a>
+                                        <a class="btn btn-default" data-edit="strikethrough" title="删除线"><i
+                                                    class="fa fa-strikethrough"></i></a>
+                                        <a class="btn btn-default" data-edit="underline" title="下划线 (Ctrl/Cmd+U)"><i
+                                                    class="fa fa-underline"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="insertunorderedlist"
+                                           title="圆点编号"><i class="fa fa-list-ul"></i></a>
+                                        <a class="btn btn-default" data-edit="insertorderedlist" title="数字编号"><i
+                                                    class="fa fa-list-ol"></i></a>
+                                        <a class="btn btn-default" data-edit="outdent"
+                                           title="去掉缩进 (Shift+Tab)"><i class="fa fa-outdent"></i></a>
+                                        <a class="btn btn-default" data-edit="indent" title="增加缩进 (Tab)"><i
+                                                    class="fa fa-indent"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="justifyleft"
+                                           title="居左 (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                        <a class="btn btn-default" data-edit="justifycenter"
+                                           title="居中 (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                        <a class="btn btn-default" data-edit="justifyright"
+                                           title="居右 (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                        <a class="btn btn-default" data-edit="justifyfull" title="自适应 (Ctrl/Cmd+J)"><i
+                                                    class="fa fa-align-justify"></i></a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="undo" title="撤销 (Ctrl/Cmd+Z)"><i
+                                                    class="fa fa-undo"></i></a>
+                                        <a class="btn btn-default" data-edit="redo" title="前进 (Ctrl/Cmd+Y)"><i
+                                                    class="fa fa-repeat"></i></a>
+                                    </div>
+                                    <input type="text" data-edit="inserttext" class="wysiwyg-voiceBtn" id="voiceBtn"
+                                           x-webkit-speech="">
                                 </div>
-                                <div class="widget-body input-group-qm">
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">商品名称：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价格：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                                <span class="input-group-addon">万</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">商品种类：</span>
-                                                <select class="form-control" name="country" data-bv-field="pname">
-                                                    <option value="">请选择</option>
-                                                    <option value="yq">玉器</option>
-                                                    <option value="zb">珠宝</option>
-                                                    <option value="zo">钟表</option>
-                                                    <option value="zs">钻石</option>
-                                                    <option value="hj">黄金</option>
-                                                </select><i class="form-control-feedback" data-bv-field="pname"
-                                                            style="display: none;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">商品归类：</span>
-                                                <select class="form-control" name="country" data-bv-field="pname">
-                                                    <option value="0">最新</option>
-                                                    <option value="1">热门</option>
-                                                    <option value="2">积分</option>
-                                                </select><i class="form-control-feedback" data-bv-field="pname"
-                                                            style="display: none;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;店铺：</span>
-                                                <select class="form-control" name="country" data-bv-field="pname">
-                                                    <option value="">请选择</option>
-                                                    <option value="ca">长安街店铺</option>
-                                                    <option value="wh">武侯祠店铺</option>
-                                                    <option value="cx">春熙路店铺</option>
-                                                    <option value="tg">太古里店铺</option>
-                                                </select><i class="form-control-feedback" data-bv-field="pname"
-                                                            style="display: none;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">联系电话：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="wysiwyg-editor" id="editor">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <div class="widget flat radius-bordered">
-                                <div class="widget-header bordered-bottom">
-                                    <span class="widget-caption">商品规格</span>
-                                </div>
-                                <div class="widget-body input-group-qm">
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">编号：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">大小：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">店铺：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">重量：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">证书：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">材质：</span>
-                                                <input type="text" class="form-control input-sm" id="sminput"
-                                                       placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <input id="discrible" class="select2-display-none" name="discrible" value="">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-5 col-lg-8 col-md-offset-5 col-md-8">
+                                <input class="btn btn-palegreen" type="button" onclick="toVaild();" value="提 交"/>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <div class="widget flat radius-bordered">
-                                <div class="widget-header bordered-bottom">
-                                    <span class="widget-caption">商品主图</span>
-                                </div>
-                                <div class="widget-body input-group-qm">
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
-                                            <div class="img-goods-main"></div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
-                                            <div class="img-goods-main"></div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
-                                            <div class="img-goods-main"></div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 no-padding-right">
-                                            <div class="img-goods-main"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            <div>
-                                                <input type="file" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
-                                            限定上传4张图片
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <div class="widget flat radius-bordered">
-                                <div class="widget-header bordered-bottom">
-                                    <span class="widget-caption">商品描述</span>
-                                </div>
-                                <div class="widget-body">
-                                    <div id="alerts"></div>
-                                    <div class="btn-toolbar wysiwyg-toolbar" data-role="editor-toolbar"
-                                         data-target="#editor">
-                                        <div class="btn-group">
-                                            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                               title="字体"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                            <ul class="dropdown-menu"></ul>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                               title="字号"><i class="fa fa-text-height"></i>&nbsp;<b
-                                                        class="caret"></b></a>
-                                            <ul class="dropdown-menu dropdown-default">
-                                                <li><a data-edit="fontSize 5"><font size="5">大</font></a></li>
-                                                <li><a data-edit="fontSize 3"><font size="3">中</font></a></li>
-                                                <li><a data-edit="fontSize 1"><font size="1">小</font></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a class="btn btn-default" data-edit="bold" title="粗体 (Ctrl/Cmd+B)"><i
-                                                        class="fa fa-bold"></i></a>
-                                            <a class="btn btn-default" data-edit="italic" title="斜体 (Ctrl/Cmd+I)"><i
-                                                        class="fa fa-italic"></i></a>
-                                            <a class="btn btn-default" data-edit="strikethrough" title="删除线"><i
-                                                        class="fa fa-strikethrough"></i></a>
-                                            <a class="btn btn-default" data-edit="underline" title="下划线 (Ctrl/Cmd+U)"><i
-                                                        class="fa fa-underline"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a class="btn btn-default" data-edit="insertunorderedlist"
-                                               title="圆点编号"><i class="fa fa-list-ul"></i></a>
-                                            <a class="btn btn-default" data-edit="insertorderedlist" title="数字编号"><i
-                                                        class="fa fa-list-ol"></i></a>
-                                            <a class="btn btn-default" data-edit="outdent"
-                                               title="去掉缩进 (Shift+Tab)"><i class="fa fa-outdent"></i></a>
-                                            <a class="btn btn-default" data-edit="indent" title="增加缩进 (Tab)"><i
-                                                        class="fa fa-indent"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a class="btn btn-default" data-edit="justifyleft"
-                                               title="居左 (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                            <a class="btn btn-default" data-edit="justifycenter"
-                                               title="居中 (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                            <a class="btn btn-default" data-edit="justifyright"
-                                               title="居右 (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                            <a class="btn btn-default" data-edit="justifyfull" title="自适应 (Ctrl/Cmd+J)"><i
-                                                        class="fa fa-align-justify"></i></a>
-                                        </div>
-                                        <div class="btn-group">
-                                            <a class="btn btn-default" data-edit="undo" title="撤销 (Ctrl/Cmd+Z)"><i
-                                                        class="fa fa-undo"></i></a>
-                                            <a class="btn btn-default" data-edit="redo" title="前进 (Ctrl/Cmd+Y)"><i
-                                                        class="fa fa-repeat"></i></a>
-                                        </div>
-                                        <input type="text" data-edit="inserttext" class="wysiwyg-voiceBtn" id="voiceBtn"
-                                               x-webkit-speech="">
-                                    </div>
-                                    <div class="wysiwyg-editor" id="editor">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-offset-5 col-lg-10">
-                            <input class="btn btn-palegreen" type="submit" value=" 提  交 "/>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
             <!-- /Page Body -->
         </div>
@@ -596,10 +526,178 @@ Purchase: http://wrapbootstrap.com
 
 <!--Summernote Scripts-->
 <script src="assets/js/editors/summernote/summernote.js"></script>
+<script src="assets/js/validation/bootstrapValidator.js"></script>
+
+<script src="assets/js/fileinput/fileinput.min.js"></script>
+<script src="assets/js/fileinput/fileinput_locale_zh.js"></script>
 <script>
     $(document).ready(function () {
-        $("#inputForm").bootstrapValidator();
+        $("#inputform").bootstrapValidator();
+        getpros();
+        getgtype();
+        getbasetype();
     });
+    //初始化上传插件
+    $("#img_url").fileinput({
+        language: 'zh',
+        showCaption: false,  //不显示文字表述
+        showRemove: false, //不显示移除按钮
+        showUpload: false, //不显示上传按钮
+        uploadUrl: "../proset/uploadimg", //上传后台操作的方法
+//        uploadAsync: false, //设置上传同步异步 此为同步
+        maxFileSize: 8 * 1024, //单位为kb，如果为0表示不限制文件大小
+        allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'], //限制上传文件后缀
+        layoutTemplates: {
+            actionUpload: "" //设置为空可去掉上传按钮
+            //actionDelete:"" //设置为空可去掉删除按钮
+        },
+        dropZoneTitle: '图片上传 <br/>限定上传4张',
+        minImageWidth: 50, //图片的最小宽度
+        minImageHeight: 50,//图片的最小高度
+        maxImageWidth: 2000,//图片的最大宽度
+        maxImageHeight: 2000,//图片的最大高度
+        //minFileCount: 0,
+        maxFileCount: 4 //表示允许同时上传的最大文件个数
+    }).on("filebatchselected", function (event, files) {
+        $(this).fileinput("upload");
+    }).on("fileuploaded", function (event, data) {
+        if (data.response) {
+            console.log(data.response);
+            var oriname = data.response.upload_data.client_name;
+            var newname = data.response.upload_data.file_name;
+            $("img[title$='" + oriname + "']").attr("newname", newname);
+            var imgs = $("#imgs").val();
+            if (!checkimg(newname)) {
+                $("#imgs").val(imgs + "," + newname);
+            }
+        }
+    }).on("filesuccessremove", function (event, data) {
+        console.log("删除了");
+        var delname = $("#" + data + " .kv-file-content img").attr("newname");
+        var imgs = $("#imgs").val();
+        imgs = imgs.replace("," + delname, "");
+        $("#imgs").val(imgs);
+    }).on("filecleared", function (event, data) {
+        console.log("清空了");
+        $("#imgs").val("");
+    });
+
+    function checkimg(name) {
+        var imgs = $("#imgs").val();
+        var strs = new Array(); //定义一数组
+        strs = imgs.split(","); //字符分割
+        for (i = 0; i < strs.length; i++) {
+            if (strs[i] == name)
+                return true;
+        }
+        return false;
+    }
+
+    function toVaild() {
+        $("#discrible").val($("#editor").html());
+
+        $('#inputform').data('bootstrapValidator').validate();
+        if (!$('#inputform').data('bootstrapValidator').isValid()) {
+            alert("数据填写不正确,请检查");
+        } else {
+            save();
+        }
+    }
+
+    function save() {
+        $.ajax({
+            type: 'POST',
+            url: '../goodsset/save',//路径
+            data: {
+                "gname": $("#gname").val(),
+                "gcode": $("#gcode").val(),
+                "price": $("#price").val(),
+                "jifen": $("#jifen").val(),
+                "gtype": $("#gtype").val(),
+                "basetype": $("#basetype").val(),
+                "project": $("#project").val(),
+                "tel": $("#tel").val(),
+                "certificate": $("#certificate").val(),
+                "size": $("#size").val(),
+                "weight": $("#weight").val(),
+                "material": $("#material").val(),
+                "imgs": $("#imgs").val(),
+                "discrible": $("#discrible").val()
+            },
+            success: function (data) {
+                if (data) {
+                    alert(data);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("保存数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getpros() {
+        $.ajax({
+            type: 'POST',
+            url: '../protrade/getProjects',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<option value="' + data[i]["id"] + '">' + data[i]["name"] + '</option>';
+                    }
+
+                    $("#project").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getgtype() {
+        $.ajax({
+            type: 'POST',
+            url: '../goodsset/getGoodsType',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<option value="' + data[i]["id"] + '">' + data[i]["name"] + '</option>';
+                    }
+
+                    $("#gtype").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getbasetype() {
+        $.ajax({
+            type: 'POST',
+            url: '../goodsset/getBaseType',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<option value="' + data[i]["id"] + '">' + data[i]["name"] + '</option>';
+                    }
+
+                    $("#basetype").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
 </script>
 
 </body>

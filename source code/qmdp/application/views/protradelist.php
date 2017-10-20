@@ -213,7 +213,7 @@ Purchase: http://wrapbootstrap.com
             <!-- Page Body -->
             <div class="page-body">
                 <div class="row">
-                    <div class="input-group-title">信息录入</div>
+                    <div class="input-group-title">交易列表</div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <table class="table table-striped table-bordered table-hover" id="simpledatatable">
                             <thead>

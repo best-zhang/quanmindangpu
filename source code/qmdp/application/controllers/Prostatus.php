@@ -76,7 +76,7 @@ class Prostatus extends CI_Controller
         if ($this->db->affected_rows() > 0) {
             echo "删除成功";
         } else {
-            echo "发布失败";
+            echo "删除失败";
         }
     }
 
