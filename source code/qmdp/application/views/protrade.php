@@ -88,7 +88,7 @@ Purchase: http://wrapbootstrap.com
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="login.html">
+                                    <a href="../login">
                                         退 出
                                     </a>
                                 </li>
@@ -120,7 +120,7 @@ Purchase: http://wrapbootstrap.com
             <!-- Sidebar Menu -->
             <ul class="nav sidebar-menu">
                 <!--UI Elements-->
-                <li>
+                <li class="open">
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-desktop"></i>
                         <span class="menu-text"> 众筹管理 </span>
@@ -138,7 +138,7 @@ Purchase: http://wrapbootstrap.com
                                 <span class="menu-text">项目状态</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="../protrade">
                                 <span class="menu-text">交易录入</span>
                             </a>
@@ -214,17 +214,12 @@ Purchase: http://wrapbootstrap.com
                           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
                         <div class="input-group-title">信息录入</div>
                         <div class="form-group">
-                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">姓名:</label>
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">用户姓名:</label>
                             <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
-                                <input type="text" class="form-control input-sm" name="pname" id="pname"
-                                       placeholder=""
-                                       data-bv-message="姓名格式不正确"
-                                       data-bv-notempty="true"
-                                       data-bv-notempty-message="姓名不能为空"
-                                       data-bv-stringlength="true"
-                                       data-bv-stringlength-min="1"
-                                       data-bv-stringlength-max="30"
-                                       data-bv-stringlength-message="姓名长度范围为1-30"/>
+                                <select class="form-control" id="pname" name="pname" data-bv-field="pname">
+                                    <option value="">请选择</option>
+                                </select><i class="form-control-feedback" data-bv-field="pname"
+                                            style="display: none;"></i>
                             </div>
                         </div>
                         <div class="form-group">
@@ -330,6 +325,8 @@ Purchase: http://wrapbootstrap.com
 <script>
     $(document).ready(function () {
         getpros();
+        getusers();
+
         //--Bootstrap Date Picker--
         $('.date-picker').datepicker();
         $("#inputform").bootstrapValidator();
@@ -362,10 +359,35 @@ Purchase: http://wrapbootstrap.com
         });
     }
 
+    function getusers() {
+        $.ajax({
+            type: 'POST',
+            url: '../goodstrade/getUsers',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<option value="' + data[i]["id"] + '">' + data[i]["name"] + '</option>';
+                    }
+
+                    $("#pname").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
     function toVaild() {
         $('#inputform').data('bootstrapValidator').validate();
         if (!$('#inputform').data('bootstrapValidator').isValid()) {
             alert("数据填写不正确,请检查");
+        } else if (!$("#pname").val()) {
+            alert("请选择用户");
+        } else if (!$("#project").val()) {
+            alert("请选择店铺");
         } else {
             save();
         }

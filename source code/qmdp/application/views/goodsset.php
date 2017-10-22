@@ -158,7 +158,7 @@ Purchase: http://wrapbootstrap.com
                     </ul>
                 </li>
                 <!--Tables-->
-                <li>
+                <li class="open">
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-table"></i>
                         <span class="menu-text"> 商城管理 </span>
@@ -167,7 +167,7 @@ Purchase: http://wrapbootstrap.com
                     </a>
 
                     <ul class="submenu">
-                        <li>
+                        <li class="active">
                             <a href="../goodsset">
                                 <span class="menu-text">商品设置</span>
                             </a>

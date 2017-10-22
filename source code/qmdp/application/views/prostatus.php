@@ -145,7 +145,7 @@ Purchase: http://wrapbootstrap.com
             <!-- Sidebar Menu -->
             <ul class="nav sidebar-menu">
                 <!--UI Elements-->
-                <li>
+                <li class="open">
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-desktop"></i>
                         <span class="menu-text"> 众筹管理 </span>
@@ -158,7 +158,7 @@ Purchase: http://wrapbootstrap.com
                                 <span class="menu-text">项目设置</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="../prostatus">
                                 <span class="menu-text">项目状态</span>
                             </a>

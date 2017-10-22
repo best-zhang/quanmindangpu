@@ -158,7 +158,7 @@ Purchase: http://wrapbootstrap.com
                     </ul>
                 </li>
                 <!--Tables-->
-                <li>
+                <li class="open">
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-table"></i>
                         <span class="menu-text"> 商城管理 </span>
@@ -172,7 +172,7 @@ Purchase: http://wrapbootstrap.com
                                 <span class="menu-text">商品设置</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="../goodslist">
                                 <span class="menu-text">商品列表</span>
                             </a>
@@ -273,7 +273,6 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
 <script>
     $(document).ready(function () {
-        inittable();
         getlist();
     });
 
@@ -281,7 +280,8 @@ Purchase: http://wrapbootstrap.com
         //Datatable Initiating
         var oTable = $('#simpledatatable').dataTable({
             "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
-            "iDisplayLength": 5,
+            "bPaginate": true,//显示（使用）分页器
+            "iDisplayLength": 10,
             "oTableTools": {
                 "aButtons": [],
                 "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
@@ -353,6 +353,7 @@ Purchase: http://wrapbootstrap.com
                 }
 
                 $("#list").html(str);
+                inittable();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);

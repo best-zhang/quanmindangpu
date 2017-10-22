@@ -35,8 +35,12 @@ class Protradelist extends CI_Controller
 
     function getProTradeList()
     {
-        $query = $this->db->query('SELECT t1.id,t1.person,t1.money,t1.integral,t1.tradetime,t1.address,t1.jingban,t2.name FROM raisedeal t1 LEFT JOIN raise t2 ON t1.projectid = t2.id ORDER BY t1.dtinsert DESC;');
+        $selectsql = 'SELECT t1.id,t1.money,t1.integral,t1.tradetime,t1.address,t1.jingban,t2.name,t3.username AS person' .
+            ' FROM raisedeal t1 LEFT JOIN raise t2 ON t1.projectid = t2.id' .
+            ' LEFT JOIN user t3 ON t1.userid = t3.id' .
+            ' ORDER BY t1.dtinsert DESC;';
 
+        $query = $this->db->query($selectsql);
         $this->response_data($query->result());
     }
 
