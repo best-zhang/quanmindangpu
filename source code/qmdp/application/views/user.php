@@ -1,7 +1,6 @@
 ﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
@@ -9,13 +8,13 @@ Version: 1.0.0
 Purchase: http://wrapbootstrap.com
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>项目状态</title>
+    <title>用户设置</title>
 
-    <meta name="description" content="form editors"/>
+    <meta name="description" content="project setting"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -37,12 +36,9 @@ Purchase: http://wrapbootstrap.com
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
-    <style type="text/css">
-        body:before {
-            background-color: #ffffff;
-        }
 
-        .page-body {
+    <style type="text/css">
+        body:before, .page-body {
             background: #ffffff;
         }
 
@@ -52,26 +48,6 @@ Purchase: http://wrapbootstrap.com
             padding: 20px;
             line-height: 34px;
             color: #555;
-        }
-
-        .img-project {
-            width: 100%;
-            height: 0px;
-            padding-bottom: 100%;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        }
-
-        .blank-img-label {
-            height: 0px;
-            padding-bottom: 75%;
-        }
-
-        .label-img {
-            float: left;
-            padding: 10px 5px;
-            margin-right: 50px;
-            font-size: 15px;
         }
     </style>
 </head>
@@ -145,7 +121,7 @@ Purchase: http://wrapbootstrap.com
             <!-- Sidebar Menu -->
             <ul class="nav sidebar-menu">
                 <!--UI Elements-->
-                <li class="open">
+                <li>
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-desktop"></i>
                         <span class="menu-text"> 众筹管理 </span>
@@ -158,7 +134,7 @@ Purchase: http://wrapbootstrap.com
                                 <span class="menu-text">项目设置</span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="../prostatus">
                                 <span class="menu-text">项目状态</span>
                             </a>
@@ -185,7 +161,7 @@ Purchase: http://wrapbootstrap.com
                     </a>
 
                     <ul class="submenu">
-                        <li>
+                        <li class="active">
                             <a href="../goodsset">
                                 <span class="menu-text">商品设置</span>
                             </a>
@@ -207,7 +183,7 @@ Purchase: http://wrapbootstrap.com
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="open">
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-table"></i>
                         <span class="menu-text"> 用户管理 </span>
@@ -216,7 +192,7 @@ Purchase: http://wrapbootstrap.com
                     </a>
 
                     <ul class="submenu">
-                        <li>
+                        <li class="active">
                             <a href="../user">
                                 <span class="menu-text">用户设置</span>
                             </a>
@@ -242,9 +218,9 @@ Purchase: http://wrapbootstrap.com
                         <a href="#">首页</a>
                     </li>
                     <li>
-                        <a href="#">众筹管理</a>
+                        <a href="#">用户管理</a>
                     </li>
-                    <li class="active">项目状态</li>
+                    <li class="active">用户设置</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
@@ -252,22 +228,94 @@ Purchase: http://wrapbootstrap.com
             <!-- Page Body -->
             <div class="page-body">
                 <div class="row">
-                    <div class="input-group-title">众筹中</div>
-                    <div id="raising">
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group-title">计划中</div>
-                    <div id="plan">
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group-title">已完成</div>
-                    <div id="completed">
-
-                    </div>
+                    <form id="inputform" method="post" action="../proset/save"
+                          class="form-horizontal"
+                          data-bv-message="填写不正确"
+                          data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                          data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                          data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                        <div class="input-group-title">用户信息</div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">用户名:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="username" id="username"
+                                       placeholder=""
+                                       data-bv-message="用户名格式不正确"
+                                       data-bv-notempty="true"
+                                       data-bv-notempty-message="用户名不能为空"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="50"
+                                       data-bv-stringlength-message="用户名长度范围为1-50"/>
+                                <label>用于登录前台系统，密码默认。</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">姓名:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="uname" id="uname"
+                                       placeholder=""
+                                       data-bv-message="姓名格式不正确"
+                                       data-bv-notempty="true"
+                                       data-bv-notempty-message="姓名不能为空"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="50"
+                                       data-bv-stringlength-message="姓名长度范围为1-50"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">性别:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                                <label class="radio-inline">
+                                    <input name="sex" type="radio" value="0" checked="checked">
+                                    <span class="text">男</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="sex" type="radio" value="1">
+                                    <span class="text">女</span>
+                                </label>
+                                <label class="radio select2-display-none">
+                                    <input name="sex" type="radio">
+                                    <span class="text"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">年龄:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="age" id="age"
+                                       placeholder=""
+                                       data-bv-message="年龄填写不正确"
+                                       data-bv-notempty="false"
+                                       data-bv-notempty-message="年龄不能为空"
+                                       data-bv-regexp="true"
+                                       data-bv-regexp-regexp="[1-9][0-9]*"
+                                       data-bv-regexp-message="年龄只允许填写数字"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="0"
+                                       data-bv-stringlength-max="5"
+                                       data-bv-stringlength-message="年龄长度范围为0-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">联系电话:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <input type="text" class="form-control input-sm" name="tel" id="tel"
+                                       placeholder=""
+                                       data-bv-message="联系电话格式不正确"
+                                       data-bv-stringlength="true"
+                                       data-bv-stringlength-min="1"
+                                       data-bv-stringlength-max="30"
+                                       data-bv-stringlength-message="联系电话长度范围为1-30"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-3 col-lg-8 col-md-offset-3 col-md-8">
+                                <input class="btn btn-palegreen" type="button" onclick="toVaild();" value="提 交"/>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- /Page Body -->
@@ -293,164 +341,42 @@ Purchase: http://wrapbootstrap.com
 
 <!--Summernote Scripts-->
 <script src="assets/js/editors/summernote/summernote.js"></script>
+<script src="assets/js/validation/bootstrapValidator.js"></script>
+
 <script>
     $(document).ready(function () {
-        getraising();
-        getplan();
-        getcompleted();
+        $("#inputform").bootstrapValidator();
     });
 
-    function getraising() {
-        $.ajax({
-            type: 'POST',
-            url: '../prostatus/getRaising',//路径
-            data: {},
-            success: function (data) {
-                if (data) {
-                    console.log(data);
-                    var str = "";
-                    for (i = 0; i < data.length; i++) {
-                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
-                            '<div class="well padding-5">' +
-                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
-                            '<div class="blank-img-label"></div>' +
-                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
-                            '<span class="clearfix"></span>' +
-                            '</div>' +
-                            '<div class="text-align-right margin-top-5">' +
-                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
-                            '<i class="fa fa-trash-o"></i>' +
-                            '</a>' +
-                            '</div>' + '</div>' +
-                            '</div>';
-                    }
-                    if (!str) {
-                        str = '<div class="padding-left-50">暂无数据</div>';
-                    }
-                    $("#raising").html(str);
-                }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
-            }
-        });
+    function toVaild() {
+        $('#inputform').data('bootstrapValidator').validate();
+        if (!$('#inputform').data('bootstrapValidator').isValid()) {
+            alert("数据填写不正确,请检查");
+        } else {
+            save();
+        }
     }
 
-    function getplan() {
+    function save() {
         $.ajax({
             type: 'POST',
-            url: '../prostatus/getPlan',//路径
-            data: {},
-            success: function (data) {
-                if (data) {
-                    console.log(data);
-                    var str = "";
-                    for (i = 0; i < data.length; i++) {
-                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
-                            '<div class="well padding-5">' +
-                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
-                            '<div class="blank-img-label"></div>' +
-                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
-                            '<span class="clearfix"></span>' +
-                            '</div>' +
-                            '<div class="text-align-right margin-top-5">' +
-                            '<a href="javascript:void(0);" title="发布" onclick="issue(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5">' +
-                            '<i class="fa fa-cloud-upload"></i>' +
-                            '</a>' +
-                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
-                            '<i class="fa fa-trash-o"></i>' +
-                            '</a>' +
-                            '</div>' + '</div>' +
-                            '</div>';
-                    }
-                    if (!str) {
-                        str = '<div class="padding-left-50">暂无数据</div>';
-                    }
-                    $("#plan").html(str);
-                }
+            url: '../user/save',//路径
+            data: {
+                "username": $("#username").val(),
+                "uname": $("#uname").val(),
+                "sex": $('input:radio:checked').val(),
+                "age": $("#age").val(),
+                "tel": $("#tel").val()
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
-            }
-        });
-    }
-
-    function getcompleted() {
-        $.ajax({
-            type: 'POST',
-            url: '../prostatus/getCompleted',//路径
-            data: {},
             success: function (data) {
                 if (data) {
-                    console.log(data);
-                    var str = "";
-                    for (i = 0; i < data.length; i++) {
-                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
-                            '<div class="well padding-5">' +
-                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
-                            '<div class="blank-img-label"></div>' +
-                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
-                            '<span class="clearfix"></span>' +
-                            '</div>' +
-                            '<div class="text-align-right margin-top-5">' +
-                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
-                            '<i class="fa fa-trash-o"></i>' +
-                            '</a>' +
-                            '</div>' + '</div>' +
-                            '</div>';
-                    }
-                    if (!str) {
-                        str = '<div class="padding-left-50">暂无数据</div>';
-                    }
-                    $("#completed").html(str);
-                }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
-            }
-        });
-    }
-
-    function issue(id) {
-        $.ajax({
-            type: 'POST',
-            url: '../prostatus/issue',//路径
-            data: {"id": id},
-            success: function (data) {
-                if (data) {
-                    console.log(data);
-                    getraising();
-                    getplan();
-                    getcompleted();
                     alert(data);
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("发布出错：" + XMLHttpRequest.status + "," + textStatus);
+                alert("保存数据出错：" + XMLHttpRequest.status + "," + textStatus);
             }
         });
-    }
-
-    function del(id) {
-        if (confirm("确定删除该项目?")) {
-            $.ajax({
-                type: 'POST',
-                url: '../prostatus/delpro',//路径
-                data: {"id": id},
-                success: function (data) {
-                    if (data) {
-                        console.log(data);
-                        getraising();
-                        getplan();
-                        getcompleted();
-                        alert(data);
-                    }
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("删除失败：" + XMLHttpRequest.status + "," + textStatus);
-                }
-            });
-        }
     }
 
 </script>

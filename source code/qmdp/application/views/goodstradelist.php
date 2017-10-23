@@ -189,6 +189,27 @@ Purchase: http://wrapbootstrap.com
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#" class="menu-dropdown">
+                        <i class="menu-icon fa fa-table"></i>
+                        <span class="menu-text"> 用户管理 </span>
+
+                        <i class="menu-expand"></i>
+                    </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="../user">
+                                <span class="menu-text">用户设置</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../userlist">
+                                <span class="menu-text">用户列表</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <!-- /Sidebar Menu -->
         </div>

@@ -1,7 +1,6 @@
 ﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
@@ -13,7 +12,7 @@ Purchase: http://wrapbootstrap.com
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>项目状态</title>
+    <title>用户列表</title>
 
     <meta name="description" content="form editors"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -35,14 +34,13 @@ Purchase: http://wrapbootstrap.com
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
     <link id="skin-link" href="" rel="stylesheet" type="text/css"/>
 
+    <!--Page Related styles-->
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet"/>
+
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
     <style type="text/css">
-        body:before {
-            background-color: #ffffff;
-        }
-
-        .page-body {
+        body:before, .page-body {
             background: #ffffff;
         }
 
@@ -54,24 +52,8 @@ Purchase: http://wrapbootstrap.com
             color: #555;
         }
 
-        .img-project {
-            width: 100%;
-            height: 0px;
-            padding-bottom: 100%;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        }
-
-        .blank-img-label {
-            height: 0px;
-            padding-bottom: 75%;
-        }
-
-        .label-img {
-            float: left;
-            padding: 10px 5px;
-            margin-right: 50px;
-            font-size: 15px;
+        #simpledatatable_filter, #simpledatatable_length, #simpledatatable_info {
+            display: none;
         }
     </style>
 </head>
@@ -113,7 +95,7 @@ Purchase: http://wrapbootstrap.com
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="../login">
+                                    <a href="login.html">
                                         退 出
                                     </a>
                                 </li>
@@ -145,7 +127,7 @@ Purchase: http://wrapbootstrap.com
             <!-- Sidebar Menu -->
             <ul class="nav sidebar-menu">
                 <!--UI Elements-->
-                <li class="open">
+                <li>
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-desktop"></i>
                         <span class="menu-text"> 众筹管理 </span>
@@ -158,7 +140,7 @@ Purchase: http://wrapbootstrap.com
                                 <span class="menu-text">项目设置</span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="../prostatus">
                                 <span class="menu-text">项目状态</span>
                             </a>
@@ -190,7 +172,7 @@ Purchase: http://wrapbootstrap.com
                                 <span class="menu-text">商品设置</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="../goodslist">
                                 <span class="menu-text">商品列表</span>
                             </a>
@@ -207,7 +189,7 @@ Purchase: http://wrapbootstrap.com
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="open">
                     <a href="#" class="menu-dropdown">
                         <i class="menu-icon fa fa-table"></i>
                         <span class="menu-text"> 用户管理 </span>
@@ -221,7 +203,7 @@ Purchase: http://wrapbootstrap.com
                                 <span class="menu-text">用户设置</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="../userlist">
                                 <span class="menu-text">用户列表</span>
                             </a>
@@ -242,9 +224,9 @@ Purchase: http://wrapbootstrap.com
                         <a href="#">首页</a>
                     </li>
                     <li>
-                        <a href="#">众筹管理</a>
+                        <a href="#">用户管理</a>
                     </li>
-                    <li class="active">项目状态</li>
+                    <li class="active">用户列表</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
@@ -252,21 +234,41 @@ Purchase: http://wrapbootstrap.com
             <!-- Page Body -->
             <div class="page-body">
                 <div class="row">
-                    <div class="input-group-title">众筹中</div>
-                    <div id="raising">
+                    <div class="input-group-title">用户列表</div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                            <thead>
+                            <tr>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    用户名
+                                </th>
+                                <th>
+                                    用户姓名
+                                </th>
+                                <th>
+                                    性别
+                                </th>
+                                <th>
+                                    年龄
+                                </th>
+                                <th>
+                                    联系电话
+                                </th>
+                                <th>
+                                    积分
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="list">
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group-title">计划中</div>
-                    <div id="plan">
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-group-title">已完成</div>
-                    <div id="completed">
-
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -286,164 +288,109 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/beyond.min.js"></script>
 
 <!--Page Related Scripts-->
-<!--Bootstrap  wysiwig Scripts-->
-<script src="assets/js/editors/wysiwyg/jquery.hotkeys.js"></script>
-<script src="assets/js/editors/wysiwyg/prettify.js"></script>
-<script src="assets/js/editors/wysiwyg/bootstrap-wysiwyg.js"></script>
-
-<!--Summernote Scripts-->
-<script src="assets/js/editors/summernote/summernote.js"></script>
+<script src="assets/js/datatable/jquery.dataTables.min.js"></script>
+<script src="assets/js/datatable/ZeroClipboard.js"></script>
+<script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
+<script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
 <script>
     $(document).ready(function () {
-        getraising();
-        getplan();
-        getcompleted();
+        getlist();
     });
 
-    function getraising() {
-        $.ajax({
-            type: 'POST',
-            url: '../prostatus/getRaising',//路径
-            data: {},
-            success: function (data) {
-                if (data) {
-                    console.log(data);
-                    var str = "";
-                    for (i = 0; i < data.length; i++) {
-                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
-                            '<div class="well padding-5">' +
-                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
-                            '<div class="blank-img-label"></div>' +
-                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
-                            '<span class="clearfix"></span>' +
-                            '</div>' +
-                            '<div class="text-align-right margin-top-5">' +
-                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
-                            '<i class="fa fa-trash-o"></i>' +
-                            '</a>' +
-                            '</div>' + '</div>' +
-                            '</div>';
-                    }
-                    if (!str) {
-                        str = '<div class="padding-left-50">暂无数据</div>';
-                    }
-                    $("#raising").html(str);
+    function inittable() {
+        //Datatable Initiating
+        var oTable = $('#simpledatatable').dataTable({
+            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            "bPaginate": true,//显示（使用）分页器
+            "iDisplayLength": 10,
+            "oTableTools": {
+                "aButtons": [],
+                "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+            },
+            "language": {
+                "search": "",
+                "sLengthMenu": "_MENU_",
+                "oPaginate": {
+                    "sPrevious": "往前",
+                    "sNext": "往后"
                 }
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
-            }
+            "aoColumns": [
+                null,
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false}
+            ],
+            "aaSorting": []
+        });
+
+        //Check All Functionality
+        jQuery('#simpledatatable .group-checkable').change(function () {
+            var set = $(".checkboxes");
+            var checked = jQuery(this).is(":checked");
+            jQuery(set).each(function () {
+                if (checked) {
+                    $(this).prop("checked", true);
+                    $(this).parents('tr').addClass("active");
+                } else {
+                    $(this).prop("checked", false);
+                    $(this).parents('tr').removeClass("active");
+                }
+            });
+
+        });
+        jQuery('#simpledatatable tbody tr .checkboxes').change(function () {
+            $(this).parents('tr').toggleClass("active");
         });
     }
 
-    function getplan() {
+    function getlist() {
         $.ajax({
             type: 'POST',
-            url: '../prostatus/getPlan',//路径
+            url: '../userlist/getUserList',//路径
             data: {},
             success: function (data) {
+                var str = "";
                 if (data) {
-                    console.log(data);
-                    var str = "";
                     for (i = 0; i < data.length; i++) {
-                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
-                            '<div class="well padding-5">' +
-                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
-                            '<div class="blank-img-label"></div>' +
-                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
-                            '<span class="clearfix"></span>' +
-                            '</div>' +
-                            '<div class="text-align-right margin-top-5">' +
-                            '<a href="javascript:void(0);" title="发布" onclick="issue(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5">' +
-                            '<i class="fa fa-cloud-upload"></i>' +
-                            '</a>' +
-                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
-                            '<i class="fa fa-trash-o"></i>' +
-                            '</a>' +
-                            '</div>' + '</div>' +
-                            '</div>';
+                        str += '<tr lid="' + data[i]["id"] + '">' +
+                            '<td>' + data[i]["id"] + '</td>' +
+                            '<td>' + data[i]["username"] + '</td>' +
+                            '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
+                            '<td>' + data[i]["sex"] + ' </td>' +
+                            '<td>' + data[i]["age"] + '</td>' +
+                            '<td>' + (data[i]["tel"] ? data[i]["tel"] : "") + '</td>' +
+                            '<td>' + (data[i]["integral"] ? data[i]["integral"] : "") + '</td>' +
+                            '<td><a href="javascript:void(0)" onclick="del(' + data[i]["id"] + ')">删除</a>' + '</td>' +
+                            '</tr>';
                     }
-                    if (!str) {
-                        str = '<div class="padding-left-50">暂无数据</div>';
-                    }
-                    $("#plan").html(str);
                 }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
-            }
-        });
-    }
+                if (!str) {
+                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">无数据</td></tr>';
+                }
 
-    function getcompleted() {
-        $.ajax({
-            type: 'POST',
-            url: '../prostatus/getCompleted',//路径
-            data: {},
-            success: function (data) {
-                if (data) {
-                    console.log(data);
-                    var str = "";
-                    for (i = 0; i < data.length; i++) {
-                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 margin-bottom-10">' +
-                            '<div class="well padding-5">' +
-                            '<div class="img-project" style="background-image: url(\'' + 'uploads/' + data[i]["cover"] + '\')">' +
-                            '<div class="blank-img-label"></div>' +
-                            '<span class="label label-azure graded label-img">' + data[i]["name"] + '</span>' +
-                            '<span class="clearfix"></span>' +
-                            '</div>' +
-                            '<div class="text-align-right margin-top-5">' +
-                            '<a href="javascript:void(0);" title="删除" onclick="del(\'' + data[i]["id"] + '\')" class="btn btn-default shiny padding-5 padding-left-10">' +
-                            '<i class="fa fa-trash-o"></i>' +
-                            '</a>' +
-                            '</div>' + '</div>' +
-                            '</div>';
-                    }
-                    if (!str) {
-                        str = '<div class="padding-left-50">暂无数据</div>';
-                    }
-                    $("#completed").html(str);
-                }
+                $("#list").html(str);
+                inittable();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取数据出错：" + XMLHttpRequest.status + "," + textStatus);
-            }
-        });
-    }
-
-    function issue(id) {
-        $.ajax({
-            type: 'POST',
-            url: '../prostatus/issue',//路径
-            data: {"id": id},
-            success: function (data) {
-                if (data) {
-                    console.log(data);
-                    getraising();
-                    getplan();
-                    getcompleted();
-                    alert(data);
-                }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("发布出错：" + XMLHttpRequest.status + "," + textStatus);
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
             }
         });
     }
 
     function del(id) {
-        if (confirm("确定删除该项目?")) {
+        if (confirm("确定删除该商品?")) {
             $.ajax({
                 type: 'POST',
-                url: '../prostatus/delpro',//路径
+                url: '../goodslist/delgoods',//路径
                 data: {"id": id},
                 success: function (data) {
                     if (data) {
                         console.log(data);
-                        getraising();
-                        getplan();
-                        getcompleted();
-                        alert(data);
+                        getlist();
                     }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {

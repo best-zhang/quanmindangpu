@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Goodstrade extends CI_Controller
+class User extends CI_Controller
 {
 
     /**
@@ -21,7 +21,7 @@ class Goodstrade extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('goodstrade');
+        $this->load->view('user');
     }
 
     public function __construct()
@@ -33,53 +33,27 @@ class Goodstrade extends CI_Controller
         $this->load->database();
     }
 
-    function getUsers()
-    {
-        $query = $this->db->query('SELECT id,name FROM user ORDER BY id ASC;');
-
-        $this->response_data($query->result());
-    }
-
-    function getGoods()
-    {
-        $query = $this->db->query('SELECT id,name FROM goods ORDER BY id ASC;');
-
-        $this->response_data($query->result());
-    }
-
-    function getProjects()
-    {
-        $query = $this->db->query('SELECT id,name FROM raise ORDER BY id ASC;');
-
-        $this->response_data($query->result());
-    }
-
     function save()
     {
-        $uid = trim($_POST['uid']);
-        $goods = trim($_POST['goods']);
-        $project = trim($_POST['project']);
-        $money = trim($_POST['money']);
-        $jifen = trim($_POST['jifen']);
-        $tradetime = trim($_POST['tradetime']);
-        $jingban = trim($_POST['jingban']);
+        $username = trim($_POST['username']);
+        $uname = trim($_POST['uname']);
+        $sex = trim($_POST['sex']);
+        $age = trim($_POST['age']);
+        $tel = trim($_POST['tel']);
 
         $user = $this->session->userdata('user_info');
 
-        $sqladd = "INSERT INTO goodsdeal(userid,goodsid,proid,money,integral,tradetime,jingban,createby,dtinsert)" .
-            "VALUES('{$uid}','{$goods}','{$project}','{$money}','{$jifen}','{$tradetime}','{$jingban}','{$user}',NOW());";
+        $sqladd = "INSERT INTO user(username,password,name,sex,age,tel,createby,dtinsert) " .
+            "VALUES('{$username}','123456','{$uname}','{$sex}','{$age}','{$tel}','{$user}',NOW());";
+
         $this->db->query($sqladd);
         if ($this->db->affected_rows() > 0) {
-
-            if ($jifen > 0)
-            {
-
-            }
-                echo "保存成功";
+            echo "保存成功";
         } else {
             echo "保存失败";
         }
     }
+
 
     /**
      * @param $data 数组

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Goodstrade extends CI_Controller
+class Userlist extends CI_Controller
 {
 
     /**
@@ -21,7 +21,7 @@ class Goodstrade extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('goodstrade');
+        $this->load->view('userlist');
     }
 
     public function __construct()
@@ -33,51 +33,25 @@ class Goodstrade extends CI_Controller
         $this->load->database();
     }
 
-    function getUsers()
+    function getUserList()
     {
-        $query = $this->db->query('SELECT id,name FROM user ORDER BY id ASC;');
+        $sqlselect = 'SELECT id,username,name, if(sex=0,"男","女") AS sex,age,tel,integral FROM user ORDER BY id ASC;';
+
+        $query = $this->db->query($sqlselect);
 
         $this->response_data($query->result());
     }
 
-    function getGoods()
+    function delUser()
     {
-        $query = $this->db->query('SELECT id,name FROM goods ORDER BY id ASC;');
+        $id = trim($_POST['id']);
 
-        $this->response_data($query->result());
-    }
-
-    function getProjects()
-    {
-        $query = $this->db->query('SELECT id,name FROM raise ORDER BY id ASC;');
-
-        $this->response_data($query->result());
-    }
-
-    function save()
-    {
-        $uid = trim($_POST['uid']);
-        $goods = trim($_POST['goods']);
-        $project = trim($_POST['project']);
-        $money = trim($_POST['money']);
-        $jifen = trim($_POST['jifen']);
-        $tradetime = trim($_POST['tradetime']);
-        $jingban = trim($_POST['jingban']);
-
-        $user = $this->session->userdata('user_info');
-
-        $sqladd = "INSERT INTO goodsdeal(userid,goodsid,proid,money,integral,tradetime,jingban,createby,dtinsert)" .
-            "VALUES('{$uid}','{$goods}','{$project}','{$money}','{$jifen}','{$tradetime}','{$jingban}','{$user}',NOW());";
-        $this->db->query($sqladd);
+        $sqldelete = "DELETE FROM user WHERE id='{$id}'";
+        $this->db->query($sqldelete);
         if ($this->db->affected_rows() > 0) {
-
-            if ($jifen > 0)
-            {
-
-            }
-                echo "保存成功";
+            echo "删除成功";
         } else {
-            echo "保存失败";
+            echo "删除失败";
         }
     }
 
