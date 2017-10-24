@@ -14,19 +14,48 @@
       <file leaf-file-name="_index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+            <state relative-caret-position="354">
+              <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+              <folding>
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elements.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="1596" column="86" lean-forward="false" selection-start-line="1596" selection-start-column="82" selection-end-line="1596" selection-end-column="86" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="widgets.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/widgets.html">
+      <file leaf-file-name="modals.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9916">
-              <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+            <state relative-caret-position="197">
+              <caret line="957" column="36" lean-forward="false" selection-start-line="957" selection-start-column="36" selection-end-line="962" selection-end-column="42" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="databoxes.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/databoxes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="862" column="37" lean-forward="false" selection-start-line="862" selection-start-column="28" selection-end-line="862" selection-end-column="37" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#20;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,6 +84,8 @@
       <find>&lt;div class=&quot;col-lg-4 col-md-4 col-sm-4 no-padding-left&quot;&gt;</find>
       <find>country</find>
       <find>form-field-radio</find>
+      <find>I am a default well</find>
+      <find>Animated</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;label class=&quot;col-lg-2 col-md-2 col-sm-2 control-label padding-right-10&quot;&gt;</replace>
@@ -93,7 +124,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="20" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -114,23 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -147,11 +161,28 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/WorkSpace/GitHub/quanmindangpu/source code/qmdp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -200,31 +231,33 @@
       <workItem from="1508507138372" duration="3499000" />
       <workItem from="1508678086679" duration="2180000" />
       <workItem from="1508747394066" duration="9990000" />
+      <workItem from="1508855328738" duration="6500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63048000" />
+    <option name="totallyTimeSpent" value="69548000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23472223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -239,67 +272,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_proset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_proset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6000">
-          <caret line="442" column="23" lean-forward="false" selection-start-line="437" selection-start-column="20" selection-end-line="442" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_goodsset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3100">
-          <caret line="155" column="52" lean-forward="true" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_prostatus.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="167" column="39" lean-forward="true" selection-start-line="167" selection-start-column="39" selection-end-line="167" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_goodslist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6160">
-          <caret line="308" column="87" lean-forward="false" selection-start-line="308" selection-start-column="87" selection-end-line="308" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_goodslist.html" />
     <entry file="file://$PROJECT_DIR$/_crowdtrade.html" />
-    <entry file="file://$PROJECT_DIR$/_goodstrade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6920">
-          <caret line="346" column="43" lean-forward="false" selection-start-line="346" selection-start-column="43" selection-end-line="346" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_proset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8840">
-          <caret line="442" column="23" lean-forward="true" selection-start-line="437" selection-start-column="20" selection-end-line="442" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_prostatus.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3140">
-          <caret line="157" column="48" lean-forward="false" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_goodstrade.html" />
+    <entry file="file://$PROJECT_DIR$/_proset.html" />
+    <entry file="file://$PROJECT_DIR$/_prostatus.html" />
     <entry file="file://$PROJECT_DIR$/_crowdtrade.html" />
     <entry file="file://$PROJECT_DIR$/_crowdtradelist.html" />
     <entry file="file://$PROJECT_DIR$/form-editors.html">
@@ -309,14 +286,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_proset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2860">
-          <caret line="302" column="69" lean-forward="true" selection-start-line="302" selection-start-column="69" selection-end-line="302" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_proset.html" />
     <entry file="file://$PROJECT_DIR$/form-validation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24680">
@@ -331,13 +301,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_prostatus.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="161" column="28" lean-forward="true" selection-start-line="161" selection-start-column="28" selection-end-line="161" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_prostatus.html" />
     <entry file="file://$PROJECT_DIR$/form-editors.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -359,14 +323,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_proset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1940">
-          <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_proset.html" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-960">
@@ -426,20 +383,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_goodstradelist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="194" column="43" lean-forward="false" selection-start-line="194" selection-start-column="43" selection-end-line="194" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_protradelist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="151" column="29" lean-forward="true" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_goodstradelist.html" />
+    <entry file="file://$PROJECT_DIR$/_protradelist.html" />
     <entry file="file://$PROJECT_DIR$/assets/js/validation/bootstrapValidator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -467,9 +412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="9" column="7757" lean-forward="false" selection-start-line="9" selection-start-column="7757" selection-end-line="9" selection-end-column="7757" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -477,18 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1162">
           <caret line="2543" column="41" lean-forward="false" selection-start-line="2543" selection-start-column="33" selection-end-line="2543" selection-end-column="41" />
-          <folding>
-            <marker date="1410512614000" expanded="true" signature="85826:85862" ph="..." />
-            <marker date="1410512614000" expanded="true" signature="91256:91262" ph=" " />
-            <marker date="1410512614000" expanded="true" signature="93632:93646" ph="..." />
-            <marker date="1410512614000" expanded="true" signature="93857:93863" ph=" " />
-            <marker date="1410512614000" expanded="true" signature="93863:93869" ph=" " />
-            <marker date="1410512614000" expanded="true" signature="94504:94518" ph="..." />
-            <marker date="1410512614000" expanded="true" signature="102180:102187" ph="×" />
-            <marker date="1410512614000" expanded="true" signature="103479:103486" ph="×" />
-            <marker date="1410512614000" expanded="true" signature="105327:105334" ph="×" />
-            <marker date="1410512614000" expanded="true" signature="105658:105664" ph=" " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -499,30 +429,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_prostatus.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4720">
-          <caret line="236" column="73" lean-forward="true" selection-start-line="236" selection-start-column="73" selection-end-line="236" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_prostatus.html" />
     <entry file="file://$PROJECT_DIR$/assets/js/fileinput/fileinput_locale_zh.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1340">
           <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="55" />
-          <folding>
-            <marker date="1508207558318" expanded="true" signature="3058:3066" ph="…" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_protrade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5540">
-          <caret line="277" column="97" lean-forward="false" selection-start-line="277" selection-start-column="97" selection-end-line="277" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_protrade.html" />
     <entry file="file://$PROJECT_DIR$/form-validation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -530,57 +445,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_goodslist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="313" column="87" lean-forward="true" selection-start-line="313" selection-start-column="52" selection-end-line="313" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_goodsset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="358" column="95" lean-forward="false" selection-start-line="358" selection-start-column="87" selection-end-line="358" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_goodstrade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="255" column="87" lean-forward="true" selection-start-line="250" selection-start-column="48" selection-end-line="255" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_proset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="129" column="31" lean-forward="false" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_goodslist.html" />
+    <entry file="file://$PROJECT_DIR$/_goodsset.html" />
+    <entry file="file://$PROJECT_DIR$/_goodstrade.html" />
+    <entry file="file://$PROJECT_DIR$/_proset.html" />
     <entry file="file://$PROJECT_DIR$/form-inputs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="1416" column="60" lean-forward="true" selection-start-line="1416" selection-start-column="60" selection-end-line="1416" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/widgets.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9916">
-          <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+        <state relative-caret-position="20">
+          <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databoxes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="862" column="37" lean-forward="false" selection-start-line="862" selection-start-column="28" selection-end-line="862" selection-end-column="37" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#20;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modals.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="957" column="36" lean-forward="false" selection-start-line="957" selection-start-column="36" selection-end-line="962" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/sectional.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="1596" column="86" lean-forward="false" selection-start-line="1596" selection-start-column="82" selection-end-line="1596" selection-end-column="86" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="354">
+          <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
