@@ -35,6 +35,10 @@ Purchase: http://wrapbootstrap.com
     <script src="assets/js/skins.min.js"></script>
 
     <style type="text/css">
+        body:before, .page-body {
+            background: #ffffff;
+        }
+
         .navbar {
             background-color: rgba(255, 255, 255, 0.8);
             font-size: 17px;
@@ -61,16 +65,17 @@ Purchase: http://wrapbootstrap.com
             color: #666666;
         }
 
-        .carousel {
-            height: 400px;
-        }
-
         .carousel .item img {
             width: 100%;
         }
 
         .carousel .item {
-            max-height: 400px;
+            max-height: 500px;
+        }
+
+        .raise-item h3 {
+            font-size: 23px;
+            margin-bottom: 20px;
         }
 
         .img-project {
@@ -79,6 +84,9 @@ Purchase: http://wrapbootstrap.com
             padding-bottom: 100%;
             background-size: 100% 100%;
             background-repeat: no-repeat;
+        }
+        .label{
+            padding: 8px;
         }
 
         .well .row div {
@@ -96,6 +104,34 @@ Purchase: http://wrapbootstrap.com
         .well .item-day {
             font-size: 30px;
             color: #d58512;
+        }
+
+        .badge {
+            height: auto;
+        }
+
+        .footer {
+            background-color: #5b5958;
+            color: #eeeeee;
+        }
+
+        .footer a {
+            color: #eeeeee;
+            font-size: 15px;
+        }
+
+        .footer img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .list-unstyled li {
+            padding: 3px;
+        }
+
+        .beian {
+            background-color: #1e1e1e;
+            color: #eeeeee;
         }
     </style>
 </head>
@@ -143,59 +179,163 @@ Purchase: http://wrapbootstrap.com
     </div>
 </div>
 
-<div class="page-body">
-    <div class="row">
-        <div class="container">
-            <h2>近期资助</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <div class="well no-padding">
-                        <div class="img-project"
-                             style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            <span class="label label-info">筹备中</span>
-                        </div>
-                        <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                        <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
-                        <div class="progress margin-top-5 no-margin-bottom">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
-                                 aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                <span>60%</span>
+<div class="page-body no-padding margin-top-40">
+    <div class="raise-item">
+        <div class="row">
+            <div class="container">
+                <h3>近期资助</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="well no-padding">
+                            <div class="img-project"
+                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
+                                <span class="label label-info">筹备中</span>
+                            </div>
+                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
+                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容sgdsdghfdhgfdhg</div>
+                            <div class="progress margin-top-5 no-margin-bottom">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <span>60%</span>
+                                </div>
+                            </div>
+                            <div class="row padding-left-10">
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                    <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
+                                    <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">
+                                    <div class="margin-top-5">剩余时间</div>
+                                    <div><span class="item-day">10</span>天</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row padding-left-10">
-                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                                <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
-                                <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="well no-padding">
+                            <div class="img-project"
+                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
+                                <span class="label label-info">筹备中</span>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">
-                                <div class="margin-top-5">剩余时间</div>
-                                <div><span class="item-day">10</span>天</div>
+                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
+                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
+                            <div class="progress margin-top-5 no-margin-bottom">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <span>60%</span>
+                                </div>
+                            </div>
+                            <div class="row padding-left-10">
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                    <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
+                                    <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">
+                                    <div class="margin-top-5">剩余时间</div>
+                                    <div><span class="item-day">10</span>天</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <div class="well no-padding">
-                        <div class="img-project"
-                             style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            <span class="label label-info">筹备中</span>
-                        </div>
-                        <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                        <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
-                        <div class="progress margin-top-5 no-margin-bottom">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
-                                 aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                <span>60%</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <h3>即将上线</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="well no-padding">
+                            <div class="img-project"
+                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
+                                <span class="label label-warning">计划中</span>
+                            </div>
+                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
+                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容sgdsdghfdhgfdhg</div>
+                            <div class="progress margin-top-5 no-margin-bottom">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    <span>等待开始</span>
+                                </div>
+                            </div>
+                            <div class="row padding-left-10">
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
+                                    <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
+                                    <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row padding-left-10">
-                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                                <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
-                                <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="well no-padding">
+                            <div class="img-project"
+                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
+                                <span class="label label-warning">计划中</span>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">
-                                <div class="margin-top-5">剩余时间</div>
-                                <div><span class="item-day">10</span>天</div>
+                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
+                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
+                            <div class="progress margin-top-5 no-margin-bottom">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    <span>等待开始</span>
+                                </div>
+                            </div>
+                            <div class="row padding-left-10">
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
+                                    <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
+                                    <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <h3>完成项目</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="well no-padding">
+                            <div class="img-project"
+                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
+                                <span class="label label-success">已完成</span>
+                            </div>
+                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
+                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容sgdsdghfdhgfdhg</div>
+                            <div class="progress margin-top-5 no-margin-bottom">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    <span>100%(已完成)</span>
+                                </div>
+                            </div>
+                            <div class="row padding-left-10">
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
+                                    <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
+                                    <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="well no-padding">
+                            <div class="img-project"
+                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
+                                <span class="label label-success">已完成</span>
+                            </div>
+                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
+                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
+                            <div class="progress margin-top-5 no-margin-bottom">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    <span>100%(已完成)</span>
+                                </div>
+                            </div>
+                            <div class="row padding-left-10">
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
+                                    <div class="margin-top-10">目标：￥<span>3,000,000</span></div>
+                                    <div class="margin-top-5">起投：￥<span>30,000</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -203,6 +343,68 @@ Purchase: http://wrapbootstrap.com
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="container padding-top-30">
+            <div class="text-center">
+                <h2>发现财富的秘密</h2>
+            </div>
+            <div class="row padding-top-30">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+                    <span class="badge badge-sky badge-square padding-20"><h4>关注项目</h4></span>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+                    <span class="badge badge-sky badge-square padding-20"><h4>了解项目</h4></span>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+                    <span class="badge badge-sky badge-square padding-20"><h4>项目购买</h4></span>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+                    <span class="badge badge-sky badge-square padding-20"><h4>协议签署</h4></span>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+                    <span class="badge badge-sky badge-square padding-20"><h4>财富实现</h4></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-50">
+        <div class="container padding-top-30">
+            <div class="text-center"><h4>全名当铺众筹项目</h4></div>
+        </div>
+        <div class="container margin-top-20">
+            <div class="text-center">想知道更多关于项目发生</div>
+        </div>
+        <div class="container margin-top-10">
+            <div class="text-center">或开始你自己</div>
+        </div>
+        <div class="container margin-top-40">
+            <div class="text-center"><a href="javascript:void(0);" class="btn btn-success">了解更多</a></div>
+        </div>
+    </div>
+
+    <div class="row padding-50 footer">
+        <div class="container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <h2>全民当铺众筹网</h2>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <ul class="list-unstyled">
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
+                <div>
+                    <img class="margin-right-10" src="assets/img/ewm1.jpg">
+                    <img class="margin-left-10" src="assets/img/ewm1.jpg">
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <div class="padding-10 text-align-center beian">蜀ICP备12569350号 Copyright © 2017 qmdp168.com</div>
 </div>
 
 <!--Basic Scripts-->
