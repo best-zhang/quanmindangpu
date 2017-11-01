@@ -337,7 +337,7 @@ class CI_URI {
 	 * Fetch URI Segment
 	 *
 	 * @see		CI_URI::$segments
-	 * @param	int		$n		Index
+	 * @param	int		$n		Home
 	 * @param	mixed		$no_result	What to return if the segment index is not found
 	 * @return	mixed
 	 */
@@ -357,7 +357,7 @@ class CI_URI {
 	 *
 	 * @see		CI_URI::$rsegments
 	 * @see		CI_URI::segment()
-	 * @param	int		$n		Index
+	 * @param	int		$n		Home
 	 * @param	mixed		$no_result	What to return if the segment index is not found
 	 * @return	mixed
 	 */
@@ -384,7 +384,7 @@ class CI_URI {
 	 *		gender => male
 	 *	 )
 	 *
-	 * @param	int	$n		Index (default: 3)
+	 * @param	int	$n		Home (default: 3)
 	 * @param	array	$default	Default values
 	 * @return	array
 	 */
@@ -402,7 +402,7 @@ class CI_URI {
 	 * segment array.
 	 *
 	 * @see		CI_URI::uri_to_assoc()
-	 * @param 	int	$n		Index (default: 3)
+	 * @param 	int	$n		Home (default: 3)
 	 * @param 	array	$default	Default values
 	 * @return 	array
 	 */
@@ -420,7 +420,7 @@ class CI_URI {
 	 *
 	 * @used-by	CI_URI::uri_to_assoc()
 	 * @used-by	CI_URI::ruri_to_assoc()
-	 * @param	int	$n		Index (default: 3)
+	 * @param	int	$n		Home (default: 3)
 	 * @param	array	$default	Default values
 	 * @param	string	$which		Array name ('segment' or 'rsegment')
 	 * @return	array
@@ -512,7 +512,7 @@ class CI_URI {
 	 *
 	 * Fetches an URI segment with a slash.
 	 *
-	 * @param	int	$n	Index
+	 * @param	int	$n	Home
 	 * @param	string	$where	Where to add the slash ('trailing' or 'leading')
 	 * @return	string
 	 */
@@ -528,7 +528,7 @@ class CI_URI {
 	 *
 	 * Fetches an URI routed segment with a slash.
 	 *
-	 * @param	int	$n	Index
+	 * @param	int	$n	Home
 	 * @param	string	$where	Where to add the slash ('trailing' or 'leading')
 	 * @return	string
 	 */
@@ -547,7 +547,7 @@ class CI_URI {
 	 * @used-by	CI_URI::slash_segment()
 	 * @used-by	CI_URI::slash_rsegment()
 	 *
-	 * @param	int	$n	Index
+	 * @param	int	$n	Home
 	 * @param	string	$where	Where to add the slash ('trailing' or 'leading')
 	 * @param	string	$which	Array name ('segment' or 'rsegment')
 	 * @return	string

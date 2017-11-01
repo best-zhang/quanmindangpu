@@ -76,7 +76,7 @@ class CI_Router {
 	 *
 	 * @var	string
 	 */
-	public $method =	'index';
+	public $method = 'Home';
 
 	/**
 	 * Sub-directory that contains the requested controller class
@@ -272,7 +272,7 @@ class CI_Router {
 		}
 		else
 		{
-			$segments[1] = 'index';
+			$segments[1] = 'Home';
 		}
 
 		array_unshift($segments, NULL);
@@ -297,7 +297,7 @@ class CI_Router {
 		// Is the method being specified?
 		if (sscanf($this->default_controller, '%[^/]/%s', $class, $method) !== 2)
 		{
-			$method = 'index';
+			$method = 'Home';
 		}
 
 		if ( ! file_exists(APPPATH.'controllers/'.$this->directory.ucfirst($class).'.php'))

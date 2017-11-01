@@ -432,7 +432,7 @@ if ( ! is_php('5.4'))
 		{
 			if (sscanf($RTR->routes['404_override'], '%[^/]/%s', $error_class, $error_method) !== 2)
 			{
-				$error_method = 'index';
+				$error_method = 'Home';
 			}
 
 			$error_class = ucfirst($error_class);

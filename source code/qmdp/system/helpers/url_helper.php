@@ -129,7 +129,7 @@ if ( ! function_exists('uri_string'))
 if ( ! function_exists('index_page'))
 {
 	/**
-	 * Index page
+	 * Home page
 	 *
 	 * Returns the "index_page" from your config file
 	 *

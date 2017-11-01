@@ -191,7 +191,7 @@ class CI_Config {
 	 * Fetch a config file item
 	 *
 	 * @param	string	$item	Config item name
-	 * @param	string	$index	Index name
+	 * @param	string	$index	Home name
 	 * @return	string|null	The configuration item or NULL if the item doesn't exist
 	 */
 	public function item($item, $index = '')

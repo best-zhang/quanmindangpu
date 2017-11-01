@@ -5,7 +5,7 @@ class Userlist extends CI_Controller
 {
 
     /**
-     * Index Page for this controller.
+     * Home Page for this controller.
      *
      * Maps to the following URL
      *        http://example.com/index.php/welcome

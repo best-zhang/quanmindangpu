@@ -140,7 +140,7 @@ class CI_DB_Cache {
 	public function read($sql)
 	{
 		$segment_one = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
-		$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
+		$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'Home' : $this->CI->uri->segment(2);
 		$filepath = $this->db->cachedir.$segment_one.'+'.$segment_two.'/'.md5($sql);
 
 		if (FALSE === ($cachedata = @file_get_contents($filepath)))
@@ -163,7 +163,7 @@ class CI_DB_Cache {
 	public function write($sql, $object)
 	{
 		$segment_one = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
-		$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
+		$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'Home' : $this->CI->uri->segment(2);
 		$dir_path = $this->db->cachedir.$segment_one.'+'.$segment_two.'/';
 		$filename = md5($sql);
 
@@ -199,7 +199,7 @@ class CI_DB_Cache {
 
 		if ($segment_two === '')
 		{
-			$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
+			$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'Home' : $this->CI->uri->segment(2);
 		}
 
 		$dir_path = $this->db->cachedir.$segment_one.'+'.$segment_two.'/';
