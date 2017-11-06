@@ -21,15 +21,15 @@ class Home extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('home');
+        $data['userinfo'] = $this->session->userdata('user_info_home');
+        $this->load->view('home', $data);
     }
 
     public function __construct()
     {
         parent::__construct();
 
-//        $this->load->library('MYController');
-
+        $this->load->library('session');
         $this->load->database();
     }
 

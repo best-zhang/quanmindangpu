@@ -311,6 +311,15 @@ Purchase: http://wrapbootstrap.com
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">上级:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
+                                <select class="form-control" id="superior" name="superior" data-bv-field="superior">
+                                    <option value="">请选择</option>
+                                </select><i class="form-control-feedback" data-bv-field="superior"
+                                            style="display: none;"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-8 col-md-offset-3 col-md-8">
                                 <input class="btn btn-palegreen" type="button" onclick="toVaild();" value="提 交"/>
                             </div>
@@ -346,7 +355,29 @@ Purchase: http://wrapbootstrap.com
 <script>
     $(document).ready(function () {
         $("#inputform").bootstrapValidator();
+        getusers();
     });
+
+    function getusers() {
+        $.ajax({
+            type: 'POST',
+            url: '../goodstrade/getUsers',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<option value="' + data[i]["id"] + '">' + data[i]["name"] + '</option>';
+                    }
+
+                    $("#superior").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取用户数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
 
     function toVaild() {
         $('#inputform').data('bootstrapValidator').validate();
@@ -366,7 +397,8 @@ Purchase: http://wrapbootstrap.com
                 "uname": $("#uname").val(),
                 "sex": $('input:radio:checked').val(),
                 "age": $("#age").val(),
-                "tel": $("#tel").val()
+                "tel": $("#tel").val(),
+                "superior": $("#superior").val()
             },
             success: function (data) {
                 if (data) {

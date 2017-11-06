@@ -21,41 +21,34 @@ class Userpwd extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('userpwd');
+        $data['userinfo'] = $this->session->userdata('user_info_home');
+        $this->load->view('userpwd', $data);
     }
 
     public function __construct()
     {
         parent::__construct();
 
-//        $this->load->library('MYController');
+        $this->load->library('MYHomeController');
 
         $this->load->database();
     }
 
-    function getGoodsList()
+    function changepwd()
     {
-        $sqlselect = 'SELECT t1.id, t1.name,t1.goodscode,t1.price,t1.integral,t2.name AS proname,t3.name AS protype,t4.name AS basetype' .
-            ' FROM goods t1 LEFT JOIN raise t2 ON t1.proid = t2.id' .
-            ' LEFT JOIN goodstype t3 ON t1.goodstypeid = t3.id' .
-            ' LEFT JOIN basetype t4 ON t1.basetypeid = t4.id' .
-            ' ORDER BY t1.id;';
+        $pwd = trim($_POST['pwd']);
+        $newpwd = trim($_POST['newpwd']);
+        $confirmpwd = trim($_POST['confirmpwd']);
 
-        $query = $this->db->query($sqlselect);
+        $user = $this->session->userdata('user_info_home');
 
-        $this->response_data($query->result());
-    }
+        $sqlupdate = "UPDATE user SET password='{$newpwd}' WHERE id = {$user->id} AND password = '{$pwd}' ";
 
-    function delgoods()
-    {
-        $id = trim($_POST['id']);
-
-        $sqldelete = "DELETE FROM goods WHERE id='{$id}'";
-        $this->db->query($sqldelete);
+        $this->db->query($sqlupdate);
         if ($this->db->affected_rows() > 0) {
-            echo "删除成功";
+            echo "保存成功";
         } else {
-            echo "删除失败";
+            echo "保存失败";
         }
     }
 

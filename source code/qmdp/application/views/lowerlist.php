@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -75,6 +79,11 @@ Purchase: http://wrapbootstrap.com
             line-height: 50px;
         }
 
+        .img-user-header img {
+            width: 100px;
+            height: 100px;
+        }
+
         .well-nav {
             max-width: 250px;
             background-color: #EBF5EA;
@@ -93,8 +102,8 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-detail {
-            padding-top: 50px;
-            padding-bottom: 80px;
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
 
         #simpledatatable_filter, #simpledatatable_length, #simpledatatable_info {
@@ -109,20 +118,24 @@ Purchase: http://wrapbootstrap.com
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header margin-right-50">
-            <a class="navbar-brand" href="#">全民当铺</a>
+            <a class="navbar-brand" href="home">全民当铺</a>
         </div>
         <div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index">首页</a></li>
+                <li><a href="home">首页</a></li>
                 <li><a href="about">关于我们</a></li>
                 <li><a href="shopindex" target="_blank">当铺商城</a></li>
             </ul>
         </div>
 
         <div class="pull-right">
-            欢迎您，<span>库伊特</span> <span class="margin-left-10"> <a
-                href="index">退出</a>
-				</span>
+            <?php
+            if ($userinfo) {
+                echo '欢迎您，<span>' . $userinfo->name . '</span> <span class="margin-left-10"> <a id="logout" onclick="logout();"  href="#">退出</a></span>';
+            } else {
+                echo '<span> <a href="userlogin">登录</a> </span>';
+            }
+            ?>
         </div>
     </div>
 </nav>
@@ -133,62 +146,66 @@ Purchase: http://wrapbootstrap.com
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                 <div class="well well-nav text-center no-padding padding-top-10">
                     <div class="img-user-header">
-                        <img src="assets/img/avatars/John-Smith.jpg" class="img-circle">
+                        <img src="<?php
+                        if ($userinfo->img) {
+                            echo 'uploads/' . $userinfo->img;
+                        } else {
+                            echo 'assets/img/avatars/John-Smith.jpg';
+                        }
+                        ?>" class="img-circle">
                     </div>
                     <div class="margin-top-20 nav-title">个人信息</div>
                     <div class="nav-link padding-5">
-                        <a href="_userupdate.html">个人资料</a>
+                        <a href="userupdate">个人资料</a>
                     </div>
                     <div class="nav-link padding-5">
-                        <a href="_userpwd.html">密码修改</a>
+                        <a href="userpwd">密码修改</a>
                     </div>
                     <div class="margin-top-10 nav-title">盈利分析</div>
                     <div class="nav-link padding-5">
-                        <a href="_lowerlist.html">人员列表</a>
+                        <a href="lowerlist">人员列表</a>
                     </div>
                     <div class="nav-link padding-5">
-                        <a href="_lowerarch.html">人员架构</a>
+                        <a href="lowerarch">人员架构</a>
                     </div>
                     <div class="margin-top-10 nav-title">项目支持</div>
                     <div class="nav-link padding-10">
-                        <a href="_userpro.html">已投项目</a>
+                        <a href="userpro">已投项目</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="row well well-detail">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                        <table class="table table-striped table-bordered table-hover" id="simpledatatable">
-                            <thead>
-                            <tr>
-                                <th>
-                                    项目名称
-                                </th>
-                                <th>
-                                    日期
-                                </th>
-                                <th>
-                                    姓名
-                                </th>
-                                <th>
-                                    年龄
-                                </th>
-                                <th>
-                                    性别
-                                </th>
-                                <th>
-                                    级别
-                                </th>
-                                <th>
-                                    金额
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody id="list">
+                    <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                        <thead>
+                        <tr>
+                            <th>
+                                项目名称
+                            </th>
+                            <th>
+                                日期
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                年龄
+                            </th>
+                            <th>
+                                性别
+                            </th>
+                            <th>
+                                级别
+                            </th>
+                            <th>
+                                金额
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="list">
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -207,6 +224,7 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/datatable/ZeroClipboard.js"></script>
 <script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
 <script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
+<script src="assets/js/_js/home.common.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -272,14 +290,14 @@ Purchase: http://wrapbootstrap.com
                 var str = "";
                 if (data) {
                     for (i = 0; i < data.length; i++) {
-                        str += '<tr lid="' + data[i]["id"] + '">' +
-                            '<td>' + data[i]["id"] + '</td>' +
-                            '<td>' + data[i]["username"] + '</td>' +
+                        str += '<tr>' +
+                            '<td>' + data[i]["proname"] + '</td>' +
+                            '<td>' + data[i]["tradetime"] + '</td>' +
                             '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
-                            '<td>' + data[i]["sex"] + ' </td>' +
-                            '<td>' + data[i]["age"] + '</td>' +
-                            '<td>' + (data[i]["tel"] ? data[i]["tel"] : "") + '</td>' +
-                            '<td>' + (data[i]["integral"] ? data[i]["integral"] : "") + '</td>' +
+                            '<td>' + data[i]["age"] + ' </td>' +
+                            '<td>' + data[i]["sex"] + '</td>' +
+                            '<td>' + (data[i]["level"] ? data[i]["level"] : "") + '</td>' +
+                            '<td>' + (data[i]["money"] ? data[i]["money"] : "0") + '</td>' +
                             '</tr>';
                     }
                 }

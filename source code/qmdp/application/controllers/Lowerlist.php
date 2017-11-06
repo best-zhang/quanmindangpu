@@ -21,42 +21,56 @@ class Lowerlist extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('lowerlist');
+        $data['userinfo'] = $this->session->userdata('user_info_home');
+        $this->load->view('lowerlist', $data);
     }
 
     public function __construct()
     {
         parent::__construct();
 
-//        $this->load->library('MYController');
+        $this->load->library('MYHomeController');
 
         $this->load->database();
     }
 
-    function getGoodsList()
+    function getLowerList()
     {
-        $sqlselect = 'SELECT t1.id, t1.name,t1.goodscode,t1.price,t1.integral,t2.name AS proname,t3.name AS protype,t4.name AS basetype' .
-            ' FROM goods t1 LEFT JOIN raise t2 ON t1.proid = t2.id' .
-            ' LEFT JOIN goodstype t3 ON t1.goodstypeid = t3.id' .
-            ' LEFT JOIN basetype t4 ON t1.basetypeid = t4.id' .
-            ' ORDER BY t1.id;';
+        $session_user = $this->session->userdata('user_info_home');
+        $sqlselect = "SELECT proname,tradetime,name,age,if(sex=0,'男','女') AS sex,level,money FROM ("
+
+            . " SELECT t1.tradetime,t1.money,t2.name,t2.sex,t2.age,t3.name as proname,'A' as level"
+            . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
+            . " AND t1.projectid = t3.id"
+            . " AND t2.superior = {$session_user->id}"
+            . " UNION ALL"
+
+            . " SELECT t1.tradetime,t1.money,t2.name,t2.sex,t2.age,t3.name as proname,'B' as level"
+            . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
+            . " AND t1.projectid = t3.id"
+            . " AND t2.id in ("
+            . " select t1.id from user t1"
+            . " inner join user  t2  on t1.superior = t2.id"
+            . " where t2.superior= {$session_user->id}"
+            . " )"
+            . " UNION ALL"
+
+            . " SELECT t1.tradetime,t1.money,t2.name,t2.sex,t2.age,t3.name as proname,'C' as level"
+            . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
+            . " AND t1.projectid = t3.id"
+            . " AND t2.id in("
+            . " select t1.id from user t1"
+            . " inner join ("
+            . " select t1.id,t1.superior from user t1"
+            . " inner join user  t2 on t1.superior = t2.id"
+            . " where t2.superior= {$session_user->id}"
+            . " ) t2 on t1.superior = t2.id"
+            . " )"
+            . " )m;";
 
         $query = $this->db->query($sqlselect);
 
         $this->response_data($query->result());
-    }
-
-    function delgoods()
-    {
-        $id = trim($_POST['id']);
-
-        $sqldelete = "DELETE FROM goods WHERE id='{$id}'";
-        $this->db->query($sqldelete);
-        if ($this->db->affected_rows() > 0) {
-            echo "删除成功";
-        } else {
-            echo "删除失败";
-        }
     }
 
     /**

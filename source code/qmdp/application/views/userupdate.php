@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -96,6 +100,11 @@ Purchase: http://wrapbootstrap.com
             padding-bottom: 80px;
         }
 
+        .img-user-header img {
+            width: 100px;
+            height: 100px;
+        }
+
         #inputform .form-group {
             margin: 30px;
         }
@@ -103,6 +112,10 @@ Purchase: http://wrapbootstrap.com
         .memo {
             font-size: 14px;
             color: #777777;
+        }
+
+        .file-drop-zone {
+            margin: 0px;
         }
 
     </style>
@@ -113,20 +126,24 @@ Purchase: http://wrapbootstrap.com
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header margin-right-50">
-            <a class="navbar-brand" href="#">全民当铺</a>
+            <a class="navbar-brand" href="home">全民当铺</a>
         </div>
         <div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
+                <li><a href="home">首页</a></li>
                 <li><a href="about">关于我们</a></li>
                 <li><a href="shopindex" target="_blank">当铺商城</a></li>
             </ul>
         </div>
 
         <div class="pull-right">
-            欢迎您，<span>库伊特</span> <span class="margin-left-10"> <a
-                        href="index">退出</a>
-				</span>
+            <?php
+            if ($userinfo) {
+                echo '欢迎您，<span>' . $userinfo->name . '</span> <span class="margin-left-10"> <a id="logout" onclick="logout();"  href="#">退出</a></span>';
+            } else {
+                echo '<span> <a href="userlogin">登录</a> </span>';
+            }
+            ?>
         </div>
     </div>
 </nav>
@@ -137,25 +154,31 @@ Purchase: http://wrapbootstrap.com
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                 <div class="well well-nav text-center no-padding padding-top-10">
                     <div class="img-user-header">
-                        <img src="assets/img/avatars/John-Smith.jpg" class="img-circle">
+                        <img src="<?php
+                        if ($userinfo->img) {
+                            echo 'uploads/' . $userinfo->img;
+                        } else {
+                            echo 'assets/img/avatars/John-Smith.jpg';
+                        }
+                        ?>" class="img-circle">
                     </div>
                     <div class="margin-top-20 nav-title">个人信息</div>
                     <div class="nav-link padding-5">
-                        <a href="_userupdate.html">个人资料</a>
+                        <a href="userupdate">个人资料</a>
                     </div>
                     <div class="nav-link padding-5">
-                        <a href="_userpwd.html">密码修改</a>
+                        <a href="userpwd">密码修改</a>
                     </div>
                     <div class="margin-top-10 nav-title">盈利分析</div>
                     <div class="nav-link padding-5">
-                        <a href="_lowerlist.html">人员列表</a>
+                        <a href="lowerlist">人员列表</a>
                     </div>
                     <div class="nav-link padding-5">
-                        <a href="_lowerarch.html">人员架构</a>
+                        <a href="lowerarch">人员架构</a>
                     </div>
                     <div class="margin-top-10 nav-title">项目支持</div>
                     <div class="nav-link padding-10">
-                        <a href="_userpro.html">已投项目</a>
+                        <a href="userpro">已投项目</a>
                     </div>
                 </div>
             </div>
@@ -165,9 +188,10 @@ Purchase: http://wrapbootstrap.com
                         <input type="file" class="file" id="img_url" name="image_data"
                                accept="image/jpg,image/jpeg,image/png,image/gif" multiple>
                         <div class="text-center margin-top-10 memo">（图片大小建议: 120 x 120）</div>
+                        <input id="imgs" class="select2-display-none" name="imgs" value="">
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                        <form id="inputform" method="post" action="../protrade/save"
+                        <form id="inputform" method="post" action="../userupdate/save"
                               class="form-horizontal"
                               data-bv-message="填写不正确"
                               data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
@@ -176,18 +200,20 @@ Purchase: http://wrapbootstrap.com
                             <div class="form-group">
                                 <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">姓名:</label>
                                 <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5">
-                                    <label class="control-label">库伊特</label>
+                                    <label class="control-label"><?php echo $userinfo->name ?></label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">性别:</label>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-9">
                                     <label class="radio-inline">
-                                        <input name="sex" type="radio" value="0" checked="checked">
+                                        <input name="sex" type="radio"
+                                               value="0" <?php if (($userinfo->sex) == '男') echo 'checked'; ?>>
                                         <span class="text">男</span>
                                     </label>
                                     <label class="radio-inline">
-                                        <input name="sex" type="radio" value="1">
+                                        <input name="sex" type="radio"
+                                               value="1" <?php if (($userinfo->sex) == '女') echo 'checked'; ?>>
                                         <span class="text">女</span>
                                     </label>
                                     <label class="radio select2-display-none">
@@ -201,7 +227,7 @@ Purchase: http://wrapbootstrap.com
                                 <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5 no-padding-right">
                                     <span class="input-icon icon-right">
                                      <input class="form-control date-picker" name="birthday" id="birthday" type="text"
-                                            data-date-format="yyyy-mm-dd">
+                                            data-date-format="yyyy-mm-dd" value="<?php echo $userinfo->birthday ?>">
                                        <i class="fa fa-calendar dark"></i>
                                     </span>
                                 </div>
@@ -209,13 +235,13 @@ Purchase: http://wrapbootstrap.com
                             <div class="form-group">
                                 <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">联系方式:</label>
                                 <div class="col-lg-4 col-md-4 col-sm-4 padding-left-5 no-padding-right">
-                                    <input type="text" class="form-control input-sm" name="address" id="address"
-                                           placeholder=""/>
+                                    <input type="text" class="form-control input-sm" name="tel" id="tel"
+                                           placeholder="" value="<?php echo $userinfo->tel ?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-4 col-lg-8">
-                                    <input class="btn btn-palegreen" type="button" onclick="toVaild();" value="保 存"/>
+                                    <input class="btn btn-palegreen" type="button" onclick="toVaild()" value="保 存"/>
                                 </div>
                             </div>
                         </form>
@@ -239,11 +265,11 @@ Purchase: http://wrapbootstrap.com
 
 <script src="assets/js/fileinput/fileinput.min.js"></script>
 <script src="assets/js/fileinput/fileinput_locale_zh.js"></script>
+<script src="assets/js/_js/home.common.js"></script>
 
 <script>
     $(document).ready(function () {
         $('.date-picker').datepicker();
-
         $("#inputform").bootstrapValidator();
     });
 
@@ -253,7 +279,7 @@ Purchase: http://wrapbootstrap.com
         showCaption: false,  //不显示文字表述
         showRemove: false, //不显示移除按钮
         showUpload: false, //不显示上传按钮
-        uploadUrl: "../proset/uploadimg", //上传后台操作的方法
+        uploadUrl: "../userupdate/uploadimg", //上传后台操作的方法
 //        uploadAsync: false, //设置上传同步异步 此为同步
         maxFileSize: 1024, //单位为kb，如果为0表示不限制文件大小
         allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'], //限制上传文件后缀
@@ -286,6 +312,38 @@ Purchase: http://wrapbootstrap.com
         console.log("清空了");
         $("#imgs").val("");
     });
+
+    function toVaild() {
+        $('#inputform').data('bootstrapValidator').validate();
+        if (!$('#inputform').data('bootstrapValidator').isValid()) {
+            alert("数据填写不正确,请检查");
+        } else {
+            save();
+        }
+    }
+
+    function save() {
+        $.ajax({
+            type: 'POST',
+            url: '../userupdate/save',//路径
+            data: {
+                "sex": $('input:radio:checked').val(),
+                "birthday": $("#birthday").val(),
+                "tel": $("#tel").val(),
+                "imgs": $("#imgs").val()
+            },
+            success: function (data) {
+                if (data) {
+                    alert(data);
+                    window.location.reload();
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("保存数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
 </script>
 </body>
 <!--  /Body -->

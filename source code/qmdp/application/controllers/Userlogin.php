@@ -28,45 +28,48 @@ class Userlogin extends CI_Controller
     {
         parent::__construct();
 
-//        $this->load->library('MYController');
-
+        $this->load->library('session');
         $this->load->database();
     }
 
-    function getGoodsList()
+    public function userLogin()
     {
-        $sqlselect = 'SELECT t1.id, t1.name,t1.goodscode,t1.price,t1.integral,t2.name AS proname,t3.name AS protype,t4.name AS basetype' .
-            ' FROM goods t1 LEFT JOIN raise t2 ON t1.proid = t2.id' .
-            ' LEFT JOIN goodstype t3 ON t1.goodstypeid = t3.id' .
-            ' LEFT JOIN basetype t4 ON t1.basetypeid = t4.id' .
-            ' ORDER BY t1.id;';
+        $res = '登录成功';
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+        if ($username && $password) {
+            $sqlselect = "SELECT id,username,name, if(sex=0,'男','女') AS sex,age,tel,integral,img,birthday,dtlast FROM user WHERE username = '{$username}'  AND password = '{$password}' LIMIT 1;";
+            $query = $this->db->query($sqlselect);
 
-        $query = $this->db->query($sqlselect);
-
-        $this->response_data($query->result());
-    }
-
-    function delgoods()
-    {
-        $id = trim($_POST['id']);
-
-        $sqldelete = "DELETE FROM goods WHERE id='{$id}'";
-        $this->db->query($sqldelete);
-        if ($this->db->affected_rows() > 0) {
-            echo "删除成功";
+            $user = null;
+            foreach ($query->result() as $row) {
+                $user = $row;
+            }
+            if ($user) {
+                $this->session->set_userdata('user_info_home', $user);
+            } else {
+                $res = '用户名或密码不正确';
+            }
         } else {
-            echo "删除失败";
+            $res = '请填写用户名和密码';
         }
+        echo $res;
     }
 
-    /**
-     * @param $data 数组
-     * 构造json字符串并返回
-     */
-    function response_data($data)
+    public function getUser()
     {
-        $this->output->set_header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($data, JSON_UNESCAPED_UNICODE);//该方法中第二个参数，必须php5.4版本以上才支持
+        $session_data = $this->session->userdata('user_info_home');
+
+        echo $session_data;
+    }
+
+    public function userLogout()
+    {
+        $user = $this->session->userdata('user_info_home');
+        if ($user) {
+            $this->session->unset_userdata('user_info_home');
+        }
+        echo '退出成功';
     }
 
 }

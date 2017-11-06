@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -159,17 +163,20 @@ Purchase: http://wrapbootstrap.com
         </div>
         <div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index">首页</a></li>
+                <li class="active"><a href="home">首页</a></li>
                 <li><a href="about">关于我们</a></li>
                 <li><a href="shopindex" target="_blank">当铺商城</a></li>
             </ul>
         </div>
 
         <div class="pull-right">
-            欢迎您，<span>库伊特</span> <span class="margin-left-10"> <a
-                        href="index">退出</a>
-				</span>
-            <span> <a href="userlogin">登录</a> </span>
+            <?php
+            if ($userinfo) {
+                echo '欢迎您，<span>' . $userinfo->name . '</span> <span class="margin-left-10"> <a id="logout" onclick="logout();"  href="#">退出</a></span>';
+            } else {
+                echo '<span> <a href="userlogin">登录</a> </span>';
+            }
+            ?>
         </div>
     </div>
 </nav>
@@ -483,10 +490,12 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/beyond.min.js"></script>
 
 <!--Page Related Scripts-->
-
+<script src="assets/js/_js/home.common.js"></script>
 
 <script>
+    $(document).ready(function () {
 
+    });
 </script>
 </body>
 <!--  /Body -->

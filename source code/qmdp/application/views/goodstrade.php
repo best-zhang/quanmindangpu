@@ -295,13 +295,13 @@ Purchase: http://wrapbootstrap.com
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">交易时间:</label>
-                            <div class="col-lg-2 col-md-2 col-sm-3 padding-left-5 no-padding-right">
-                                <input class="form-control date-picker" name="tradetime" id="tradetime" type="text"
-                                       data-date-format="yyyy-mm-dd">
+                            <div class="col-lg-2 col-md-2 col-sm-3 padding-left-5">
+                                <span class="input-icon icon-right">
+                                    <input class="form-control date-picker" name="tradetime" id="tradetime" type="text"
+                                           data-date-format="yyyy-mm-dd">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
                             </div>
-                            <label class="col-lg-1 col-md-1 col-sm-1 control-label no-padding-left text-align-left">
-                                <i class="fa fa-calendar"></i>
-                            </label>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">经办人:</label>

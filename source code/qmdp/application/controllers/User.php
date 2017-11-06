@@ -40,11 +40,12 @@ class User extends CI_Controller
         $sex = trim($_POST['sex']);
         $age = trim($_POST['age']);
         $tel = trim($_POST['tel']);
+        $superior = trim($_POST['superior']);
 
         $user = $this->session->userdata('user_info');
 
-        $sqladd = "INSERT INTO user(username,password,name,sex,age,tel,createby,dtinsert) " .
-            "VALUES('{$username}','123456','{$uname}','{$sex}','{$age}','{$tel}','{$user}',NOW());";
+        $sqladd = "INSERT INTO user(username,password,name,sex,age,tel,superior,createby,dtinsert) " .
+            "VALUES('{$username}','123456','{$uname}','{$sex}','{$age}','{$tel}',{$superior},'{$user}',NOW());";
 
         $this->db->query($sqladd);
         if ($this->db->affected_rows() > 0) {

@@ -21,41 +21,84 @@ class Userupdate extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('userupdate');
+        $data['userinfo'] = $this->session->userdata('user_info_home');
+        $this->load->view('userupdate', $data);
     }
 
     public function __construct()
     {
         parent::__construct();
 
-//        $this->load->library('MYController');
+        $this->load->library('MYHomeController');
 
         $this->load->database();
     }
 
-    function getGoodsList()
+    public function uploadimg()
     {
-        $sqlselect = 'SELECT t1.id, t1.name,t1.goodscode,t1.price,t1.integral,t2.name AS proname,t3.name AS protype,t4.name AS basetype' .
-            ' FROM goods t1 LEFT JOIN raise t2 ON t1.proid = t2.id' .
-            ' LEFT JOIN goodstype t3 ON t1.goodstypeid = t3.id' .
-            ' LEFT JOIN basetype t4 ON t1.basetypeid = t4.id' .
-            ' ORDER BY t1.id;';
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 100;
+        $config['max_width'] = 1024;
+        $config['max_height'] = 768;
+        $config['file_name'] = time(); //文件名不使用原始名
 
-        $query = $this->db->query($sqlselect);
+        $this->load->library('upload', $config);
 
-        $this->response_data($query->result());
+        if (!$this->upload->do_upload('image_data')) {
+            $error = array('error' => $this->upload->display_errors());
+            $this->response_data($error);
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+            $this->response_data($data);
+        }
+
     }
 
-    function delgoods()
+    function save()
     {
-        $id = trim($_POST['id']);
+        $sex = trim($_POST['sex']);
+        $birthday = trim($_POST['birthday']);
+        $tel = trim($_POST['tel']);
+        $imgs = trim($_POST['imgs']);
 
-        $sqldelete = "DELETE FROM goods WHERE id='{$id}'";
-        $this->db->query($sqldelete);
+        $imgs = ltrim($imgs, ",");
+        $img = "";
+        if (!empty($imgs)) {
+            //如果图片很多，只保留第一张
+            $temp = explode(',', $imgs);
+            $img = $temp[0];
+        }
+
+        $user = $this->session->userdata('user_info_home');
+
+        $sqlupdate = "UPDATE user SET sex={$sex},birthday='{$birthday}',tel='{$tel}' ";
+        if ($img) {
+            $sqlupdate .= ",img='{$img}'";
+        }
+        $sqlupdate .= " WHERE id = {$user->id}";
+
+        $this->db->query($sqlupdate);
         if ($this->db->affected_rows() > 0) {
-            echo "删除成功";
+            $this->refresh();
+            echo "保存成功";
         } else {
-            echo "删除失败";
+            echo "保存失败";
+        }
+    }
+
+    public function refresh()
+    {
+        $session_user = $this->session->userdata('user_info_home');
+        $sqlselect = "SELECT id,username,name, if(sex=0,'男','女') AS sex,age,tel,integral,img,birthday,dtlast FROM user WHERE id = '{$session_user->id}' LIMIT 1;";
+        $query = $this->db->query($sqlselect);
+
+        $user = null;
+        foreach ($query->result() as $row) {
+            $user = $row;
+        }
+        if ($user) {
+            $this->session->set_userdata('user_info_home', $user);
         }
     }
 

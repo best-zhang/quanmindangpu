@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -77,6 +81,11 @@ Purchase: http://wrapbootstrap.com
             line-height: 50px;
         }
 
+        .img-user-header img {
+            width: 100px;
+            height: 100px;
+        }
+
         .well-nav {
             max-width: 250px;
             background-color: #EBF5EA;
@@ -111,20 +120,24 @@ Purchase: http://wrapbootstrap.com
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header margin-right-50">
-            <a class="navbar-brand" href="#">全民当铺</a>
+            <a class="navbar-brand" href="home">全民当铺</a>
         </div>
         <div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index">首页</a></li>
+                <li><a href="home">首页</a></li>
                 <li><a href="about">关于我们</a></li>
                 <li><a href="shopindex" target="_blank">当铺商城</a></li>
             </ul>
         </div>
 
         <div class="pull-right">
-            欢迎您，<span>库伊特</span> <span class="margin-left-10"> <a
-                        href="index">退出</a>
-				</span>
+            <?php
+            if ($userinfo) {
+                echo '欢迎您，<span>' . $userinfo->name . '</span> <span class="margin-left-10"> <a id="logout" onclick="logout();"  href="#">退出</a></span>';
+            } else {
+                echo '<span> <a href="userlogin">登录</a> </span>';
+            }
+            ?>
         </div>
     </div>
 </nav>
@@ -135,55 +148,42 @@ Purchase: http://wrapbootstrap.com
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                 <div class="well well-nav text-center no-padding padding-top-10">
                     <div class="img-user-header">
-                        <img src="assets/img/avatars/John-Smith.jpg" class="img-circle">
+                        <img src="<?php
+                        if ($userinfo->img) {
+                            echo 'uploads/' . $userinfo->img;
+                        } else {
+                            echo 'assets/img/avatars/John-Smith.jpg';
+                        }
+                        ?>" class="img-circle">
                     </div>
                     <div class="margin-top-20 nav-title">个人信息</div>
                     <div class="nav-link padding-5">
-                        <a href="_userupdate.html">个人资料</a>
+                        <a href="userupdate">个人资料</a>
                     </div>
                     <div class="nav-link padding-5">
-                        <a href="_userpwd.html">密码修改</a>
+                        <a href="userpwd">密码修改</a>
                     </div>
                     <div class="margin-top-10 nav-title">盈利分析</div>
                     <div class="nav-link padding-5">
-                        <a href="_lowerlist.html">人员列表</a>
+                        <a href="lowerlist">人员列表</a>
                     </div>
                     <div class="nav-link padding-5">
-                        <a href="_lowerarch.html">人员架构</a>
+                        <a href="lowerarch">人员架构</a>
                     </div>
                     <div class="margin-top-10 nav-title">项目支持</div>
                     <div class="nav-link padding-10">
-                        <a href="_userpro.html">已投项目</a>
+                        <a href="userpro">已投项目</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
                 <div class="row well well-detail no-margin no-padding">
-                    <div class="row no-margin padding-20">金额合计：￥500,000</div>
+                    <div class="row no-margin padding-20 text-align-right font-130">
+                        金额合计：￥<span><?php echo $money ?></span></div>
                     <div class="row no-margin">
                         <div class="">
-                            <ul class="nav nav-tabs" id="myTab">
-                                <li class="active">
-                                    <a data-toggle="tab" href="#pic">长安街当铺</a>
-                                </li>
-
-                                <li>
-                                    <a data-toggle="tab" href="#pic">春熙路当铺</a>
-                                </li>
-
-                                <li>
-                                    <a data-toggle="tab" href="#pic">顺城街当铺</a>
-                                </li>
-
-                                <li>
-                                    <a data-toggle="tab" href="#pic">环球中心当铺</a>
-                                </li>
-                            </ul>
-
-                            <div class="">
-                                <div id="pic" class="tab-pane in active">
-                                    <div class="chart" id="custom-arch"> --@--</div>
-                                </div>
+                            <div id="pic" class="tab-pane in active">
+                                <div class="chart" id="custom-arch"> --@--</div>
                             </div>
                         </div>
                     </div>
@@ -203,11 +203,33 @@ Purchase: http://wrapbootstrap.com
 <!--Page Related Scripts-->
 <script src="assets/js/treant/raphael.js"></script>
 <script src="assets/js/treant/Treant.js"></script>
-
+<script src="assets/js/_js/home.common.js"></script>
 
 <script>
     $(document).ready(function () {
-//        getlist();
+//        getData();
+        draw();
+    });
+
+    function getData() {
+        $.ajax({
+            type: 'POST',
+            url: '../lowerarch/getLowerData',//路径
+            data: {},
+            //dataType: 'json',//加上会报错
+            success: function (data) {
+                if (data) {
+                    alert(data);
+                    draw(data);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取数据出错：状态码" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function draw() {
         var config = {
                 container: "#custom-arch",
                 nodeAlign: "BOTTOM",
@@ -218,136 +240,13 @@ Purchase: http://wrapbootstrap.com
                     HTMLclass: 'nodeExample1'
                 }
             },
-            ceo = {
-                text: {
-                    name: "张三",
-                    title: "officer"
-                }
-            },
+            <?php echo $draw ?>
 
-            cto = {
-                parent: ceo,
-                text: {
-                    name: "老李",
-                    title: "Technology",
-                }
-            },
-            cbo = {
-                parent: ceo,
-                text: {
-                    name: "赵四",
-                    title: "Chief ",
-                }
-            },
-            cdo = {
-                parent: ceo,
-                text: {
-                    name: "刘能",
-                    title: "accounting"
-                }
-            },
-            cio = {
-                parent: cto,
-                text: {
-                    name: "谢广坤",
-                    title: "Chief"
-                }
-            },
-            ciso = {
-                parent: cto,
-                text: {
-                    name: "刘大脑袋",
-                    title: "Innovation",
-                }
-            },
-            cio2 = {
-                parent: cdo,
-                text: {
-                    name: "谢大脚",
-                    title: "Chief"
-                }
-            },
-            ciso2 = {
-                parent: cbo,
-                text: {
-                    name: "王大拿",
-                    title: "Communicate"
-                }
-            },
-            ciso3 = {
-                parent: cbo,
-                text: {
-                    name: "刘英",
-                    title: "Brand"
-                }
-            },
-            ciso4 = {
-                parent: cbo,
-                text: {
-                    name: "王晓艳",
-                    title: "Development"
-                }
-            },
-            my1 = {
-                parent: ciso2,
-                text: {
-                    name: "秋歌",
-                    title: "1"
-                }
-            },
-            my2 = {
-                parent: ciso2,
-                text: {
-                    name: "王小蒙",
-                    title: "222"
-                }
-            },
-            my3 = {
-                parent: ciso3,
-                text: {
-                    name: "谢永强",
-                    title: "333"
-                }
-            },
+            // Antoher approach, same result
+            // JSON approach
 
-            chart_config = [
-                config,
-                ceo, cto, cbo,
-                cdo, cio, ciso,
-                cio2, ciso2, ciso3, ciso4,
-                my1, my2, my3
-            ];
-
-        // Antoher approach, same result
-        // JSON approach
-
-
-        new Treant(chart_config);
-    });
-
-    function getlist() {
-        $.ajax({
-            type: 'POST',
-            url: '../lowerarch/getLowerArch',//路径
-            data: {},
-            success: function (data) {
-                var str = "";
-                if (data) {
-                    for (i = 0; i < data.length; i++) {
-
-                    }
-                }
-                if (!str) {
-                    str = '暂无数据';
-                }
-
-                $("#arch").html(str);
-                inittable();
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
-            }
-        });
+            new
+        Treant(chart_config);
     }
 
 </script>
