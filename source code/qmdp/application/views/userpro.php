@@ -76,7 +76,7 @@ Purchase: http://wrapbootstrap.com
             line-height: 50px;
         }
 
-        .img-user-header img{
+        .img-user-header img {
             width: 100px;
             height: 100px;
         }
@@ -189,110 +189,7 @@ Purchase: http://wrapbootstrap.com
                 </div>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                <div class="row well well-detail">
-                    <div class="row well no-padding">
-                        <div class="col-lg-3 col-md-3 col-sm-6 no-padding">
-                            <img src="assets/img/avatars/John-Smith.jpg" width=180
-                                 height=180/>
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-6 padding-20">
-                            <div class="proname">项目名称</div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 60%">
-                                    <span>60%</span>
-                                </div>
-                            </div>
-                            <div class="prolabel">目标: ￥3,000,000</div>
-                            <div class="prolabel">起投: ￥3,000,000</div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 padding-top-20 text-center">
-                            <div class="prolabel"><span class="label label-info">筹备中</span></div>
-                            <div class="prolabel">剩余时间</div>
-                            <div class="prolabel">
-                                <span class="proday">10</span>天
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row well no-padding">
-                        <div class="col-lg-3 col-md-3 col-sm-6 no-padding">
-                            <img src="assets/img/avatars/John-Smith.jpg" width=200
-                                 height=200/>
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-6 padding-20">
-                            <div class="proname">项目名称</div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 60%">
-                                    <span>60%</span>
-                                </div>
-                            </div>
-                            <div class="prolabel">目标: ￥3,000,000</div>
-                            <div class="prolabel">起投: ￥3,000,000</div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 padding-top-20 text-center">
-                            <div class="prolabel"><span class="label label-info">筹备中</span></div>
-                            <div class="prolabel">剩余时间</div>
-                            <div class="prolabel">
-                                <span class="proday">10</span>天
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row well no-padding">
-                        <div class="col-lg-3 col-md-3 col-sm-6 no-padding">
-                            <img src="assets/img/avatars/John-Smith.jpg" width=200
-                                 height=200/>
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-6 padding-20">
-                            <div class="proname">项目名称</div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 60%">
-                                    <span>60%</span>
-                                </div>
-                            </div>
-                            <div class="prolabel">目标: ￥3,000,000</div>
-                            <div class="prolabel">起投: ￥3,000,000</div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 padding-top-20 text-center">
-                            <div class="prolabel"><span class="label label-info">筹备中</span></div>
-                            <div class="prolabel">剩余时间</div>
-                            <div class="prolabel">
-                                <span class="proday">10</span>天
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row well no-padding">
-                        <div class="col-lg-3 col-md-3 col-sm-6 no-padding">
-                            <img src="assets/img/avatars/John-Smith.jpg" width=200
-                                 height=200/>
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-6 padding-20">
-                            <div class="proname">项目名称</div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 60%">
-                                    <span>60%</span>
-                                </div>
-                            </div>
-                            <div class="prolabel">目标: ￥3,000,000</div>
-                            <div class="prolabel">起投: ￥3,000,000</div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 padding-top-20 text-center">
-                            <div class="prolabel"><span class="label label-info">筹备中</span></div>
-                            <div class="prolabel">剩余时间</div>
-                            <div class="prolabel">
-                                <span class="proday">10</span>天
-                            </div>
-                        </div>
-                    </div>
+                <div id="pros" class="row well well-detail">
 
                 </div>
             </div>
@@ -310,7 +207,51 @@ Purchase: http://wrapbootstrap.com
 
 <script>
     $(document).ready(function () {
-
+        $.ajax({
+            type: 'POST',
+            url: '../userpro/getProList',//路径
+            data: {},
+            //dataType: 'json',//加上会报错
+            success: function (data) {
+                var progress = "";
+                var status = "";
+                var str = "";
+                if (data) {
+                    for (i = 0; i < data.length; i++) {
+                        progress = (data[i]["completed"] / data[i]["target"]) * 100;
+                        status = data[i]["prostatus"] == '0' ? "计划中" : (data[i]["prostatus"] == '1' ? "众筹中" : "已完成");
+                        str += '<div class="row well no-padding">' +
+                        '<div class="col-lg-3 col-md-3 col-sm-6 no-padding">' +
+                        '<img src="uploads/' + data[i]["cover"] + '" width=180 height=180/></div>' +
+                        '<div class="col-lg-5 col-md-5 col-sm-6 padding-20">' +
+                        '<div class="proname">' + data[i]["name"] + '</div>' +
+                        '<div class="progress">' +
+                        '<div class="progress-bar progress-bar-info" role="progressbar" ' +
+                        ' aria-valuenow="' + progress + '" aria-valuemin="0" aria-valuemax="100" ' +
+                        ' style="width: ' + progress + '%"><span>' + progress + '%</span></div>' +
+                        '</div>' +
+                        '<div class="prolabel">目标: ￥' + data[i]["target"] + '</div>' +
+                        '<div class="prolabel">起投: ￥' + data[i]["minimum"] + '</div>' +
+                        '</div>' +
+                        '<div class="col-lg-3 col-md-3 col-sm-6 padding-top-20 text-center">' +
+                        '<div class="prolabel"><span class="label label-info">' + status + '</span></div>' +
+                        '<div class="prolabel">剩余时间</div>' +
+                        '<div class="prolabel">' +
+                        '<span class="proday">' + data[i]["remianday"] < 0 ? "0" : data[i]["remianday"] + '</span>天' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                }
+                if (!str) {
+                    str = '暂无数据';
+                }
+                $("#pros").html(str);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：状态码" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
     });
 </script>
 </body>

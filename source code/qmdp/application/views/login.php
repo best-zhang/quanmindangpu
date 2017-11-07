@@ -29,10 +29,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="../../assets/js/skins.min.js"></script>
     <style type="text/css">
-        body:before {background-color: #0099FF;}
-        .loginbox-icon{text-align:center;}
-        .loginbox-copyright{text-align:center; color:#ffffff;}
-        .loginbox-title{color:#0099FF; font-size:20px;}
+        body:before {
+            background-color: #0099FF;
+        }
+
+        .loginbox-icon {
+            text-align: center;
+        }
+
+        .loginbox-copyright {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .loginbox-title {
+            color: #0099FF;
+            font-size: 20px;
+        }
     </style>
 </head>
 <!--Head Ends-->
@@ -40,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="login-container animated fadeInDown">
     <div class="loginbox bg-white">
-        <div  class="loginbox-icon"><img height="100" width="100" src="../../assets/img/avatars/bing.png" /></div>
+        <div class="loginbox-icon"><img height="100" width="100" src="../../assets/img/avatars/bing.png"/></div>
 
         <div class="loginbox-title">后台管理系统登录</div>
 
@@ -56,7 +69,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </div>
-<div class="loginbox-copyright">Copyright © www.qmdp168.com, All Rights Reserved.</div>
+<div class="navbar-fixed-bottom loginbox-copyright padding-bottom-10">
+    Copyright © www.qmdp168.com, All Rights Reserved.
+</div>
 
 <!--Basic Scripts-->
 <script src="../../assets/js/jquery-2.0.3.min.js"></script>

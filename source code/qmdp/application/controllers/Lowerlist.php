@@ -39,13 +39,13 @@ class Lowerlist extends CI_Controller
         $session_user = $this->session->userdata('user_info_home');
         $sqlselect = "SELECT proname,tradetime,name,age,if(sex=0,'男','女') AS sex,level,money FROM ("
 
-            . " SELECT t1.tradetime,t1.money,t2.name,t2.sex,t2.age,t3.name as proname,'A' as level"
+            . " SELECT t1.tradetime,t1.money * 0.05 as money,t2.name,t2.sex,t2.age,t3.name as proname,'A' as level"
             . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
             . " AND t1.projectid = t3.id"
             . " AND t2.superior = {$session_user->id}"
             . " UNION ALL"
 
-            . " SELECT t1.tradetime,t1.money,t2.name,t2.sex,t2.age,t3.name as proname,'B' as level"
+            . " SELECT t1.tradetime,t1.money * 0.03 as money,t2.name,t2.sex,t2.age,t3.name as proname,'B' as level"
             . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
             . " AND t1.projectid = t3.id"
             . " AND t2.id in ("
@@ -55,7 +55,7 @@ class Lowerlist extends CI_Controller
             . " )"
             . " UNION ALL"
 
-            . " SELECT t1.tradetime,t1.money,t2.name,t2.sex,t2.age,t3.name as proname,'C' as level"
+            . " SELECT t1.tradetime,t1.money * 0.02 as money,t2.name,t2.sex,t2.age,t3.name as proname,'C' as level"
             . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
             . " AND t1.projectid = t3.id"
             . " AND t2.id in("

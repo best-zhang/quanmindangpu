@@ -268,6 +268,7 @@ Purchase: http://wrapbootstrap.com
                                        data-bv-stringlength-max="10"
                                        data-bv-stringlength-message="金额长度范围为1-10"/>
                             </div>
+                            <label class="col-lg-1 col-md-1 col-sm-1 control-label no-padding-left text-align-left">万</label>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">积分:</label>
@@ -353,7 +354,7 @@ Purchase: http://wrapbootstrap.com
 
         $('#money').bind('input propertychange', function () {
             var m = $('#money').val();
-            var value = m * 1;
+            var value = m * 1000;
             $('#jifen').val(isNaN(value) ? 0 : value);
         });
     });

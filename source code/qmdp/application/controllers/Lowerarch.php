@@ -42,12 +42,12 @@ class Lowerarch extends CI_Controller
         $session_user = $this->session->userdata('user_info_home');
         $sqlselect = "SELECT name,superior,SUM(money) as money,id FROM ("
 
-            . " SELECT t1.money,t2.name,t2.superior,t2.id"
+            . " SELECT t1.money * 0.05 as money,t2.name,t2.superior,t2.id"
             . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
             . " AND t2.superior = {$session_user->id}"
             . " UNION ALL"
 
-            . " SELECT t1.money,t2.name,t2.superior,t2.id"
+            . " SELECT t1.money * 0.03 as money,t2.name,t2.superior,t2.id"
             . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
             . " AND t2.id in ("
             . " select t1.id from user t1"
@@ -56,7 +56,7 @@ class Lowerarch extends CI_Controller
             . " )"
             . " UNION ALL"
 
-            . " SELECT t1.money,t2.name,t2.superior,t2.id"
+            . " SELECT t1.money * 0.02 as money,t2.name,t2.superior,t2.id"
             . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
             . " AND t2.id in("
             . " select t1.id from user t1"

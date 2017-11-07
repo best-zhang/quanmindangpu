@@ -53,7 +53,7 @@ class Protrade extends CI_Controller
         $user = $this->session->userdata('user_info');
 
         $sqladd = "INSERT INTO raisedeal(userid,projectid,money,integral,tradetime,address,jingban,createby,dtinsert)" .
-            "VALUES('{$pname}','{$project}','{$money}','{$jifen}','{$tradetime}','{$address}','{$jingban}','{$user}',NOW());";
+            "VALUES('{$pname}','{$project}',{$money}*10000,'{$jifen}','{$tradetime}','{$address}','{$jingban}','{$user}',NOW());";
         $this->db->query($sqladd);
         if ($this->db->affected_rows() > 0) {
             echo "保存成功";

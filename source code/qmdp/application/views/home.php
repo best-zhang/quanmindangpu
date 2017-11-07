@@ -211,203 +211,21 @@ Purchase: http://wrapbootstrap.com
         <div class="row">
             <div class="container">
                 <h3>近期资助</h3>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="well no-padding">
-                            <a href="prodetail">
-                                <div class="img-project"
-                                     style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                    <span class="label label-info">筹备中</span>
-                                </div>
-                            </a>
-                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容sgdsdghfdhgfdhg</div>
-                            <div class="progress margin-top-5 no-margin-bottom">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 60%">
-                                    <span>60%</span>
-                                </div>
-                            </div>
-                            <div class="row padding-left-10">
-                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                                    <div class="margin-top-10">
-                                        目标：￥<span>3,000,000</span>
-                                    </div>
-                                    <div class="margin-top-5">
-                                        起投：￥<span>30,000</span>
-                                    </div>
-                                </div>
-                                <div
-                                        class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">
-                                    <div class="margin-top-5">剩余时间</div>
-                                    <div>
-                                        <span class="item-day">10</span>天
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                <span class="label label-info">筹备中</span>
-                            </div>
-                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
-                            <div class="progress margin-top-5 no-margin-bottom">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 60%">
-                                    <span>60%</span>
-                                </div>
-                            </div>
-                            <div class="row padding-left-10">
-                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                                    <div class="margin-top-10">
-                                        目标：￥<span>3,000,000</span>
-                                    </div>
-                                    <div class="margin-top-5">
-                                        起投：￥<span>30,000</span>
-                                    </div>
-                                </div>
-                                <div
-                                        class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">
-                                    <div class="margin-top-5">剩余时间</div>
-                                    <div>
-                                        <span class="item-day">10</span>天
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="pro1" class="row">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
                 <h3>即将上线</h3>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                <span class="label label-warning">计划中</span>
-                            </div>
-                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容sgdsdghfdhgfdhg</div>
-                            <div class="progress margin-top-5 no-margin-bottom">
-                                <div class="progress-bar progress-bar-warning"
-                                     role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                     aria-valuemax="100" style="width: 100%">
-                                    <span>等待开始</span>
-                                </div>
-                            </div>
-                            <div class="row padding-left-10">
-                                <div
-                                        class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
-                                    <div class="margin-top-10">
-                                        目标：￥<span>3,000,000</span>
-                                    </div>
-                                    <div class="margin-top-5">
-                                        起投：￥<span>30,000</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                <span class="label label-warning">计划中</span>
-                            </div>
-                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
-                            <div class="progress margin-top-5 no-margin-bottom">
-                                <div class="progress-bar progress-bar-warning"
-                                     role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                     aria-valuemax="100" style="width: 100%">
-                                    <span>等待开始</span>
-                                </div>
-                            </div>
-                            <div class="row padding-left-10">
-                                <div
-                                        class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
-                                    <div class="margin-top-10">
-                                        目标：￥<span>3,000,000</span>
-                                    </div>
-                                    <div class="margin-top-5">
-                                        起投：￥<span>30,000</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="pro2" class="row">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
                 <h3>完成项目</h3>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                <span class="label label-success">已完成</span>
-                            </div>
-                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容sgdsdghfdhgfdhg</div>
-                            <div class="progress margin-top-5 no-margin-bottom">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 100%">
-                                    <span>100%(已完成)</span>
-                                </div>
-                            </div>
-                            <div class="row padding-left-10">
-                                <div
-                                        class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
-                                    <div class="margin-top-10">
-                                        目标：￥<span>3,000,000</span>
-                                    </div>
-                                    <div class="margin-top-5">
-                                        起投：￥<span>30,000</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                <span class="label label-success">已完成</span>
-                            </div>
-                            <div class="margin-top-5 margin-left-10 item-pname">长安街当铺</div>
-                            <div class="margin-top-5 margin-left-10 item-title">这是一个标题的内容</div>
-                            <div class="progress margin-top-5 no-margin-bottom">
-                                <div class="progress-bar progress-bar-info" role="progressbar"
-                                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
-                                     style="width: 100%">
-                                    <span>100%(已完成)</span>
-                                </div>
-                            </div>
-                            <div class="row padding-left-10">
-                                <div
-                                        class="col-lg-7 col-md-7 col-sm-7 col-xs-7 margin-bottom-10">
-                                    <div class="margin-top-10">
-                                        目标：￥<span>3,000,000</span>
-                                    </div>
-                                    <div class="margin-top-5">
-                                        起投：￥<span>30,000</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="pro3" class="row">
                 </div>
             </div>
         </div>
@@ -494,8 +312,178 @@ Purchase: http://wrapbootstrap.com
 
 <script>
     $(document).ready(function () {
-
+        getpros1();
+        getpros2();
+        getpros3();
     });
+
+    function getpros1() {
+        $.ajax({
+            type: 'POST',
+            url: '../home/getProList1',//路径
+            data: {},
+            //dataType: 'json',//加上会报错
+            success: function (data) {
+                var progress = "";
+                var str = "";
+                if (data) {
+                    for (i = 0; i < data.length; i++) {
+                        progress = (data[i]["completed"] / data[i]["target"]) * 100;
+                        str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
+                            '<div class="well no-padding">' +
+                            '<a href="prodetail?id=' + data[i]["id"] + '">' +
+                            '<div class="img-project"' +
+                            'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
+                            '<span class="label label-info">众筹中</span>' +
+                            '</div>' +
+                            '</a>' +
+                            '<div class="margin-top-5 margin-left-10 item-pname">' + data[i]["name"] + '</div>' +
+                            '<div class="margin-top-5 margin-left-10 item-title">' + data[i]["title"] + '</div>' +
+                            '<div class="progress margin-top-5 no-margin-bottom">' +
+                            '<div class="progress-bar progress-bar-info" role="progressbar"' +
+                            ' aria-valuenow="' + progress + '" aria-valuemin="0" aria-valuemax="100"' +
+                            ' style="width: ' + progress + '%"><span>' + progress + '%</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="row padding-left-10">' +
+                            '<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">' +
+                            '<div class="margin-top-10">' +
+                            '目标：￥<span>' + data[i]["target"] + '</span>' +
+                            '</div>' +
+                            '<div class="margin-top-5">' +
+                            '起投：￥<span>' + data[i]["minimum"] + '</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">' +
+                            '<div class="margin-top-5">剩余时间</div>' +
+                            '<div>' +
+                            '<span class="item-day">' + data[i]["remianday"] + '</span>天' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                }
+                if (!str) {
+                    str = '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">暂无数据</div>';
+                }
+
+                $("#pro1").html(str);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：状态码" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getpros2() {
+        $.ajax({
+            type: 'POST',
+            url: '../home/getProList0',//路径
+            data: {},
+            //dataType: 'json',//加上会报错
+            success: function (data) {
+                var progress = "";
+                var str = "";
+                if (data) {
+                    for (i = 0; i < data.length; i++) {
+                        progress = (data[i]["completed"] / data[i]["target"]) * 100;
+                        str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
+                            '<div class="well no-padding">' +
+                            '<a href="prodetail?id=' + data[i]["id"] + '">' +
+                            '<div class="img-project"' +
+                            'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
+                            '<span class="label label-warning">计划中</span>' +
+                            '</div>' +
+                            '</a>' +
+                            '<div class="margin-top-5 margin-left-10 item-pname">' + data[i]["name"] + '</div>' +
+                            '<div class="margin-top-5 margin-left-10 item-title">' + data[i]["title"] + '</div>' +
+                            '<div class="progress margin-top-5 no-margin-bottom">' +
+                            '<div class="progress-bar progress-bar-warning" role="progressbar"' +
+                            ' aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"' +
+                            ' style="width: 100%"><span>等待开始</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="row padding-left-10 padding-bottom-10">' +
+                            '<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">' +
+                            '<div class="margin-top-10">' +
+                            '目标：￥<span>' + data[i]["target"] + '</span>' +
+                            '</div>' +
+                            '<div class="margin-top-5">' +
+                            '起投：￥<span>' + data[i]["minimum"] + '</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                }
+                if (!str) {
+                    str = '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">暂无数据</div>';
+                }
+
+                $("#pro2").html(str);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：状态码" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getpros3() {
+        $.ajax({
+            type: 'POST',
+            url: '../home/getProList2',//路径
+            data: {},
+            //dataType: 'json',//加上会报错
+            success: function (data) {
+                var progress = "";
+                var str = "";
+                if (data) {
+                    for (i = 0; i < data.length; i++) {
+                        progress = (data[i]["completed"] / data[i]["target"]) * 100;
+                        str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
+                            '<div class="well no-padding">' +
+                            '<a href="prodetail?id=' + data[i]["id"] + '">' +
+                            '<div class="img-project"' +
+                            'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
+                            '<span class="label label-success">已完成</span>' +
+                            '</div>' +
+                            '</a>' +
+                            '<div class="margin-top-5 margin-left-10 item-pname">' + data[i]["name"] + '</div>' +
+                            '<div class="margin-top-5 margin-left-10 item-title">' + data[i]["title"] + '</div>' +
+                            '<div class="progress margin-top-5 no-margin-bottom">' +
+                            '<div class="progress-bar progress-bar-info" role="progressbar"' +
+                            ' aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"' +
+                            ' style="width: 100%"><span>100%(已完成)</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="row padding-left-10 padding-bottom-10">' +
+                            '<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">' +
+                            '<div class="margin-top-10">' +
+                            '目标：￥<span>' + data[i]["target"] + '</span>' +
+                            '</div>' +
+                            '<div class="margin-top-5">' +
+                            '起投：￥<span>' + data[i]["minimum"] + '</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                }
+                if (!str) {
+                    str = '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">暂无数据</div>';
+                }
+
+                $("#pro3").html(str);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：状态码" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
 </script>
 </body>
 <!--  /Body -->

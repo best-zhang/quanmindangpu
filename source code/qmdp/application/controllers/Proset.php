@@ -78,7 +78,7 @@ class Proset extends CI_Controller
         $user = $this->session->userdata('user_info');
 
         $sqladd = "INSERT INTO raise(NAME,title,instruction,tel,weixin,qq,target,minimum,remainday,dtend,cover,completed,detail,createby,dtinsert)" .
-            "VALUES('{$name}','{$title}','{$introduction}','{$tel}','{$wx}','{$qq}',$wantall,$minimum,$remainday,'2017-11-28','{$img}',0,'{$discrible}','{$user}',NOW());";
+            "VALUES('{$name}','{$title}','{$introduction}','{$tel}','{$wx}','{$qq}',$wantall*10000,$minimum*10000,$remainday,DATE_ADD(NOW(),INTERVAL $remainday day),'{$img}',0,'{$discrible}','{$user}',NOW());";
 
         $this->db->query($sqladd);
         if ($this->db->affected_rows() > 0) {
