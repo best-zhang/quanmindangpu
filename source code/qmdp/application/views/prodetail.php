@@ -90,10 +90,6 @@ Purchase: http://wrapbootstrap.com
             background-repeat: no-repeat;
         }
 
-        .page-body .container .row .progress {
-            max-width: 350px;
-        }
-
         .page-body .container .row .label {
             font-size: 18px;
             padding: 10px 25px;
@@ -168,7 +164,7 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-left-20">
                 <div class="font-200 padding-bottom-10"><?php echo $proinfo->name ?></div>
-                <div class="font-130 padding-bottom-10"><?php echo $proinfo->instruction ?></div>
+                <div class="font-110 padding-bottom-10"><?php echo $proinfo->instruction ?></div>
                 <div class="progress">
                     <div class="progress-bar progress-bar-info" role="progressbar"
                          aria-valuenow="<?php echo $proinfo->progress ?>" aria-valuemin="0" aria-valuemax="100"
@@ -176,9 +172,9 @@ Purchase: http://wrapbootstrap.com
                         <span><?php echo $proinfo->progress ?>%</span>
                     </div>
                 </div>
-                <div class="font-120 padding-bottom-10">目标：￥<span><?php echo $proinfo->target ?></span></div>
-                <div class="font-120 padding-bottom-10">起投：￥<span><?php echo $proinfo->minimum ?></span></div>
-                <div class="font-120 padding-bottom-10">
+                <div class="font-110 padding-bottom-10">目标：￥<span><?php echo $proinfo->target ?></span></div>
+                <div class="font-110 padding-bottom-10">起投：￥<span><?php echo $proinfo->minimum ?></span></div>
+                <div class="font-110 padding-bottom-10">
                     截止时间：<span><?php echo date("Y年n月j日", strtotime($proinfo->dtend)) ?></span>
                 </div>
                 <div class="padding-top-10"><span class="label label-info">
@@ -193,7 +189,7 @@ Purchase: http://wrapbootstrap.com
             </div>
         </div>
         <div class="row margin-top-20">
-            <div class="font-170 padding-10">关于这个项目</div>
+            <div class="font-140 padding-10">关于这个项目</div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <?php echo $proinfo->detail ?>
             </div>

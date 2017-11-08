@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -102,7 +106,7 @@ Purchase: http://wrapbootstrap.com
 <div class="padding-5 info-hello">欢迎来到当铺商城</div>
 
 <div class="container">
-    <a class="font-200" href="#">LOGO</a>
+    <a class="font-200" href="shopindex">LOGO</a>
 </div>
 
 <div class="container">
@@ -114,9 +118,9 @@ Purchase: http://wrapbootstrap.com
                 <a href="shopindex">首页</a>
             </li>
             <li>
-                <a href="shopindex">长安街当铺</a>
+                <a href="shop?id=<?php echo $proinfo->id ?>"><?php echo $proinfo->name ?></a>
             </li>
-            <li class="active">红玉</li>
+            <li class="active"><?php echo $goodsinfo->name ?></li>
         </ul>
     </div>
     <!-- /Page Breadcrumb -->
@@ -127,36 +131,37 @@ Purchase: http://wrapbootstrap.com
         <div class="row">
             <div class="picZoomer col-lg-5 col-md-5 col-sm-5 col-xs-6 no-padding">
                 <div>
-                    <img id="picZoomer-pic" src="assets/img/1.jpg"
-                         data-magnify-src="assets/img/1.jpg">
+                    <img id="picZoomer-pic" src="<?php echo 'uploads/' . $img1 ?>"
+                         data-magnify-src="<?php echo 'uploads/' . $img1 ?>">
                 </div>
                 <div class="row img-goods-list no-margin padding-top-10">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padding-5">
-                        <img src="assets/img/1.jpg" alt="">
+                        <img src="<?php if ($img1) echo 'uploads/' . $img1 ?>" alt="">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padding-5">
-                        <img src="assets/img/2.jpg" alt="">
+                        <img src="<?php if ($img2) echo 'uploads/' . $img2 ?>" alt="">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padding-5">
-                        <img src="assets/img/3.jpg" alt="">
+                        <img src="<?php if ($img3) echo 'uploads/' . $img3 ?>" alt="">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padding-5">
-                        <img src="assets/img/4.jpg" alt="">
+                        <img src="<?php if ($img4) echo 'uploads/' . $img4 ?>" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 padding-left-50">
-                <div class="goods-info-name font-130 padding-bottom-10 padding-left-10">名称：<span>富士康姐啊宏发大厦</span></div>
+                <div class="goods-info-name font-130 padding-bottom-10 padding-left-10">
+                    名称：<span><?php echo $goodsinfo->name ?></span></div>
                 <div class="well font-110 goods-info-price">
-                    <div class="padding-bottom-5">价格：<span>￥30,000</span></div>
-                    <div class="padding-top-5">积分：<span>3000</span></div>
+                    <div class="padding-bottom-5">价格：<span>￥<?php echo $goodsinfo->price ?></span></div>
+                    <div class="padding-top-5">积分：<span><?php echo $goodsinfo->integral ?></span></div>
                 </div>
                 <div class="well margin-bottom-5 font-110 goods-info-more">
-                    <div class="padding-bottom-5">产品编号：<span>0010101001010</span></div>
-                    <div class="padding-bottom-5">大小：<span>00</span></div>
-                    <div class="padding-bottom-5">重量：<span>00</span></div>
-                    <div class="padding-bottom-5">材质：<span>玉器</span></div>
-                    <div class="padding-bottom-5">证书：<span>其他</span></div>
+                    <div class="padding-bottom-5">产品编号：<span><?php echo $goodsinfo->goodscode ?></span></div>
+                    <div class="padding-bottom-5">大小：<span><?php echo $goodsinfo->size ?></span></div>
+                    <div class="padding-bottom-5">重量：<span><?php echo $goodsinfo->weight ?></span></div>
+                    <div class="padding-bottom-5">材质：<span><?php echo $goodsinfo->material ?></span></div>
+                    <div class="padding-bottom-5">证书：<span><?php echo $goodsinfo->certificate ?></span></div>
                 </div>
                 <div class="padding-left-10 padding-bottom-10 font-130">线下交易</div>
                 <div class="padding-left-10 text-center">
@@ -173,7 +178,7 @@ Purchase: http://wrapbootstrap.com
         <div class="row margin-top-20 margin-bottom-30">
             <div class="font-130 padding-10">商品详情</div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                gsdshhhshsdgwtwertgdgsdfg
+                <?php echo $goodsinfo->detail ?>
             </div>
         </div>
     </div>
@@ -185,8 +190,8 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                 <ul class="list-unstyled">
-                    <li><a href="home.php">众筹网</a></li>
-                    <li><a href="#">关于我们</a></li>
+                    <li><a href="home">众筹网</a></li>
+                    <li><a href="about">关于我们</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -207,7 +212,7 @@ Purchase: http://wrapbootstrap.com
             </div>
         </div>
         <div class="footer-icon text-center padding-top-50 padding-bottom-10"><img src="assets/img/kx.png"><img
-                src="assets/img/cx.png"><img src="assets/img/hyyz.png">
+                    src="assets/img/cx.png"><img src="assets/img/hyyz.png">
         </div>
     </div>
     <div class="padding-10 text-align-center beian">蜀ICP备12569350号 Copyright © 2017 qmdp168.com</div>

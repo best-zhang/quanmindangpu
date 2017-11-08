@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -10,7 +14,7 @@ Purchase: http://wrapbootstrap.com
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>长安街当铺</title>
+    <title><?php echo $proinfo->name ?></title>
 
     <meta name="description" content="index"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -156,7 +160,7 @@ Purchase: http://wrapbootstrap.com
 <div class="padding-5 info-hello">欢迎来到当铺商城</div>
 
 <div class="container">
-    <a class="font-200" href="#">LOGO</a>
+    <a class="font-200" href="shopindex">LOGO</a>
 </div>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -165,13 +169,12 @@ Purchase: http://wrapbootstrap.com
                 <li class="active dropdown margin-right-50">
                     <a href="javascript:void(0);"
                        class="dropdown-toggle no-padding-left no-padding-right no-margin-left" data-toggle="dropdown">
-                        长安街当铺
+                        <?php echo $proinfo->name ?>
                         <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="shop">长安街当铺</a></li>
-                        <li><a href="shop">春熙路当铺</a></li>
+                    <ul id="shops" class="dropdown-menu">
                     </ul>
+                    <input class="select2-display-none" id="shopid" value="<?php echo $proinfo->id ?>">
                 </li>
                 <li class="margin-left-30"><a href="shopindex">首页</a></li>
                 <li><a href="popular">热门</a></li>
@@ -190,7 +193,7 @@ Purchase: http://wrapbootstrap.com
                 <a href="shopindex">首页</a>
             </li>
             <li class="active">
-                长安街当铺
+                <?php echo $proinfo->name ?>
             </li>
         </ul>
     </div>
@@ -202,97 +205,13 @@ Purchase: http://wrapbootstrap.com
         <div class="row">
             <div class="container">
                 <h3>热门</h3>
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well goods-type-item no-padding no-margin">
-                            <a href="goodsdetail.php">
-                                <div class="img-goods-type"
-                                     style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                    <span class="label label-info">热门</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
+                <div id="hotgoods" class="row">
+
                 </div>
 
                 <h3>最新</h3>
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well goods-type-item no-padding no-margin">
-                            <a href="_prodetail.html">
-                                <div class="img-goods-type"
-                                     style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                    <span class="label label-info">热门</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
+                <div id="newgoods" class="row">
+
                 </div>
             </div>
             <div class="container">
@@ -397,9 +316,111 @@ Purchase: http://wrapbootstrap.com
 
 <!--Page Related Scripts-->
 
-
 <script>
+    $(document).ready(function () {
+        getpros();
+        gethotgoods();
+        getnewgoods();
+    });
 
+    function getpros() {
+        $.ajax({
+            type: 'POST',
+            url: '../shopindex/getPros',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<li><a href="shop?id=' + data[i]["id"] + '">' + data[i]["name"] + '</a></li>';
+                    }
+
+                    $("#shops").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取店铺数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function gethotgoods() {
+        var shopid = $("#shopid").val();
+        $.ajax({
+            type: 'POST',
+            url: '../shop/gethotgoods',//路径
+            data: {"id": shopid},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    var img = '';
+                    for (i = 0; i < data.length; i++) {
+                        var imgs = (data[i]["imgs"]).split(',');
+                        if (imgs.length > 0) {
+                            img = imgs[0];
+                        }
+                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">'
+                            + '<div class="well no-padding">'
+                            + '<a href="goodsdetail?id=' + data[i]["id"] + '">'
+                            + '<div class="img-project" '
+                            + 'style="background-image: url(uploads/' + img + ');">'
+                            + '</div>'
+                            + '</a>'
+                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
+                            + '<div class="padding-5 text-center goods-price">'
+                            + '￥<span>' + data[i]["price"] + '</span>'
+                            + '</div>'
+                            + '</div>'
+                            + '</div>';
+                    }
+
+                    $("#hotgoods").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取热门商品数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getnewgoods() {
+        var shopid = $("#shopid").val();
+        $.ajax({
+            type: 'POST',
+            url: '../shop/getnewgoods',//路径
+            data: {"id": shopid},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    var img = '';
+                    for (i = 0; i < data.length; i++) {
+                        var imgs = (data[i]["imgs"]).split(',');
+                        if (imgs.length > 0) {
+                            img = imgs[0];
+                        }
+                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">'
+                            + '<div class="well no-padding">'
+                            + '<a href="goodsdetail?id=' + data[i]["id"] + '">'
+                            + '<div class="img-project" '
+                            + 'style="background-image: url(uploads/' + img + ');">'
+                            + '</div>'
+                            + '</a>'
+                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
+                            + '<div class="padding-5 text-center goods-price">'
+                            + '￥<span>' + data[i]["price"] + '</span>'
+                            + '</div>'
+                            + '</div>'
+                            + '</div>';
+                    }
+
+                    $("#newgoods").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取最新商品数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
 </script>
 </body>
 <!--  /Body -->

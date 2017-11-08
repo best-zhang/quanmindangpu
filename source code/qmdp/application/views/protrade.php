@@ -1,6 +1,7 @@
 ﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
 <!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0

@@ -21,43 +21,64 @@ class Goodsdetail extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('goodsdetail');
+        $data['proinfo'] = $this->getProInfo();
+        $arr = $this->getGoodsInfo();
+        $data['goodsinfo'] = $arr['data'];
+        $data['img1'] = $arr['img1'];
+        $data['img2'] = $arr['img2'];
+        $data['img3'] = $arr['img3'];
+        $data['img4'] = $arr['img4'];
+        $this->load->view('goodsdetail', $data);
     }
 
     public function __construct()
     {
         parent::__construct();
 
-//        $this->load->library('MYController');
-
         $this->load->database();
     }
 
-    function getGoodsList()
+    function getProInfo()
     {
-        $sqlselect = 'SELECT t1.id, t1.name,t1.goodscode,t1.price,t1.integral,t2.name AS proname,t3.name AS protype,t4.name AS basetype' .
-            ' FROM goods t1 LEFT JOIN raise t2 ON t1.proid = t2.id' .
-            ' LEFT JOIN goodstype t3 ON t1.goodstypeid = t3.id' .
-            ' LEFT JOIN basetype t4 ON t1.basetypeid = t4.id' .
-            ' ORDER BY t1.id;';
+        $id = trim($_GET['id']);
+        $sqlselect = "SELECT t1.id,t1.name FROM raise t1,goods t2 WHERE t1.id = t2.proid AND t2.id = '{$id}';";
 
         $query = $this->db->query($sqlselect);
-
-        $this->response_data($query->result());
-    }
-
-    function delgoods()
-    {
-        $id = trim($_POST['id']);
-
-        $sqldelete = "DELETE FROM goods WHERE id='{$id}'";
-        $this->db->query($sqldelete);
-        if ($this->db->affected_rows() > 0) {
-            echo "删除成功";
-        } else {
-            echo "删除失败";
+        $pro = 0;
+        foreach ($query->result() as $row) {
+            $pro = $row;
         }
+
+        return $pro;
     }
+
+    function getGoodsInfo()
+    {
+        $id = trim($_GET['id']);
+        $sqlselect = "SELECT t1.id,t1.name,t1.price,t1.integral,t1.tel,t1.goodscode,t1.certificate,t1.size,t1.weight,t1.material,t1.imgs,t1.detail,"
+            . "t2.name AS goodstype,t3.name AS basetype "
+            . "FROM goods t1,goodstype t2,basetype t3 WHERE t1.goodstypeid = t2.id AND t1.basetypeid = t3.id AND t1.id = '{$id}';";
+
+        $query = $this->db->query($sqlselect);
+        $pro = 0;
+        $img1 = "";
+        $img2 = "";
+        $img3 = "";
+        $img4 = "";
+        foreach ($query->result() as $row) {
+            $pro = $row;
+        }
+        if ($pro) {
+            $imgs = explode(',', $pro->imgs);
+            if (count($imgs) > 0) $img1 = $imgs[0];
+            if (count($imgs) > 1) $img2 = $imgs[1];
+            if (count($imgs) > 2) $img3 = $imgs[2];
+            if (count($imgs) > 3) $img4 = $imgs[3];
+        }
+        $arr = array("data" => $pro, "img1" => $img1, "img2" => $img2, "img3" => $img3, "img4" => $img4);
+        return $arr;
+    }
+
 
     /**
      * @param $data 数组

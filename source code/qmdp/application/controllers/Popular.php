@@ -28,8 +28,6 @@ class Popular extends CI_Controller
     {
         parent::__construct();
 
-//        $this->load->library('MYController');
-
         $this->load->database();
     }
 

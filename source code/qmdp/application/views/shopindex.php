@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<!DOCTYPE html>
 <!--
 BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
 Version: 1.0.0
@@ -137,7 +141,7 @@ Purchase: http://wrapbootstrap.com
             width: 100px;
         }
 
-        .footer-icon img{
+        .footer-icon img {
             margin: 0px 5px;
         }
 
@@ -157,24 +161,23 @@ Purchase: http://wrapbootstrap.com
 <div class="padding-5 info-hello">欢迎来到当铺商城</div>
 
 <div class="container">
-    <a class="font-200" href="#">LOGO</a>
+    <a class="font-200" href="shopindex">LOGO</a>
 </div>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div>
             <ul class="nav navbar-nav">
                 <li class="dropdown margin-right-50">
-                    <a href="javascript:void(0);" class="dropdown-toggle no-padding-left no-padding-right no-margin-left"
+                    <a href="javascript:void(0);"
+                       class="dropdown-toggle no-padding-left no-padding-right no-margin-left"
                        data-toggle="dropdown">
                         全民当铺
                         <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="shop">长安街当铺</a></li>
-                        <li><a href="shop">春熙路当铺</a></li>
+                    <ul id="shops" class="dropdown-menu">
                     </ul>
                 </li>
-                <li class="active margin-left-30"><a href="#">首页</a></li>
+                <li class="active margin-left-30"><a href="shopindex">首页</a></li>
                 <li><a href="popular">热门</a></li>
                 <li><a href="integral">积分</a></li>
             </ul>
@@ -212,97 +215,11 @@ Purchase: http://wrapbootstrap.com
         <div class="row">
             <div class="container">
                 <h3>热门</h3>
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well goods-type-item no-padding no-margin">
-                            <a href="goodsdetail.php">
-                                <div class="img-goods-type"
-                                     style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                    <span class="label label-info">热门</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
+                <div id="hotgoods" class="row">
                 </div>
 
                 <h3>最新</h3>
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well goods-type-item no-padding no-margin">
-                            <a href="_prodetail.html">
-                                <div class="img-goods-type"
-                                     style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                                    <span class="label label-info">热门</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div class="well no-padding">
-                            <div class="img-project"
-                                 style="background-image: url(assets/img/avatars/Stephanie-Walter.jpg);">
-                            </div>
-                            <div class="text-center font-120 goods-name">长安街当铺</div>
-                            <div class="padding-5 text-center goods-price">
-                                ￥<span>3,000,000</span>
-                            </div>
-                        </div>
-                    </div>
+                <div id="newgoods" class="row">
                 </div>
             </div>
             <div class="container">
@@ -370,8 +287,8 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                 <ul class="list-unstyled">
-                    <li><a href="home.php">众筹网</a></li>
-                    <li><a href="#">关于我们</a></li>
+                    <li><a href="home">众筹网</a></li>
+                    <li><a href="about">关于我们</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -392,7 +309,7 @@ Purchase: http://wrapbootstrap.com
             </div>
         </div>
         <div class="footer-icon text-center padding-top-50 padding-bottom-10"><img src="assets/img/kx.png"><img
-                src="assets/img/cx.png"><img src="assets/img/hyyz.png">
+                    src="assets/img/cx.png"><img src="assets/img/hyyz.png">
         </div>
     </div>
     <div class="padding-10 text-align-center beian">蜀ICP备12569350号 Copyright © 2017 qmdp168.com</div>
@@ -409,6 +326,108 @@ Purchase: http://wrapbootstrap.com
 
 
 <script>
+    $(document).ready(function () {
+        getpros();
+        gethotgoods();
+        getnewgoods();
+    });
+
+    function getpros() {
+        $.ajax({
+            type: 'POST',
+            url: '../shopindex/getPros',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    for (i = 0; i < data.length; i++) {
+                        str += '<li><a href="shop?id=' + data[i]["id"] + '">' + data[i]["name"] + '</a></li>';
+                    }
+
+                    $("#shops").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取店铺数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function gethotgoods() {
+        $.ajax({
+            type: 'POST',
+            url: '../shopindex/gethotgoods',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    var img = '';
+                    for (i = 0; i < data.length; i++) {
+                        var imgs = (data[i]["imgs"]).split(',');
+                        if (imgs.length > 0) {
+                            img = imgs[0];
+                        }
+                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">'
+                            + '<div class="well no-padding">'
+                            + '<a href="goodsdetail?id=' + data[i]["id"] + '">'
+                            + '<div class="img-project" '
+                            + 'style="background-image: url(uploads/' + img + ');">'
+                            + '</div>'
+                            + '</a>'
+                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
+                            + '<div class="padding-5 text-center goods-price">'
+                            + '￥<span>' + data[i]["price"] + '</span>'
+                            + '</div>'
+                            + '</div>'
+                            + '</div>';
+                    }
+
+                    $("#hotgoods").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取热门商品数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getnewgoods() {
+        $.ajax({
+            type: 'POST',
+            url: '../shopindex/getnewgoods',//路径
+            data: {},
+            success: function (data) {
+                if (data) {
+                    var str = '';
+                    var img = '';
+                    for (i = 0; i < data.length; i++) {
+                        var imgs = (data[i]["imgs"]).split(',');
+                        if (imgs.length > 0) {
+                            img = imgs[0];
+                        }
+                        str += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">'
+                            + '<div class="well no-padding">'
+                            + '<a href="goodsdetail?id=' + data[i]["id"] + '">'
+                            + '<div class="img-project" '
+                            + 'style="background-image: url(uploads/' + img + ');">'
+                            + '</div>'
+                            + '</a>'
+                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
+                            + '<div class="padding-5 text-center goods-price">'
+                            + '￥<span>' + data[i]["price"] + '</span>'
+                            + '</div>'
+                            + '</div>'
+                            + '</div>';
+                    }
+
+                    $("#newgoods").html(str);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取最新商品数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
 
 </script>
 </body>
