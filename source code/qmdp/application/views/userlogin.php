@@ -99,6 +99,14 @@ Purchase: http://wrapbootstrap.com
                 alert("请输入用户名和密码");
             }
         });
+		
+		//回车登录
+        document.onkeydown = function(e){ 
+            var ev = document.all ? window.event : e;
+            if(ev.keyCode==13) {
+                $("#btnLogin").click();
+            }
+        };
     });
 
     function login(name, pwd) {

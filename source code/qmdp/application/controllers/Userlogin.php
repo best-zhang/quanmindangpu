@@ -47,6 +47,9 @@ class Userlogin extends CI_Controller
             }
             if ($user) {
                 $this->session->set_userdata('user_info_home', $user);
+				
+				 $sqlupdate = "UPDATE user SET dtlast = NOW() WHERE id = {$user->id}";
+				 $this->db->query($sqlupdate);
             } else {
                 $res = '用户名或密码不正确';
             }

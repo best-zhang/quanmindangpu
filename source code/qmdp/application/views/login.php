@@ -81,6 +81,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="../../assets/js/beyond.js"></script>
 
 <script src="../../assets/js/_js/login.js"></script>
+
+<script>
+    $(document).ready(function () {		
+		//回车登录
+        document.onkeydown = function(e){ 
+            var ev = document.all ? window.event : e;
+            if(ev.keyCode==13) {
+                $("#btnLogin").click();
+            }
+        };
+    });    
+</script>
+
 </body>
 <!--Body Ends-->
 </html>
