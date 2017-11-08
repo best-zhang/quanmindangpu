@@ -50,12 +50,23 @@ class Protrade extends CI_Controller
         $address = trim($_POST['address']);
         $jingban = trim($_POST['jingban']);
 
+		$money *= 10000;
+		
         $user = $this->session->userdata('user_info');
 
         $sqladd = "INSERT INTO raisedeal(userid,projectid,money,integral,tradetime,address,jingban,createby,dtinsert)" .
-            "VALUES('{$pname}','{$project}',{$money}*10000,'{$jifen}','{$tradetime}','{$address}','{$jingban}','{$user}',NOW());";
+            "VALUES('{$pname}','{$project}',{$money},'{$jifen}','{$tradetime}','{$address}','{$jingban}','{$user}',NOW());";			
         $this->db->query($sqladd);
         if ($this->db->affected_rows() > 0) {
+			$sqlupdate = "UPDATE raise SET completed = completed + {$money} WHERE id = {$project};";
+			$this->db->query($sqlupdate);
+			
+			$sqlupdate = "UPDATE raise SET prostatus = 2 WHERE dtend <= NOW() AND prostatus = 1 AND id = {$project};";
+			$this->db->query($sqlupdate);
+			
+			$sqlupdate = "UPDATE user SET integral = integral + {$jifen} WHERE id = {$pname};";
+			$this->db->query($sqlupdate);
+			
             echo "保存成功";
         } else {
             echo "保存失败";
