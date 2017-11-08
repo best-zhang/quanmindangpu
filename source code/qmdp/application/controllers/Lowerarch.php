@@ -40,7 +40,7 @@ class Lowerarch extends CI_Controller
     function getLowerData()
     {
         $session_user = $this->session->userdata('user_info_home');
-        $sqlselect = "SELECT name,superior,SUM(money) as money,id FROM ("
+        $sqlselect = "SELECT name,superior,ROUND(SUM(money),2) as money,id FROM ("
 
             . " SELECT t1.money * 0.05 as money,t2.name,t2.superior,t2.id"
             . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
@@ -80,7 +80,7 @@ class Lowerarch extends CI_Controller
         }
         $res .= $config . "];";
 
-        $arr = array("data" => $res, "all" => $all);
+        $arr = array("data" => $res, "all" => Number_format($all,2));
         return $arr;
     }
 

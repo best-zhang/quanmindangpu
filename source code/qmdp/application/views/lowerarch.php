@@ -178,7 +178,7 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
                 <div class="row well well-detail no-margin no-padding">
-                    <div class="row no-margin padding-20 text-align-right font-130">
+                    <div class="row no-margin padding-20 text-align-right font-130 padding-right-40">
                         金额合计：￥<span><?php echo $money ?></span></div>
                     <div class="row no-margin">
                         <div class="">

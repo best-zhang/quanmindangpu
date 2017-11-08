@@ -292,12 +292,12 @@ Purchase: http://wrapbootstrap.com
                     for (i = 0; i < data.length; i++) {
                         str += '<tr>' +
                             '<td>' + data[i]["proname"] + '</td>' +
-                            '<td>' + data[i]["tradetime"] + '</td>' +
+                            '<td>' + data[i]["tradetime"].replace(" 00:00:00","") + '</td>' +
                             '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
                             '<td>' + data[i]["age"] + ' </td>' +
                             '<td>' + data[i]["sex"] + '</td>' +
                             '<td>' + (data[i]["level"] ? data[i]["level"] : "") + '</td>' +
-                            '<td>' + (data[i]["money"] ? data[i]["money"] : "0") + '</td>' +
+                            '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
                             '</tr>';
                     }
                 }
