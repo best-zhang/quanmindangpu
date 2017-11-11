@@ -48,7 +48,7 @@ Purchase: http://wrapbootstrap.com
         }
 
         .navbar {
-            background-color: rgba(230, 230, 230, 0.85);
+            background-color: rgba(230, 230, 230);
             font-size: 17px;
             height: auto;
         }
@@ -87,12 +87,13 @@ Purchase: http://wrapbootstrap.com
         }
 
         .carousel .item {
-            max-height: 500px;
+            height: 600px;
         }
 
         .raise-item h3 {
             font-size: 23px;
             margin-bottom: 20px;
+            padding-top: 50px;
         }
 
         .img-project {
@@ -182,6 +183,7 @@ Purchase: http://wrapbootstrap.com
 </nav>
 
 <div>
+    <div style="height: 50px;"></div>
     <div id="carousel-example-generic" class="carousel slide"
          data-ride="carousel">
         <!-- Indicators -->
@@ -206,36 +208,36 @@ Purchase: http://wrapbootstrap.com
     </div>
 </div>
 
-<div class="page-body no-padding margin-top-40">
+<div class="page-body no-padding">
     <div class="raise-item">
         <div class="row">
             <div class="container">
                 <h3>近期资助</h3>
-                <div id="pro1" class="row">
+                <div id="pro1" class="row padding-top-10">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
                 <h3>即将上线</h3>
-                <div id="pro2" class="row">
+                <div id="pro2" class="row padding-top-10">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
                 <h3>完成项目</h3>
-                <div id="pro3" class="row">
+                <div id="pro3" class="row padding-top-10">
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="container padding-top-30">
+    <div class="row padding-top-50">
+        <div class="container padding-top-50">
             <div class="text-center">
                 <h2>发现财富的秘密</h2>
             </div>
-            <div class="row padding-top-30">
+            <div class="row padding-top-50">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
                     <span class="badge badge-sky badge-square padding-20"><h4>关注项目</h4></span>
@@ -256,8 +258,8 @@ Purchase: http://wrapbootstrap.com
         </div>
     </div>
 
-    <div class="row margin-50">
-        <div class="container padding-top-30">
+    <div class="row margin-50 padding-bottom-30">
+        <div class="container padding-top-50">
             <div class="text-center">
                 <h4>全名当铺众筹项目</h4>
             </div>
@@ -330,7 +332,7 @@ Purchase: http://wrapbootstrap.com
                     for (i = 0; i < data.length; i++) {
                         progress = (data[i]["completed"] / data[i]["target"]) * 100;
                         str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
-                            '<div class="well no-padding">' +
+                            '<div class="well no-padding padding-bpttpm-20">' +
                             '<a href="prodetail?id=' + data[i]["id"] + '">' +
                             '<div class="img-project"' +
                             'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
@@ -390,7 +392,7 @@ Purchase: http://wrapbootstrap.com
                     for (i = 0; i < data.length; i++) {
                         progress = (data[i]["completed"] / data[i]["target"]) * 100;
                         str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
-                            '<div class="well no-padding">' +
+                            '<div class="well no-padding padding-bpttpm-20">' +
                             '<a href="prodetail?id=' + data[i]["id"] + '">' +
                             '<div class="img-project"' +
                             'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
@@ -444,7 +446,7 @@ Purchase: http://wrapbootstrap.com
                     for (i = 0; i < data.length; i++) {
                         progress = (data[i]["completed"] / data[i]["target"]) * 100;
                         str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
-                            '<div class="well no-padding">' +
+                            '<div class="well no-padding padding-bpttpm-20">' +
                             '<a href="prodetail?id=' + data[i]["id"] + '">' +
                             '<div class="img-project"' +
                             'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
