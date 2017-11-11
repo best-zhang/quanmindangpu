@@ -95,37 +95,16 @@ Purchase: http://wrapbootstrap.com
             margin-bottom: 20px;
         }
 
-        .img-project {
-            width: 100%;
-            height: 0px;
-            padding-bottom: 100%;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+        .instrction {
+            height: 680px;
         }
 
-        .label {
-            padding: 8px;
+        .instrction .tabbable {
+            padding: 15px;
         }
 
-        .well .row div {
-            font-size: 14px;
-        }
-
-        .well .item-pname {
-            font-size: 18px;
-        }
-
-        .well .item-title {
-            font-size: 15px;
-        }
-
-        .well .item-day {
-            font-size: 30px;
-            color: #d58512;
-        }
-
-        .badge {
-            height: auto;
+        .tab-content {
+            height: 550px;
         }
 
         .footer {
@@ -206,70 +185,75 @@ Purchase: http://wrapbootstrap.com
     </div>
 </div>
 
-<div class="page-body no-padding margin-top-40">
+<div class="page-body no-padding">
     <div class="container">
-		<div class="row">
-           <div class="text-center">
-		   <h2>为什么选择我们</h2>
-		   </div>
+        <div class="row padding-top-30">
+            <div class="text-center padding-top-40">
+                <h2>为什么选择我们</h2>
+            </div>
         </div>
-        <div class="row">
-           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
-		   <img width="100%" src="assets/img/ys1.png">
-		   </div>
-		   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
-		   <img width="100%" src="assets/img/ys2.png">
-		   </div>
-        </div>        
-        <div class="row margin-top-50 margin-bottom-30">
+        <div class="row padding-top-30">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-center">
+                <img width="100%" src="assets/img/ys1.png">
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-center">
+                <img width="100%" src="assets/img/ys2.png">
+            </div>
+        </div>
+        <div class="row instrction padding-top-50 padding-bottom-50">
             <div class="tabbable tabs-left">
-                                        <ul class="nav nav-tabs" id="myTab3">
-                                            <li class="active tab-sky">
-                                                <a data-toggle="tab" href="#aboutus">
-                                                    关于我们
-                                                </a>
-                                            </li>
+                <ul class="nav nav-tabs" id="myTab3">
+                    <li class="active tab-sky">
+                        <a data-toggle="tab" href="#aboutus">
+                            关于我们
+                        </a>
+                    </li>
 
-                                            <li class="tab-sky">
-                                                <a data-toggle="tab" href="#investment">
-                                                    关于投资
-                                                </a>
-                                            </li>
+                    <li class="tab-sky">
+                        <a data-toggle="tab" href="#investment">
+                            关于投资
+                        </a>
+                    </li>
 
-                                            <li class="tab-sky">
-                                                <a data-toggle="tab" href="#proinvest">
-                                                    项目投资
-                                                </a>
-                                            </li>
-											
-											<li class="tab-sky">
-                                                <a data-toggle="tab" href="#legal">
-                                                    法律协议
-                                                </a>
-                                            </li>
-                                        </ul>
+                    <li class="tab-sky">
+                        <a data-toggle="tab" href="#proinvest">
+                            项目投资
+                        </a>
+                    </li>
 
-                                        <div class="tab-content">
-                                            <div id="aboutus" class="tab-pane in active">
-                                                <p>全民当铺是全国第一家，也是国内唯一成功的一家互联网当铺，公司总部在深圳市前海自贸区，目前公司拥有省级代理商5家，分布上海，深圳，重庆，成都。上千家二级代理商，上万个代理人，成为全球最大的互联网典当中心，每天典当金额过亿，当品超万件。</p>
-                                            </div>
+                    <li class="tab-sky">
+                        <a data-toggle="tab" href="#legal">
+                            法律协议
+                        </a>
+                    </li>
+                </ul>
 
-                                            <div id="investment" class="tab-pane">
-                                                <p>我们的目标是为了帮助更多的创业企业顺利地拓展事业，促进新产品和新技术的市场转化，并引导中国的产业投资沿着良性的轨道发展。</p>
-                                                <p>我们有着实力强大的投融资顾问专家团队，在投资可行性分析，融资顾问，财务规划方面都有着充足的实力。我们善于发掘具有投资价值和投资潜力的项目，向我们的投资会员推荐。</p>
-                                            </div>
+                <div class="tab-content">
+                    <div id="aboutus" class="tab-pane in active">
+                        <p>
+                            全民当铺是全国第一家，也是国内唯一成功的一家互联网当铺，公司总部在深圳市前海自贸区，目前公司拥有省级代理商5家，分布上海，深圳，重庆，成都。上千家二级代理商，上万个代理人，成为全球最大的互联网典当中心，每天典当金额过亿，当品超万件。</p>
+                    </div>
 
-                                            <div id="proinvest" class="tab-pane">
-                                                <p>全民当铺互联网动产质押信息平台，我们通过各个渠道收集到借款人的需求，评估师上门或借款人到店，对质押物进行评估及其放款建议。覆盖珠宝首饰、奢侈品、名表、贵金属、车辆 等各类质押信息服务。全民当铺从产品上推动行业的创新，真正的满足大众用户，借急钱，借快钱的需求。从服务上全民当铺提供上门借贷服务，帮助债权端与资金端之间搭建O2O桥梁，优化用户贷款体验，促成双方达成交易的一个网络桥梁。</p>
-                                            </div>
-											
-											<div id="legal" class="tab-pane">
-                                                <p>本站（中国风险投资网）的会员资料和全部项目信息（包括商业计划书）属于保密范围，本站将尽量保障信息的安全和不受侵犯，但如果发生不可抗拒因素及用户自身原因造成的损失，如黑客入侵，服务器故障等，本站不承担相应赔偿责任。</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <div id="investment" class="tab-pane">
+                        <p>我们的目标是为了帮助更多的创业企业顺利地拓展事业，促进新产品和新技术的市场转化，并引导中国的产业投资沿着良性的轨道发展。</p>
+                        <p>我们有着实力强大的投融资顾问专家团队，在投资可行性分析，融资顾问，财务规划方面都有着充足的实力。我们善于发掘具有投资价值和投资潜力的项目，向我们的投资会员推荐。</p>
+                    </div>
+
+                    <div id="proinvest" class="tab-pane">
+                        <p>全民当铺互联网动产质押信息平台，我们通过各个渠道收集到借款人的需求，评估师上门或借款人到店，对质押物进行评估及其放款建议。覆盖珠宝首饰、奢侈品、名表、贵金属、车辆
+                            等各类质押信息服务。全民当铺从产品上推动行业的创新，真正的满足大众用户，借急钱，借快钱的需求。从服务上全民当铺提供上门借贷服务，帮助债权端与资金端之间搭建O2O桥梁，优化用户贷款体验，促成双方达成交易的一个网络桥梁。</p>
+                    </div>
+
+                    <div id="legal" class="tab-pane">
+                        <p>
+                            本站（中国风险投资网）的会员资料和全部项目信息（包括商业计划书）属于保密范围，本站将尽量保障信息的安全和不受侵犯，但如果发生不可抗拒因素及用户自身原因造成的损失，如黑客入侵，服务器故障等，本站不承担相应赔偿责任。</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>	
+    </div>
     <div class="row padding-50 footer">
         <div class="container">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -307,8 +291,8 @@ Purchase: http://wrapbootstrap.com
 
 <script>
     $(document).ready(function () {
-       
-    });    
+
+    });
 </script>
 </body>
 <!--  /Body -->

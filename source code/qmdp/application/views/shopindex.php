@@ -128,6 +128,7 @@ Purchase: http://wrapbootstrap.com
             padding-top: 60px;
             padding-left: 50px;
             padding-right: 50px;
+            margin-top: 50px;
             border-top: 2px solid #cfcfcf;
         }
 
@@ -152,6 +153,16 @@ Purchase: http://wrapbootstrap.com
         .beian {
             background-color: #1e1e1e;
             color: #eeeeee;
+        }
+
+        .goods-name {
+            padding-top: 10px;
+        }
+
+        .goods-price {
+            padding-top: 10px;
+            color: #ff000c;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -215,14 +226,14 @@ Purchase: http://wrapbootstrap.com
         <div class="row">
             <div class="container">
                 <h3>热门</h3>
-                <div id="hotgoods" class="row">
+                <div id="hotgoods" class="row padding-top-20">
                 </div>
 
-                <h3>最新</h3>
-                <div id="newgoods" class="row">
+                <h3 class="padding-top-30">最新</h3>
+                <div id="newgoods" class="row padding-top-20">
                 </div>
             </div>
-            <div class="container">
+            <div class="container padding-top-50">
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                         <hr class="wide">
@@ -374,8 +385,10 @@ Purchase: http://wrapbootstrap.com
                             + 'style="background-image: url(uploads/' + img + ');">'
                             + '</div>'
                             + '</a>'
-                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
-                            + '<div class="padding-5 text-center goods-price">'
+                            + '<div class="text-center font-120 goods-name">'
+                            + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 13) + "...") : data[i]["name"])
+                            + '</div>'
+                            + '<div class="padding-10 text-center goods-price">'
                             + '￥<span>' + data[i]["price"] + '</span>'
                             + '</div>'
                             + '</div>'
@@ -412,8 +425,10 @@ Purchase: http://wrapbootstrap.com
                             + 'style="background-image: url(uploads/' + img + ');">'
                             + '</div>'
                             + '</a>'
-                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
-                            + '<div class="padding-5 text-center goods-price">'
+                            + '<div class="text-center font-120 goods-name">'
+                            + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 13) + "...") : data[i]["name"])
+                            + '</div>'
+                            + '<div class="padding-10 text-center goods-price">'
                             + '￥<span>' + data[i]["price"] + '</span>'
                             + '</div>'
                             + '</div>'

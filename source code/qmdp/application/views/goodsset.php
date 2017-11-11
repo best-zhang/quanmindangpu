@@ -55,6 +55,14 @@ Purchase: http://wrapbootstrap.com
         .input-textarea {
             width: 100%;
         }
+
+        .file-preview {
+            padding: 0px;
+        }
+
+        .file-drop-zone {
+            margin: 0px;
+        }
     </style>
 </head>
 <!-- /Head -->

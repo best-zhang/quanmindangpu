@@ -55,6 +55,18 @@ Purchase: http://wrapbootstrap.com
         .input-textarea {
             width: 100%;
         }
+
+        .dropdown-footer a {
+            width: 100%;
+        }
+
+        .file-preview {
+            padding: 0px;
+        }
+
+        .file-drop-zone {
+            margin: 0px;
+        }
     </style>
 </head>
 <!-- /Head -->
@@ -84,7 +96,7 @@ Purchase: http://wrapbootstrap.com
                     <ul class="account-area">
                         <li>
                             <a class="login-area dropdown-toggle" data-toggle="dropdown">
-                                <div class="avatar" title="View your public profile">
+                                <div class="avatar" title="点击退出">
                                     <img src="assets/img/avatars/adam-jansen.jpg">
                                 </div>
                                 <section>
@@ -94,7 +106,7 @@ Purchase: http://wrapbootstrap.com
                             <!--Login Area Dropdown-->
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <!--/Theme Selector Area-->
-                                <li class="dropdown-footer">
+                                <li class="dropdown-footer padding-right-20 padding-left-20">
                                     <a href="../login">
                                         退 出
                                     </a>
