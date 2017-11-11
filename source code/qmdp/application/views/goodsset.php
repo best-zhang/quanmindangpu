@@ -573,8 +573,8 @@ Purchase: http://wrapbootstrap.com
             //actionDelete:"" //设置为空可去掉删除按钮
         },
         dropZoneTitle: '图片上传 <br/>限定上传4张',
-        minImageWidth: 50, //图片的最小宽度
-        minImageHeight: 50,//图片的最小高度
+        minImageWidth: 400, //图片的最小宽度
+        minImageHeight: 400,//图片的最小高度
         maxImageWidth: 2000,//图片的最大宽度
         maxImageHeight: 2000,//图片的最大高度
         //minFileCount: 0,
