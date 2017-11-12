@@ -67,6 +67,7 @@ Purchase: http://wrapbootstrap.com
         .navbar-default .navbar-nav > li > a:hover {
             color: #ff000c;
             border-bottom: solid 2px #16caff;
+            padding-bottom: 1px;
         }
 
         .navbar-default .navbar-nav > li > a {
@@ -83,7 +84,7 @@ Purchase: http://wrapbootstrap.com
         }
 
         .carousel .item {
-            max-height: 500px;
+            height: 600px;
         }
 
         .raise-item h3 {
@@ -426,7 +427,7 @@ Purchase: http://wrapbootstrap.com
                             + '</div>'
                             + '</a>'
                             + '<div class="text-center font-120 goods-name">'
-                            + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 13) + "...") : data[i]["name"])
+                            + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 15) + "...") : data[i]["name"])
                             + '</div>'
                             + '<div class="padding-10 text-center goods-price">'
                             + '￥<span>' + data[i]["price"] + '</span>'

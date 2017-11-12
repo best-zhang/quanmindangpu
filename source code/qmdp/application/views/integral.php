@@ -127,6 +127,7 @@ Purchase: http://wrapbootstrap.com
             padding-top: 60px;
             padding-left: 50px;
             padding-right: 50px;
+            margin-top: 50px;
             border-top: 2px solid #cfcfcf;
         }
 
@@ -151,6 +152,16 @@ Purchase: http://wrapbootstrap.com
         .beian {
             background-color: #1e1e1e;
             color: #eeeeee;
+        }
+
+        .goods-name {
+            padding-top: 10px;
+        }
+
+        .goods-price {
+            padding-top: 10px;
+            color: #ff000c;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -207,7 +218,7 @@ Purchase: http://wrapbootstrap.com
 
                 </div>
             </div>
-            <div class="container">
+            <div class="container padding-top-50">
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                         <hr class="wide">
@@ -358,7 +369,9 @@ Purchase: http://wrapbootstrap.com
                             + 'style="background-image: url(uploads/' + img + ');">'
                             + '</div>'
                             + '</a>'
-                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
+                            + '<div class="text-center font-120 goods-name">'
+                            + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 15) + "...") : data[i]["name"])
+                            + '</div>'
                             + '<div class="padding-top-5 text-center goods-integral">'
                             + '<span>' + data[i]["integral"] + '</span>'
                             + '</div>'

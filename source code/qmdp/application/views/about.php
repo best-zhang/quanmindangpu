@@ -53,15 +53,16 @@ Purchase: http://wrapbootstrap.com
             height: auto;
         }
 
-        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover,
-        .navbar-default .navbar-nav > .active > a:focus {
+        .navbar-default .navbar-main > .active > a, .navbar-default .navbar-main > .active > a:hover,
+        .navbar-default .navbar-main > .active > a:focus {
             color: #ff3738;
             background-color: rgba(255, 255, 255, 0);
         }
 
-        .navbar-default .navbar-nav > li > a:hover {
+        .navbar-default .navbar-main > li > a:hover {
             color: #ff000c;
             border-bottom: solid 2px #16caff;
+            padding-bottom: 13px;
         }
 
         .navbar-default .navbar-nav > li > a {
@@ -87,7 +88,7 @@ Purchase: http://wrapbootstrap.com
         }
 
         .carousel .item {
-            max-height: 500px;
+            height: 600px;
         }
 
         .raise-item h3 {
@@ -130,6 +131,18 @@ Purchase: http://wrapbootstrap.com
             background-color: #1e1e1e;
             color: #eeeeee;
         }
+
+        .dropdown .dropdown-toggle {
+            line-height: 50px;
+        }
+
+        .dropdown-menu {
+            min-width: 120px;
+        }
+
+        .dropdown .dropdown-menu li a {
+            color: #1e1e1e;
+        }
     </style>
 </head>
 <!-- /Head -->
@@ -138,12 +151,12 @@ Purchase: http://wrapbootstrap.com
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header margin-right-50">
-            <a class="navbar-brand" href="#">全民当铺</a>
+            <a class="navbar-brand" href="home">全民当铺</a>
         </div>
         <div>
-            <ul class="nav navbar-nav">
-                <li><a href="home">首页</a></li>
-                <li class="active"><a href="about">关于我们</a></li>
+            <ul class="nav navbar-nav navbar-main">
+                <li class="active"><a href="home">首页</a></li>
+                <li><a href="about">关于我们</a></li>
                 <li><a href="shopindex" target="_blank">当铺商城</a></li>
             </ul>
         </div>
@@ -151,7 +164,7 @@ Purchase: http://wrapbootstrap.com
         <div class="pull-right">
             <?php
             if ($userinfo) {
-                echo '欢迎您，<span>' . $userinfo->name . '</span> <span class="margin-left-10"> <a id="logout" onclick="logout();"  href="#">退出</a></span>';
+                echo '<ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle no-padding font-110" data-toggle="dropdown"><img src="uploads/' . $userinfo->img . '" class="img-circle margin-right-5" width="40" height="40">' . $userinfo->name . '</a><ul class="dropdown-menu"><li><a href="userinfo">个人资料</a></li><li><a id="logout" onclick="logout();"  href="#">退出</a></li></ul></li></ul>';
             } else {
                 echo '<span> <a href="userlogin">登录</a> </span>';
             }

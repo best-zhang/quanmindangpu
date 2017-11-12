@@ -175,12 +175,15 @@ Purchase: http://wrapbootstrap.com
                     <div class="nav-link padding-5">
                         <a href="userpwd">密码修改</a>
                     </div>
-                    <div class="margin-top-10 nav-title">盈利分析</div>
+                    <div class="margin-top-10 nav-title">人员信息管理</div>
                     <div class="nav-link padding-5">
                         <a href="lowerlist">人员列表</a>
                     </div>
                     <div class="nav-link padding-5">
                         <a href="lowerarch">人员架构</a>
+                    </div>
+                    <div class="nav-link padding-5">
+                        <a href="loweradd">信息录入</a>
                     </div>
                     <div class="margin-top-10 nav-title">项目支持</div>
                     <div class="nav-link padding-10">

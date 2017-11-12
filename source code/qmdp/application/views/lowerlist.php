@@ -106,7 +106,34 @@ Purchase: http://wrapbootstrap.com
             padding-bottom: 30px;
         }
 
-        #simpledatatable_filter, #simpledatatable_length, #simpledatatable_info {
+        .well-table-title {
+            padding: 10px;
+            background-color: #7ef0ff;
+        }
+
+        .span-level {
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        #profit-a, #profit-b, #profit-c {
+            line-height: 24px;
+            font-weight: bold;
+        }
+
+        #table-a_filter, #table-a_length, #table-a_info {
+            display: none;
+        }
+
+        #table-b_filter, #table-b_length, #table-b_info {
+            display: none;
+        }
+
+        #table-c_filter, #table-c_length, #table-c_info {
+            display: none;
+        }
+
+        .DTTTFooter {
             display: none;
         }
 
@@ -161,12 +188,15 @@ Purchase: http://wrapbootstrap.com
                     <div class="nav-link padding-5">
                         <a href="userpwd">密码修改</a>
                     </div>
-                    <div class="margin-top-10 nav-title">盈利分析</div>
+                    <div class="margin-top-10 nav-title">人员信息管理</div>
                     <div class="nav-link padding-5">
                         <a href="lowerlist">人员列表</a>
                     </div>
                     <div class="nav-link padding-5">
                         <a href="lowerarch">人员架构</a>
+                    </div>
+                    <div class="nav-link padding-5">
+                        <a href="loweradd">信息录入</a>
                     </div>
                     <div class="margin-top-10 nav-title">项目支持</div>
                     <div class="nav-link padding-10">
@@ -176,7 +206,12 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="row well well-detail">
-                    <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                    <div class="well-table-title">
+                        <div class="text-center"><span class="span-level">A级(5%)</span>
+                            <span id="profit-a" class="pull-right padding-right-20">金额</span>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover" id="table-a">
                         <thead>
                         <tr>
                             <th>
@@ -195,14 +230,84 @@ Purchase: http://wrapbootstrap.com
                                 性别
                             </th>
                             <th>
-                                级别
+                                金额
+                            </th>
+                            <th>
+                                收益
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="list-a">
+
+                        </tbody>
+                    </table>
+                    <div class="well-table-title margin-top-20">
+                        <div class="text-center"><span class="span-level">B级(3%)</span>
+                            <span id="profit-b" class="pull-right padding-right-20">金额</span>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover" id="table-b">
+                        <thead>
+                        <tr>
+                            <th>
+                                项目名称
+                            </th>
+                            <th>
+                                日期
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                年龄
+                            </th>
+                            <th>
+                                性别
                             </th>
                             <th>
                                 金额
                             </th>
+                            <th>
+                                收益
+                            </th>
                         </tr>
                         </thead>
-                        <tbody id="list">
+                        <tbody id="list-b">
+
+                        </tbody>
+                    </table>
+                    <div class="well-table-title margin-top-20">
+                        <div class="text-center"><span class="span-level">C级(2%)</span>
+                            <span id="profit-c" class="pull-right padding-right-20">金额</span>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover" id="table-c">
+                        <thead>
+                        <tr>
+                            <th>
+                                项目名称
+                            </th>
+                            <th>
+                                日期
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                年龄
+                            </th>
+                            <th>
+                                性别
+                            </th>
+                            <th>
+                                金额
+                            </th>
+                            <th>
+                                收益
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="list-c">
 
                         </tbody>
                     </table>
@@ -228,15 +333,17 @@ Purchase: http://wrapbootstrap.com
 
 <script>
     $(document).ready(function () {
-        getlist();
+        getlistA();
+        getlistB();
+        getlistC();
     });
 
-    function inittable() {
+    function inittableA() {
         //Datatable Initiating
-        var oTable = $('#simpledatatable').dataTable({
+        var oTableA = $('#table-a').dataTable({
             "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
-            "bPaginate": true,//显示（使用）分页器
-            "iDisplayLength": 10,
+            "bPaginate": false,//显示（使用）分页器
+            "iDisplayLength": 15,
             "oTableTools": {
                 "aButtons": [],
                 "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
@@ -262,7 +369,7 @@ Purchase: http://wrapbootstrap.com
         });
 
         //Check All Functionality
-        jQuery('#simpledatatable .group-checkable').change(function () {
+        jQuery('#table-a .group-checkable').change(function () {
             var set = $(".checkboxes");
             var checked = jQuery(this).is(":checked");
             jQuery(set).each(function () {
@@ -276,28 +383,132 @@ Purchase: http://wrapbootstrap.com
             });
 
         });
-        jQuery('#simpledatatable tbody tr .checkboxes').change(function () {
+        jQuery('#table-a tbody tr .checkboxes').change(function () {
             $(this).parents('tr').toggleClass("active");
         });
     }
 
-    function getlist() {
+    function inittableB() {
+        //Datatable Initiating
+        var oTableB = $('#table-b').dataTable({
+            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            "bPaginate": false,//显示（使用）分页器
+            "iDisplayLength": 15,
+            "oTableTools": {
+                "aButtons": [],
+                "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+            },
+            "language": {
+                "search": "",
+                "sLengthMenu": "_MENU_",
+                "oPaginate": {
+                    "sPrevious": "往前",
+                    "sNext": "往后"
+                }
+            },
+            "aoColumns": [
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                null
+            ],
+            "aaSorting": []
+        });
+
+        //Check All Functionality
+        jQuery('#table-b .group-checkable').change(function () {
+            var set = $(".checkboxes");
+            var checked = jQuery(this).is(":checked");
+            jQuery(set).each(function () {
+                if (checked) {
+                    $(this).prop("checked", true);
+                    $(this).parents('tr').addClass("active");
+                } else {
+                    $(this).prop("checked", false);
+                    $(this).parents('tr').removeClass("active");
+                }
+            });
+
+        });
+        jQuery('#table-b tbody tr .checkboxes').change(function () {
+            $(this).parents('tr').toggleClass("active");
+        });
+    }
+
+    function inittableC() {
+        //Datatable Initiating
+        var oTableC = $('#table-c').dataTable({
+            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            "bPaginate": false,//显示（使用）分页器
+            "iDisplayLength": 15,
+            "oTableTools": {
+                "aButtons": [],
+                "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+            },
+            "language": {
+                "search": "",
+                "sLengthMenu": "_MENU_",
+                "oPaginate": {
+                    "sPrevious": "往前",
+                    "sNext": "往后"
+                }
+            },
+            "aoColumns": [
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                null
+            ],
+            "aaSorting": []
+        });
+
+        //Check All Functionality
+        jQuery('#table-c .group-checkable').change(function () {
+            var set = $(".checkboxes");
+            var checked = jQuery(this).is(":checked");
+            jQuery(set).each(function () {
+                if (checked) {
+                    $(this).prop("checked", true);
+                    $(this).parents('tr').addClass("active");
+                } else {
+                    $(this).prop("checked", false);
+                    $(this).parents('tr').removeClass("active");
+                }
+            });
+
+        });
+        jQuery('#table-c tbody tr .checkboxes').change(function () {
+            $(this).parents('tr').toggleClass("active");
+        });
+    }
+
+    function getlistA() {
         $.ajax({
             type: 'POST',
-            url: '../lowerlist/getLowerList',//路径
+            url: '../lowerlist/getLowerListA',//路径
             data: {},
             success: function (data) {
                 var str = "";
                 if (data) {
+                    var profit = 0;
+                    var all = 0;
                     for (i = 0; i < data.length; i++) {
+                        profit = data[i]["profit"] ? Number(data[i]["profit"]) : 0;
+                        all += profit;
                         str += '<tr>' +
                             '<td>' + data[i]["proname"] + '</td>' +
-                            '<td>' + data[i]["tradetime"].replace(" 00:00:00","") + '</td>' +
+                            '<td>' + data[i]["tradetime"].replace(" 00:00:00", "") + '</td>' +
                             '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
                             '<td>' + data[i]["age"] + ' </td>' +
                             '<td>' + data[i]["sex"] + '</td>' +
-                            '<td>' + (data[i]["level"] ? data[i]["level"] : "") + '</td>' +
                             '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
+                            '<td>' + profit + '</td>' +
                             '</tr>';
                     }
                 }
@@ -305,8 +516,85 @@ Purchase: http://wrapbootstrap.com
                     str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">暂无数据</td></tr>';
                 }
 
-                $("#list").html(str);
-                inittable();
+                $("#list-a").html(str);
+                $("#profit-a").html("金额: " + all.toFixed(2));
+                inittableA();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getlistB() {
+        $.ajax({
+            type: 'POST',
+            url: '../lowerlist/getLowerListB',//路径
+            data: {},
+            success: function (data) {
+                var str = "";
+                if (data) {
+                    var profit = 0;
+                    var all = 0;
+                    for (i = 0; i < data.length; i++) {
+                        profit = data[i]["profit"] ? Number(data[i]["profit"]) : 0;
+                        all += profit;
+                        str += '<tr>' +
+                            '<td>' + data[i]["proname"] + '</td>' +
+                            '<td>' + data[i]["tradetime"].replace(" 00:00:00", "") + '</td>' +
+                            '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
+                            '<td>' + data[i]["age"] + ' </td>' +
+                            '<td>' + data[i]["sex"] + '</td>' +
+                            '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
+                            '<td>' + (data[i]["profit"] ? Number(data[i]["profit"]).toFixed(2) : "0") + '</td>' +
+                            '</tr>';
+                    }
+                }
+                if (!str) {
+                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">暂无数据</td></tr>';
+                }
+
+                $("#list-b").html(str);
+                $("#profit-b").html("金额: " + all.toFixed(2));
+                inittableB();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function getlistC() {
+        $.ajax({
+            type: 'POST',
+            url: '../lowerlist/getLowerListC',//路径
+            data: {},
+            success: function (data) {
+                var str = "";
+                if (data) {
+                    var profit = 0;
+                    var all = 0;
+                    for (i = 0; i < data.length; i++) {
+                        profit = data[i]["profit"] ? Number(data[i]["profit"]) : 0;
+                        all += profit;
+                        str += '<tr>' +
+                            '<td>' + data[i]["proname"] + '</td>' +
+                            '<td>' + data[i]["tradetime"].replace(" 00:00:00", "") + '</td>' +
+                            '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
+                            '<td>' + data[i]["age"] + ' </td>' +
+                            '<td>' + data[i]["sex"] + '</td>' +
+                            '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
+                            '<td>' + (data[i]["profit"] ? Number(data[i]["profit"]).toFixed(2) : "0") + '</td>' +
+                            '</tr>';
+                    }
+                }
+                if (!str) {
+                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">暂无数据</td></tr>';
+                }
+
+                $("#list-c").html(str);
+                $("#profit-c").html("金额: " + all.toFixed(2));
+                inittableC();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);

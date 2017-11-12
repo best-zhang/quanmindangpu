@@ -13,7 +13,7 @@ Purchase: http://wrapbootstrap.com
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>密码修改</title>
+    <title>人员列表</title>
 
     <meta name="description" content="form validation"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -33,6 +33,9 @@ Purchase: http://wrapbootstrap.com
     <link href="assets/css/typicons.min.css" rel="stylesheet"/>
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
     <link id="skin-link" href="" rel="stylesheet" type="text/css"/>
+
+    <!--Page Related styles-->
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet"/>
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
@@ -99,12 +102,12 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-detail {
-            padding-top: 50px;
-            padding-bottom: 80px;
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
 
-        #inputform .form-group {
-            margin: 30px;
+        #simpledatatable_filter, #simpledatatable_length, #simpledatatable_info {
+            display: none;
         }
 
     </style>
@@ -176,65 +179,39 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="row well well-detail">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                        <form id="inputform" method="post" action=""
-                              class="form-horizontal"
-                              data-bv-message="填写不正确"
-                              data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-                              data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-                              data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                    <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                        <thead>
+                        <tr>
+                            <th>
+                                项目名称
+                            </th>
+                            <th>
+                                日期
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                年龄
+                            </th>
+                            <th>
+                                性别
+                            </th>
+                            <th>
+                                级别
+                            </th>
+                            <th>
+                                金额
+                            </th>
+                            <th>
+                                收益
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="list">
 
-                            <div class="form-group">
-                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">当前密码:</label>
-                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
-                                    <input type="password" class="form-control input-sm" name="pwd" id="pwd"
-                                           placeholder="请输入当前密码"
-                                           data-bv-notempty="true"
-                                           data-bv-notempty-message="密码不能为空"
-                                           data-bv-stringlength="true"
-                                           data-bv-stringlength-min="1"
-                                           data-bv-stringlength-max="20"
-                                           data-bv-stringlength-message="密码长度范围为1-20字符"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">新密码:</label>
-                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
-                                    <input type="password" class="form-control" name="newpwd" id="newpwd"
-                                           placeholder="6-20字符"
-                                           data-bv-notempty="true"
-                                           data-bv-notempty-message="密码不能为空"
-                                           data-bv-stringlength="true"
-                                           data-bv-stringlength-min="6"
-                                           data-bv-stringlength-max="30"
-                                           data-bv-stringlength-message="密码长度范围为6-30字符"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">确认密码:</label>
-                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
-                                    <input type="password" class="form-control" name="confirmpwd" id="confirmpwd"
-                                           placeholder="再输入一遍"
-                                           data-bv-notempty="true"
-                                           data-bv-notempty-message="确认密码不能为空"
-                                           data-bv-identical="true"
-                                           data-bv-identical-field="newpwd"
-                                           data-bv-identical-message="确认密码与新密码不一致"
-                                           data-bv-stringlength="true"
-                                           data-bv-stringlength-min="6"
-                                           data-bv-stringlength-max="30"
-                                           data-bv-stringlength-message="密码长度范围为6-30字符"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-lg-offset-3 col-lg-8">
-                                    <input class="btn btn-palegreen" type="button" onclick="toVaild();" value="保 存"/>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -249,39 +226,98 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/beyond.min.js"></script>
 
 <!--Page Related Scripts-->
-<script src="assets/js/validation/bootstrapValidator.js"></script>
+<script src="assets/js/datatable/jquery.dataTables.min.js"></script>
+<script src="assets/js/datatable/ZeroClipboard.js"></script>
+<script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
+<script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
 <script src="assets/js/_js/home.common.js"></script>
 
 <script>
     $(document).ready(function () {
-        $("#inputform").bootstrapValidator();
+        getlist();
     });
 
-    function toVaild() {
-        $('#inputform').data('bootstrapValidator').validate();
-        if (!$('#inputform').data('bootstrapValidator').isValid()) {
-            alert("数据填写不正确,请检查");
-        } else {
-            save();
-        }
-    }
-
-    function save() {
-        $.ajax({
-            type: 'POST',
-            url: '../userpwd/changepwd',//路径
-            data: {
-                "pwd": $("#pwd").val(),
-                "newpwd": $("#newpwd").val(),
-                "confirmpwd": $("#confirmpwd").val()
+    function inittable() {
+        //Datatable Initiating
+        var oTable = $('#simpledatatable').dataTable({
+            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            "bPaginate": false,//显示（使用）分页器
+            "iDisplayLength": 15,
+            "oTableTools": {
+                "aButtons": [],
+                "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
             },
-            success: function (data) {
-                if (data) {
-                    alert(data);
+            "language": {
+                "search": "",
+                "sLengthMenu": "_MENU_",
+                "oPaginate": {
+                    "sPrevious": "往前",
+                    "sNext": "往后"
                 }
             },
+            "aoColumns": [
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                {"bSortable": false},
+                null
+            ],
+            "aaSorting": []
+        });
+
+        //Check All Functionality
+        jQuery('#simpledatatable .group-checkable').change(function () {
+            var set = $(".checkboxes");
+            var checked = jQuery(this).is(":checked");
+            jQuery(set).each(function () {
+                if (checked) {
+                    $(this).prop("checked", true);
+                    $(this).parents('tr').addClass("active");
+                } else {
+                    $(this).prop("checked", false);
+                    $(this).parents('tr').removeClass("active");
+                }
+            });
+
+        });
+        jQuery('#simpledatatable tbody tr .checkboxes').change(function () {
+            $(this).parents('tr').toggleClass("active");
+        });
+    }
+
+    function getlist() {
+        $.ajax({
+            type: 'POST',
+            url: '../loweradd/getLowerList',//路径
+            data: {},
+            success: function (data) {
+                var str = "";
+                if (data) {
+                    for (i = 0; i < data.length; i++) {
+                        str += '<tr>' +
+                            '<td>' + data[i]["proname"] + '</td>' +
+                            '<td>' + data[i]["tradetime"].replace(" 00:00:00", "") + '</td>' +
+                            '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
+                            '<td>' + data[i]["age"] + ' </td>' +
+                            '<td>' + data[i]["sex"] + '</td>' +
+                            '<td>' + (data[i]["level"] ? data[i]["level"] : "") + '</td>' +
+                            '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
+                            '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
+                            '</tr>';
+                    }
+                }
+                if (!str) {
+                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">暂无数据</td></tr>';
+                }
+
+                $("#list").html(str);
+                inittable();
+            },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("保存数据出错：" + XMLHttpRequest.status + "," + textStatus);
+                alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
             }
         });
     }

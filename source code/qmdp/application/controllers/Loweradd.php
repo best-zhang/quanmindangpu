@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Lowerlist extends CI_Controller
+class Loweradd extends CI_Controller
 {
 
     /**
@@ -22,7 +22,7 @@ class Lowerlist extends CI_Controller
     public function index()
     {
         $data['userinfo'] = $this->session->userdata('user_info_home');
-        $this->load->view('lowerlist', $data);
+        $this->load->view('loweradd', $data);
     }
 
     public function __construct()
@@ -34,40 +34,28 @@ class Lowerlist extends CI_Controller
         $this->load->database();
     }
 
-    function getLowerListA()
+    function getLowerList()
     {
         $session_user = $this->session->userdata('user_info_home');
-        $sqlselect = "SELECT t1.tradetime,t1.money,t1.money * 0.05 as profit,t2.name,if(t2.sex=0,'男','女') AS sex,t2.age,t3.name as proname,'A' as level"
+        $sqlselect = "SELECT proname,tradetime,name,age,if(sex=0,'男','女') AS sex,level,money FROM ("
+
+            . " SELECT t1.tradetime,t1.money * 0.05 as money,t2.name,t2.sex,t2.age,t3.name as proname,'A' as level"
             . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
             . " AND t1.projectid = t3.id"
-            . " AND t2.superior = {$session_user->id}";
+            . " AND t2.superior = {$session_user->id}"
+            . " UNION ALL"
 
-        $query = $this->db->query($sqlselect);
-
-        $this->response_data($query->result());
-    }
-
-    function getLowerListB()
-    {
-        $session_user = $this->session->userdata('user_info_home');
-        $sqlselect = "SELECT t1.tradetime,t1.money,t1.money * 0.03 as profit,t2.name,if(t2.sex=0,'男','女') AS sex,t2.age,t3.name as proname,'B' as level"
+            . " SELECT t1.tradetime,t1.money * 0.03 as money,t2.name,t2.sex,t2.age,t3.name as proname,'B' as level"
             . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
             . " AND t1.projectid = t3.id"
             . " AND t2.id in ("
             . " select t1.id from user t1"
             . " inner join user  t2  on t1.superior = t2.id"
-            . " where t2.superior = {$session_user->id}"
-            . " )";
+            . " where t2.superior= {$session_user->id}"
+            . " )"
+            . " UNION ALL"
 
-        $query = $this->db->query($sqlselect);
-
-        $this->response_data($query->result());
-    }
-
-    function getLowerListC()
-    {
-        $session_user = $this->session->userdata('user_info_home');
-        $sqlselect = "SELECT t1.tradetime,t1.money,t1.money * 0.02 as profit,t2.name,if(t2.sex=0,'男','女') AS sex,t2.age,t3.name as proname,'C' as level"
+            . " SELECT t1.tradetime,t1.money * 0.02 as money,t2.name,t2.sex,t2.age,t3.name as proname,'C' as level"
             . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
             . " AND t1.projectid = t3.id"
             . " AND t2.id in("
@@ -75,9 +63,10 @@ class Lowerlist extends CI_Controller
             . " inner join ("
             . " select t1.id,t1.superior from user t1"
             . " inner join user  t2 on t1.superior = t2.id"
-            . " where t2.superior = {$session_user->id}"
+            . " where t2.superior= {$session_user->id}"
             . " ) t2 on t1.superior = t2.id"
-            . " )";
+            . " )"
+            . " )m;";
 
         $query = $this->db->query($sqlselect);
 

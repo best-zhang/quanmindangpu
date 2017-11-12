@@ -73,6 +73,7 @@ Purchase: http://wrapbootstrap.com
             padding-top: 60px;
             padding-left: 50px;
             padding-right: 50px;
+            margin-top: 50px;
             border-top: 2px solid #cfcfcf;
         }
 

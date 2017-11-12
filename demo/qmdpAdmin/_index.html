@@ -49,15 +49,16 @@ Purchase: http://wrapbootstrap.com
             height: auto;
         }
 
-        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover,
-        .navbar-default .navbar-nav > .active > a:focus {
+        .navbar-default .navbar-main > .active > a, .navbar-default .navbar-main > .active > a:hover,
+        .navbar-default .navbar-main > .active > a:focus {
             color: #ff3738;
             background-color: rgba(255, 255, 255, 0);
         }
 
-        .navbar-default .navbar-nav > li > a:hover {
+        .navbar-default .navbar-main > li > a:hover {
             color: #ff000c;
             border-bottom: solid 2px #16caff;
+            padding-bottom: 13px;
         }
 
         .navbar-default .navbar-nav > li > a {
@@ -147,6 +148,18 @@ Purchase: http://wrapbootstrap.com
             background-color: #1e1e1e;
             color: #eeeeee;
         }
+
+        .dropdown .dropdown-toggle {
+            line-height: 50px;
+        }
+
+        .dropdown-menu li a {
+            color: #080808;
+        }
+
+        .dropdown-menu {
+            min-width: 120px;
+        }
     </style>
 </head>
 <!-- /Head -->
@@ -158,7 +171,7 @@ Purchase: http://wrapbootstrap.com
             <a class="navbar-brand" href="#">全民当铺</a>
         </div>
         <div>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-main">
                 <li class="active"><a href="#">首页</a></li>
                 <li><a href="#">关于我们</a></li>
                 <li><a href="_shopindex.html" target="_blank">当铺商城</a></li>
@@ -166,10 +179,24 @@ Purchase: http://wrapbootstrap.com
         </div>
 
         <div class="pull-right">
-            欢迎您，<span>库伊特</span> <span class="margin-left-10"> <a
+            <!--欢迎您，<span>库伊特</span> <span class="margin-left-10"> <a
                 href="_index.html">退出</a>
 				</span>
-            <span> <a href="_userlogin.html">登录</a> </span>
+            <span> <a href="_userlogin.html">登录</a> </span>-->
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle no-padding font-110" data-toggle="dropdown">
+                            <img src="assets/img/avatars/adam-jansen.jpg" class="img-circle margin-right-5" width="40" height="40">
+                            管理员
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人资料</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
         </div>
     </div>
 </nav>
