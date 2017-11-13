@@ -84,10 +84,11 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-nav .nav-title {
-            background-color: #0099FF;
+            background-color: #99ccff;
             font-size: 16px;
             font-weight: bold;
             padding: 5px;
+			color:#fbfbfb;
         }
 
         .well-nav .nav-link a {

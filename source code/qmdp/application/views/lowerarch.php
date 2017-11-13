@@ -92,10 +92,11 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-nav .nav-title {
-            background-color: #0099FF;
+            background-color: #99ccff;
             font-size: 16px;
             font-weight: bold;
             padding: 5px;
+			color:#fbfbfb;
         }
 
         .well-nav .nav-link a {
@@ -111,7 +112,11 @@ Purchase: http://wrapbootstrap.com
             font-family: 'Microsoft YaHei', 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
             text-align: center;
         }
-
+		
+		.total-money{
+			background-color:#99ccff;
+			color:#fbfbfb;
+		}
     </style>
 </head>
 <!-- /Head -->
@@ -181,7 +186,7 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
                 <div class="row well well-detail no-margin no-padding">
-                    <div class="row no-margin padding-20 text-align-right font-130 padding-right-40">
+                    <div class="row no-margin padding-10 text-align-right font-130 padding-right-30 total-money">
                         金额合计：￥<span><?php echo $money ?></span></div>
                     <div class="row no-margin">
                         <div class="">
@@ -210,27 +215,8 @@ Purchase: http://wrapbootstrap.com
 
 <script>
     $(document).ready(function () {
-//        getData();
         draw();
     });
-
-    function getData() {
-        $.ajax({
-            type: 'POST',
-            url: '../lowerarch/getLowerData',//路径
-            data: {},
-            //dataType: 'json',//加上会报错
-            success: function (data) {
-                if (data) {
-                    alert(data);
-                    draw(data);
-                }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("获取数据出错：状态码" + XMLHttpRequest.status + "," + textStatus);
-            }
-        });
-    }
 
     function draw() {
         var config = {
@@ -248,8 +234,7 @@ Purchase: http://wrapbootstrap.com
             // Antoher approach, same result
             // JSON approach
 
-            new
-        Treant(chart_config);
+            new  Treant(chart_config);
     }
 
 </script>

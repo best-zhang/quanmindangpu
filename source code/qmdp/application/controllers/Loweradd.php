@@ -37,28 +37,21 @@ class Loweradd extends CI_Controller
     function getLowerList()
     {
         $session_user = $this->session->userdata('user_info_home');
-        $sqlselect = "SELECT proname,tradetime,name,age,if(sex=0,'男','女') AS sex,level,money FROM ("
+        $sqlselect = "SELECT id,name,age,if(sex=0,'男','女') AS sex,tel,level FROM ("
 
-            . " SELECT t1.tradetime,t1.money * 0.05 as money,t2.name,t2.sex,t2.age,t3.name as proname,'A' as level"
-            . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
-            . " AND t1.projectid = t3.id"
-            . " AND t2.superior = {$session_user->id}"
+            . " SELECT id,name,sex,age,tel,'A' as level FROM user WHERE superior = {$session_user->id}"
             . " UNION ALL"
 
-            . " SELECT t1.tradetime,t1.money * 0.03 as money,t2.name,t2.sex,t2.age,t3.name as proname,'B' as level"
-            . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
-            . " AND t1.projectid = t3.id"
-            . " AND t2.id in ("
+            . " SELECT id,name,sex,age,tel,'B' as level"
+            . " FROM user WHERE id in ("
             . " select t1.id from user t1"
             . " inner join user  t2  on t1.superior = t2.id"
             . " where t2.superior= {$session_user->id}"
             . " )"
             . " UNION ALL"
 
-            . " SELECT t1.tradetime,t1.money * 0.02 as money,t2.name,t2.sex,t2.age,t3.name as proname,'C' as level"
-            . " FROM raisedeal t1,user t2,raise t3 WHERE t1.userid=t2.id"
-            . " AND t1.projectid = t3.id"
-            . " AND t2.id in("
+            . " SELECT id,name,sex,age,tel,'C' as level"
+            . " FROM user WHERE id in("
             . " select t1.id from user t1"
             . " inner join ("
             . " select t1.id,t1.superior from user t1"

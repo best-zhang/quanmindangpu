@@ -80,7 +80,7 @@ class Lowerarch extends CI_Controller
         }
         $res .= $config . "];";
 
-        $arr = array("data" => $res, "all" => Number_format($all,2));
+        $arr = array("data" => $res, "all" => sprintf("%.2f",$all));
         return $arr;
     }
 

@@ -90,10 +90,11 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-nav .nav-title {
-            background-color: #0099FF;
+            background-color: #99ccff;
             font-size: 16px;
             font-weight: bold;
             padding: 5px;
+			color:#fbfbfb;
         }
 
         .well-nav .nav-link a {
@@ -102,7 +103,7 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-detail {
-            padding-top: 30px;
+			padding-top: 5px;
             padding-bottom: 30px;
         }
 
@@ -179,33 +180,28 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="row well well-detail">
+				<div class="padding-10 text-align-right"><a id="addUser" href="#myModal" data-toggle="modal" data-target="#myModal">新增</a></div>
                     <table class="table table-striped table-bordered table-hover" id="simpledatatable">
                         <thead>
-                        <tr>
-                            <th>
-                                项目名称
-                            </th>
-                            <th>
-                                日期
-                            </th>
+                        <tr>                            
                             <th>
                                 姓名
                             </th>
-                            <th>
-                                年龄
-                            </th>
-                            <th>
+							<th>
                                 性别
                             </th>
                             <th>
+                                年龄
+                            </th>                            
+                            <th>
+                                联系方式
+                            </th>
+							<th>
                                 级别
                             </th>
                             <th>
-                                金额
-                            </th>
-                            <th>
-                                收益
-                            </th>
+                                操作
+                            </th>                            
                         </tr>
                         </thead>
                         <tbody id="list">
@@ -218,6 +214,82 @@ Purchase: http://wrapbootstrap.com
     </div>
 </div>
 
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					新增用户
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form id="inputform" method="post" action=""
+                              class="form-horizontal"
+                              data-bv-message="填写不正确"
+                              data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                              data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                              data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">当前密码:</label>
+                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
+                                    <input type="text" class="form-control input-sm" name="pwd" id="pwd"
+                                           placeholder="请输入当前密码"
+                                           data-bv-notempty="true"
+                                           data-bv-notempty-message="密码不能为空"
+                                           data-bv-stringlength="true"
+                                           data-bv-stringlength-min="1"
+                                           data-bv-stringlength-max="20"
+                                           data-bv-stringlength-message="密码长度范围为1-20字符"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">新密码:</label>
+                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
+                                    <input type="text" class="form-control" name="newpwd" id="newpwd"
+                                           placeholder="6-20字符"
+                                           data-bv-notempty="true"
+                                           data-bv-notempty-message="密码不能为空"
+                                           data-bv-stringlength="true"
+                                           data-bv-stringlength-min="1"
+                                           data-bv-stringlength-max="20"
+                                           data-bv-stringlength-message="密码长度范围为1-20字符"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">确认密码:</label>
+                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
+                                    <input type="text" class="form-control" name="confirmpwd" id="confirmpwd"
+                                           placeholder="再输入一遍"
+                                           data-bv-notempty="true"
+                                           data-bv-notempty-message="确认密码不能为空"
+                                           data-bv-identical="true"
+                                           data-bv-identical-field="newpwd"
+                                           data-bv-identical-message="确认密码与新密码不一致"
+                                           data-bv-stringlength="true"
+                                           data-bv-stringlength-min="1"
+                                           data-bv-stringlength-max="20"
+                                           data-bv-stringlength-message="密码长度范围为1-20字符"/>
+                                </div>
+                            </div>
+                        </form>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary" onclick="toVaild();">
+					保存
+				</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					取消
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <!--Basic Scripts-->
 <script src="assets/js/jquery-2.0.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
@@ -230,11 +302,40 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/datatable/ZeroClipboard.js"></script>
 <script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
 <script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
+<script src="assets/js/bootbox/bootbox.js"></script>
+<script src="assets/js/validation/bootstrapValidator.js"></script>
 <script src="assets/js/_js/home.common.js"></script>
 
 <script>
     $(document).ready(function () {
         getlist();
+		
+		$("#inputform").bootstrapValidator({
+			excluded:[":disabled"]//关键配置，表示只对于禁用域不进行验证，其他的表单元素都要验证
+		});
+		$("#myModal").modal('hide');
+//		$("#addUser").on('click', function () {
+//			$('#inputform').data('bootstrapValidator').validate();
+//            bootbox.dialog({
+//                message: $("#myModal").html(),
+//                title: "新增用户",
+//                //className: "modal-darkorange",
+//                buttons: {                    
+//					"保存": {
+//                        className: "btn-blue",
+//                        callback: function () { toVaild(); return false; }
+//                    },
+//                    "取消": {
+//                        className: "btn-danger",
+//                        callback: function () { }
+//                    }
+//                }
+//            });
+//        });
+		$('#myModal').on('hide.bs.modal', function () {
+             //alert('closed');
+              $('#inputform').bootstrapValidator('resetForm');
+		});
     });
 
     function inittable() {
@@ -260,10 +361,8 @@ Purchase: http://wrapbootstrap.com
                 {"bSortable": false},
                 {"bSortable": false},
                 {"bSortable": false},
-                {"bSortable": false},
-                {"bSortable": false},
-                {"bSortable": false},
-                null
+				{"bSortable": false},
+                {"bSortable": false}
             ],
             "aaSorting": []
         });
@@ -297,15 +396,13 @@ Purchase: http://wrapbootstrap.com
                 var str = "";
                 if (data) {
                     for (i = 0; i < data.length; i++) {
-                        str += '<tr>' +
-                            '<td>' + data[i]["proname"] + '</td>' +
-                            '<td>' + data[i]["tradetime"].replace(" 00:00:00", "") + '</td>' +
-                            '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
-                            '<td>' + data[i]["age"] + ' </td>' +
+                        str += '<tr>' +							
+							'<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +                            
                             '<td>' + data[i]["sex"] + '</td>' +
+                            '<td>' + data[i]["age"] + ' </td>' +                            
+							'<td>' + data[i]["tel"] + '</td>' +
                             '<td>' + (data[i]["level"] ? data[i]["level"] : "") + '</td>' +
-                            '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
-                            '<td>' + (data[i]["money"] ? Number(data[i]["money"]).toFixed(2) : "0") + '</td>' +
+							'<td>' + data[i]["id"] + '</td>' +							
                             '</tr>';
                     }
                 }
@@ -321,7 +418,17 @@ Purchase: http://wrapbootstrap.com
             }
         });
     }
-
+	
+	function toVaild() {
+        $('#inputform').data('bootstrapValidator').validate();
+        if ($('#inputform').data('bootstrapValidator').isValid()) {
+            //save();
+			alert("通过检查");
+        } else {            
+			alert("数据填写不正确,请检查");
+        }
+    }
+	
 </script>
 </body>
 <!--  /Body -->

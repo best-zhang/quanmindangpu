@@ -90,10 +90,11 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-nav .nav-title {
-            background-color: #0099FF;
+            background-color: #99ccff;
             font-size: 16px;
             font-weight: bold;
             padding: 5px;
+			color:#fbfbfb;
         }
 
         .well-nav .nav-link a {
@@ -108,13 +109,18 @@ Purchase: http://wrapbootstrap.com
 
         .well-table-title {
             padding: 10px;
-            background-color: #7ef0ff;
+            background-color: #ebf5ea;
         }
 
         .span-level {
             font-weight: bold;
             font-size: 17px;
         }
+		
+		.total-money{
+			background-color:#99ccff;
+			color:#fbfbfb;
+		}
 
         #profit-a, #profit-b, #profit-c {
             line-height: 24px;
@@ -206,6 +212,7 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="row well well-detail">
+				<div class="padding-10 padding-right-30 font-130 text-align-right total-money">金额合计：￥<?php echo $money ?></div>
                     <div class="well-table-title">
                         <div class="text-center"><span class="span-level">A级(5%)</span>
                             <span id="profit-a" class="pull-right padding-right-20">金额</span>
@@ -341,7 +348,7 @@ Purchase: http://wrapbootstrap.com
     function inittableA() {
         //Datatable Initiating
         var oTableA = $('#table-a').dataTable({
-            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            //"sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
             "bPaginate": false,//显示（使用）分页器
             "iDisplayLength": 15,
             "oTableTools": {
@@ -391,7 +398,7 @@ Purchase: http://wrapbootstrap.com
     function inittableB() {
         //Datatable Initiating
         var oTableB = $('#table-b').dataTable({
-            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            //"sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
             "bPaginate": false,//显示（使用）分页器
             "iDisplayLength": 15,
             "oTableTools": {
@@ -441,7 +448,7 @@ Purchase: http://wrapbootstrap.com
     function inittableC() {
         //Datatable Initiating
         var oTableC = $('#table-c').dataTable({
-            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            //"sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
             "bPaginate": false,//显示（使用）分页器
             "iDisplayLength": 15,
             "oTableTools": {
@@ -513,12 +520,14 @@ Purchase: http://wrapbootstrap.com
                     }
                 }
                 if (!str) {
-                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">暂无数据</td></tr>';
-                }
+                    str = '<tr class="odd"><td valign="top" colspan="7" class="dataTables_empty">暂无数据</td></tr>';
+					$("#list-a").html(str);
+                }else{
+					$("#list-a").html(str);
+					inittableA();
+				}
 
-                $("#list-a").html(str);
-                $("#profit-a").html("金额: " + all.toFixed(2));
-                inittableA();
+                $("#profit-a").html("金额: " + all.toFixed(2));                
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
@@ -551,12 +560,14 @@ Purchase: http://wrapbootstrap.com
                     }
                 }
                 if (!str) {
-                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">暂无数据</td></tr>';
-                }
+                    str = '<tr class="odd"><td valign="top" colspan="7" class="dataTables_empty">暂无数据</td></tr>';
+					$("#list-b").html(str);
+                }else{
+					$("#list-b").html(str);
+					inittableB();
+				}
 
-                $("#list-b").html(str);
-                $("#profit-b").html("金额: " + all.toFixed(2));
-                inittableB();
+                $("#profit-b").html("金额: " + all.toFixed(2));                
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
@@ -589,12 +600,14 @@ Purchase: http://wrapbootstrap.com
                     }
                 }
                 if (!str) {
-                    str = '<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">暂无数据</td></tr>';
-                }
-
-                $("#list-c").html(str);
-                $("#profit-c").html("金额: " + all.toFixed(2));
-                inittableC();
+                    str = '<tr class="odd"><td valign="top" colspan="7" class="dataTables_empty">暂无数据</td></tr>';
+					$("#list-c").html(str);
+                }else{
+					$("#list-c").html(str);
+					inittableC();
+				}
+                
+                $("#profit-c").html("金额: " + all.toFixed(2));                
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);

@@ -22,6 +22,7 @@ class Lowerlist extends CI_Controller
     public function index()
     {
         $data['userinfo'] = $this->session->userdata('user_info_home');
+		$data['money'] = $this->getLowerMoney();
         $this->load->view('lowerlist', $data);
     }
 
@@ -32,6 +33,47 @@ class Lowerlist extends CI_Controller
         $this->load->library('MYHomeController');
 
         $this->load->database();
+    }
+	
+	function getLowerMoney()
+    {
+        $session_user = $this->session->userdata('user_info_home');
+        $sqlselect = "SELECT ROUND(SUM(money),2) as money FROM ("
+
+            . " SELECT t1.money * 0.05 as money"
+            . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
+            . " AND t2.superior = {$session_user->id}"
+            . " UNION ALL"
+
+            . " SELECT t1.money * 0.03 as money"
+            . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
+            . " AND t2.id in ("
+            . " select t1.id from user t1"
+            . " inner join user  t2  on t1.superior = t2.id"
+            . " where t2.superior= {$session_user->id}"
+            . " )"
+            . " UNION ALL"
+
+            . " SELECT t1.money * 0.02 as money"
+            . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
+            . " AND t2.id in("
+            . " select t1.id from user t1"
+            . " inner join ("
+            . " select t1.id,t1.superior from user t1"
+            . " inner join user  t2 on t1.superior = t2.id"
+            . " where t2.superior= {$session_user->id}"
+            . " ) t2 on t1.superior = t2.id"
+            . " )"
+            . " )m;";
+
+        $query = $this->db->query($sqlselect);
+
+        $money = 0.00;
+        foreach ($query->result() as $row) {           
+            $money = $row->money;
+        }      
+
+        return $money;
     }
 
     function getLowerListA()
