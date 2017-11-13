@@ -94,7 +94,7 @@ Purchase: http://wrapbootstrap.com
             font-size: 16px;
             font-weight: bold;
             padding: 5px;
-			color:#fbfbfb;
+            color: #fbfbfb;
         }
 
         .well-nav .nav-link a {
@@ -103,7 +103,7 @@ Purchase: http://wrapbootstrap.com
         }
 
         .well-detail {
-			padding-top: 5px;
+            padding-top: 5px;
             padding-bottom: 30px;
         }
 
@@ -180,28 +180,29 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="row well well-detail">
-				<div class="padding-10 text-align-right"><a id="addUser" href="#myModal" data-toggle="modal" data-target="#myModal">新增</a></div>
+                    <div class="padding-10 text-align-right"><a id="addUser" href="#myModal" data-toggle="modal"
+                                                                data-target="#myModal">新增</a></div>
                     <table class="table table-striped table-bordered table-hover" id="simpledatatable">
                         <thead>
-                        <tr>                            
+                        <tr>
                             <th>
                                 姓名
                             </th>
-							<th>
+                            <th>
                                 性别
                             </th>
                             <th>
                                 年龄
-                            </th>                            
+                            </th>
                             <th>
                                 联系方式
                             </th>
-							<th>
+                            <th>
                                 级别
                             </th>
                             <th>
                                 操作
-                            </th>                            
+                            </th>
                         </tr>
                         </thead>
                         <tbody id="list">
@@ -215,80 +216,110 @@ Purchase: http://wrapbootstrap.com
 </div>
 
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
-				</button>
-				<h4 class="modal-title" id="myModalLabel">
-					新增用户
-				</h4>
-			</div>
-			<div class="modal-body">
-				<form id="inputform" method="post" action=""
-                              class="form-horizontal"
-                              data-bv-message="填写不正确"
-                              data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-                              data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-                              data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新增用户
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="inputform" method="post" action=""
+                      class="form-horizontal"
+                      data-bv-message="填写不正确"
+                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
 
-                            <div class="form-group">
-                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">当前密码:</label>
-                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
-                                    <input type="text" class="form-control input-sm" name="pwd" id="pwd"
-                                           placeholder="请输入当前密码"
-                                           data-bv-notempty="true"
-                                           data-bv-notempty-message="密码不能为空"
-                                           data-bv-stringlength="true"
-                                           data-bv-stringlength-min="1"
-                                           data-bv-stringlength-max="20"
-                                           data-bv-stringlength-message="密码长度范围为1-20字符"/>
-                                </div>
-                            </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">用户名:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
+                            <input type="text" class="form-control input-sm" name="username" id="username"
+                                   placeholder="请输入用户名"
+                                   data-bv-notempty="true"
+                                   data-bv-notempty-message="用户名不能为空"
+                                   data-bv-stringlength="true"
+                                   data-bv-stringlength-min="1"
+                                   data-bv-stringlength-max="20"
+                                   data-bv-stringlength-message="用户名长度范围为1-20字符"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">姓名:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
+                            <input type="text" class="form-control input-sm" name="uname" id="uname"
+                                   placeholder="请输入姓名"
+                                   data-bv-notempty="true"
+                                   data-bv-notempty-message="姓名不能为空"
+                                   data-bv-stringlength="true"
+                                   data-bv-stringlength-min="1"
+                                   data-bv-stringlength-max="20"
+                                   data-bv-stringlength-message="姓名长度范围为1-20字符"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">性别:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-9">
+                            <label class="radio-inline">
+                                <input name="sex" type="radio" value="0" checked="checked">
+                                <span class="text">男</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input name="sex" type="radio" value="1">
+                                <span class="text">女</span>
+                            </label>
+                            <label class="radio select2-display-none">
+                                <input name="sex" type="radio">
+                                <span class="text"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">年龄:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
+                            <input type="text" class="form-control input-sm" name="age" id="age"
+                                   placeholder=""
+                                   data-bv-message="年龄填写不正确"
+                                   data-bv-notempty="false"
+                                   data-bv-notempty-message="年龄不能为空"
+                                   data-bv-regexp="true"
+                                   data-bv-regexp-regexp="[1-9][0-9]*"
+                                   data-bv-regexp-message="年龄只允许填写数字"
+                                   data-bv-stringlength="true"
+                                   data-bv-stringlength-min="0"
+                                   data-bv-stringlength-max="5"
+                                   data-bv-stringlength-message="年龄长度范围为0-5"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">联系方式:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
+                            <input type="text" class="form-control input-sm" name="tel" id="tel"
+                                   placeholder=""
+                                   data-bv-message="联系方式格式不正确"
+                                   data-bv-stringlength="true"
+                                   data-bv-stringlength-min="1"
+                                   data-bv-stringlength-max="30"
+                                   data-bv-stringlength-message="联系方式长度范围为1-30"/>
+                        </div>
+                    </div>
 
-                            <div class="form-group">
-                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">新密码:</label>
-                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
-                                    <input type="text" class="form-control" name="newpwd" id="newpwd"
-                                           placeholder="6-20字符"
-                                           data-bv-notempty="true"
-                                           data-bv-notempty-message="密码不能为空"
-                                           data-bv-stringlength="true"
-                                           data-bv-stringlength-min="1"
-                                           data-bv-stringlength-max="20"
-                                           data-bv-stringlength-message="密码长度范围为1-20字符"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-lg-2 col-md-2 col-sm-2 control-label padding-right-5">确认密码:</label>
-                                <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
-                                    <input type="text" class="form-control" name="confirmpwd" id="confirmpwd"
-                                           placeholder="再输入一遍"
-                                           data-bv-notempty="true"
-                                           data-bv-notempty-message="确认密码不能为空"
-                                           data-bv-identical="true"
-                                           data-bv-identical-field="newpwd"
-                                           data-bv-identical-message="确认密码与新密码不一致"
-                                           data-bv-stringlength="true"
-                                           data-bv-stringlength-min="1"
-                                           data-bv-stringlength-max="20"
-                                           data-bv-stringlength-message="密码长度范围为1-20字符"/>
-                                </div>
-                            </div>
-                        </form>
-			</div>
-			<div class="modal-footer">				
-				<button type="button" class="btn btn-primary" onclick="toVaild();">
-					保存
-				</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">
-					取消
-				</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="toVaild();">
+                    保存
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!--Basic Scripts-->
 <script src="assets/js/jquery-2.0.3.min.js"></script>
@@ -309,33 +340,15 @@ Purchase: http://wrapbootstrap.com
 <script>
     $(document).ready(function () {
         getlist();
-		
-		$("#inputform").bootstrapValidator({
-			excluded:[":disabled"]//关键配置，表示只对于禁用域不进行验证，其他的表单元素都要验证
-		});
-		$("#myModal").modal('hide');
-//		$("#addUser").on('click', function () {
-//			$('#inputform').data('bootstrapValidator').validate();
-//            bootbox.dialog({
-//                message: $("#myModal").html(),
-//                title: "新增用户",
-//                //className: "modal-darkorange",
-//                buttons: {                    
-//					"保存": {
-//                        className: "btn-blue",
-//                        callback: function () { toVaild(); return false; }
-//                    },
-//                    "取消": {
-//                        className: "btn-danger",
-//                        callback: function () { }
-//                    }
-//                }
-//            });
-//        });
-		$('#myModal').on('hide.bs.modal', function () {
-             //alert('closed');
-              $('#inputform').bootstrapValidator('resetForm');
-		});
+
+        $("#inputform").bootstrapValidator({
+            excluded: [":disabled"]//关键配置，表示只对于禁用域不进行验证，其他的表单元素都要验证
+        });
+        $("#myModal").modal('hide');
+
+        $('#myModal').on('hide.bs.modal', function () {
+            $('#inputform').bootstrapValidator('resetForm');
+        });
     });
 
     function inittable() {
@@ -361,7 +374,7 @@ Purchase: http://wrapbootstrap.com
                 {"bSortable": false},
                 {"bSortable": false},
                 {"bSortable": false},
-				{"bSortable": false},
+                {"bSortable": false},
                 {"bSortable": false}
             ],
             "aaSorting": []
@@ -396,13 +409,13 @@ Purchase: http://wrapbootstrap.com
                 var str = "";
                 if (data) {
                     for (i = 0; i < data.length; i++) {
-                        str += '<tr>' +							
-							'<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +                            
+                        str += '<tr>' +
+                            '<td>' + (data[i]["name"] ? data[i]["name"] : "") + '</td>' +
                             '<td>' + data[i]["sex"] + '</td>' +
-                            '<td>' + data[i]["age"] + ' </td>' +                            
-							'<td>' + data[i]["tel"] + '</td>' +
+                            '<td>' + data[i]["age"] + ' </td>' +
+                            '<td>' + data[i]["tel"] + '</td>' +
                             '<td>' + (data[i]["level"] ? data[i]["level"] : "") + '</td>' +
-							'<td>' + data[i]["id"] + '</td>' +							
+                            '<td>' + data[i]["id"] + '</td>' +
                             '</tr>';
                     }
                 }
@@ -418,17 +431,39 @@ Purchase: http://wrapbootstrap.com
             }
         });
     }
-	
-	function toVaild() {
+
+    function toVaild() {
         $('#inputform').data('bootstrapValidator').validate();
         if ($('#inputform').data('bootstrapValidator').isValid()) {
-            //save();
-			alert("通过检查");
-        } else {            
-			alert("数据填写不正确,请检查");
+            save();
+        } else {
+            alert("数据填写不正确,请检查");
         }
     }
-	
+
+    function save() {
+        $.ajax({
+            type: 'POST',
+            url: '../loweradd/save',//路径
+            data: {
+                "id": "",
+                "username": $("#username").val(),
+                "uname": $("#uname").val(),
+                "sex": $('input:radio:checked').val(),
+                "age": $("#age").val(),
+                "tel": $("#tel").val()
+            },
+            success: function (data) {
+                if (data) {
+                    alert(data);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("保存数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
 </script>
 </body>
 <!--  /Body -->
