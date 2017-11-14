@@ -10,26 +10,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="_proset.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_proset.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="443" column="13" lean-forward="true" selection-start-line="443" selection-start-column="13" selection-end-line="443" selection-end-column="13" />
+              <folding>
+                <element signature="e#21897#22645#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>id-date-picker-1</find>
-      <find>Simple DataTable</find>
-      <find>InitiateSimpleDataTable</find>
-      <find>textarea</find>
-      <find>tActionUpload</find>
-      <find>inputForm</find>
-      <find>&lt;label class=&quot;col-lg-2 control-label padding-right-10&quot;&gt;</find>
-      <find>&lt;div class=&quot;col-lg-4 no-padding-left&quot;&gt;</find>
-      <find>&lt;label class=&quot;col-lg-2 col-md-2 col-sm-2 control-label padding-right-10&quot;&gt;</find>
-      <find>&lt;div class=&quot;col-lg-4 col-md-4 col-sm-4 no-padding-left&quot;&gt;</find>
-      <find>country</find>
-      <find>form-field-radio</find>
-      <find>I am a default well</find>
-      <find>Animated</find>
-      <find>Square Badges</find>
-      <find>registrationForm</find>
       <find>item-day</find>
       <find>javascript</find>
       <find>img-project</find>
@@ -44,6 +41,22 @@
       <find>Colored</find>
       <find>goods-type-item</find>
       <find>goods-item</find>
+      <find>controller.php</find>
+      <find>print</find>
+      <find>summernote</find>
+      <find>dropdown-menu</find>
+      <find>note-current-fontname</find>
+      <find>36</find>
+      <find>16</find>
+      <find>13</find>
+      <find>fontname</find>
+      <find>fontNames</find>
+      <find>fontSizes</find>
+      <find>toolbar</find>
+      <find>fontsize</find>
+      <find>yahei</find>
+      <find>summernote.ttf</find>
+      <find>summernote.woff</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;label class=&quot;col-lg-2 col-md-2 col-sm-2 control-label padding-right-10&quot;&gt;</replace>
@@ -70,7 +83,6 @@
         <option value="$PROJECT_DIR$/_protrade.html" />
         <option value="$PROJECT_DIR$/_goodsset.html" />
         <option value="$PROJECT_DIR$/form-inputs.html" />
-        <option value="$PROJECT_DIR$/_proset.html" />
         <option value="$PROJECT_DIR$/_userinfo.html" />
         <option value="$PROJECT_DIR$/_lowerlist.html" />
         <option value="$PROJECT_DIR$/_userpwd.html" />
@@ -86,6 +98,15 @@
         <option value="$PROJECT_DIR$/_userlogin.html" />
         <option value="$PROJECT_DIR$/_lowerarch.html" />
         <option value="$PROJECT_DIR$/_index.html" />
+        <option value="$PROJECT_DIR$/assets/js/ueditor/php/Uploader.class.php" />
+        <option value="$PROJECT_DIR$/assets/js/ueditor/ueditor.config.js" />
+        <option value="$PROJECT_DIR$/assets/js/ueditor/umeditor.config.js" />
+        <option value="$PROJECT_DIR$/assets/css/beyond.min.css" />
+        <option value="$PROJECT_DIR$/assets/js/editors/summernote/summernote.js" />
+        <option value="$PROJECT_DIR$/assets/js/editors/summernote/summernote.css" />
+        <option value="$PROJECT_DIR$/assets/css/summernote.css" />
+        <option value="$PROJECT_DIR$/assets/js/editors/summernote/summernote.min.js" />
+        <option value="$PROJECT_DIR$/_proset.html" />
       </list>
     </option>
   </component>
@@ -124,6 +145,32 @@
               <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
               <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="editors" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qmdpAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmdpAdmin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="editors" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="summernote" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -147,12 +194,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\js\ueditor" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin" />
       <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\css" />
-      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\js\magnify" />
-      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\js\piczoomer" />
-      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\js\treant" />
+      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\fonts" />
+      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\js\editors\summernote" />
+      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin\assets\js\ueditor" />
+      <recent name="E:\WorkSpace\GitHub\quanmindangpu\demo\qmdpAdmin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -210,25 +260,27 @@
       <workItem from="1510152249589" duration="15000" />
       <workItem from="1510475965558" duration="5139000" />
       <workItem from="1510616495244" duration="30000" />
+      <workItem from="1510664305259" duration="12076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131585000" />
+    <option name="totallyTimeSpent" value="143661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23472223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23472223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -249,94 +301,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_crowdtrade.html" />
-    <entry file="file://$PROJECT_DIR$/assets/js/datetime/bootstrap-datepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-339">
-          <caret line="373" column="62" lean-forward="false" selection-start-line="373" selection-start-column="62" selection-end-line="373" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_goodstradelist.html" />
-    <entry file="file://$PROJECT_DIR$/_protradelist.html" />
-    <entry file="file://$PROJECT_DIR$/assets/css/demo.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css" />
-    <entry file="file://$PROJECT_DIR$/assets/css/webuploader-style.css" />
-    <entry file="file://$PROJECT_DIR$/assets/css/fileinput.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/fileinput/fileinput.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="9" column="7757" lean-forward="false" selection-start-line="9" selection-start-column="7757" selection-end-line="9" selection-end-column="7757" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/editors/summernote/summernote.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1162">
-          <caret line="2543" column="41" lean-forward="false" selection-start-line="2543" selection-start-column="33" selection-end-line="2543" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/font-awesome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_prostatus.html" />
-    <entry file="file://$PROJECT_DIR$/assets/js/fileinput/fileinput_locale_zh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_protrade.html" />
-    <entry file="file://$PROJECT_DIR$/_goodslist.html" />
-    <entry file="file://$PROJECT_DIR$/_goodsset.html" />
-    <entry file="file://$PROJECT_DIR$/_goodstrade.html" />
-    <entry file="file://$PROJECT_DIR$/_proset.html" />
-    <entry file="file://$PROJECT_DIR$/widgets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/databoxes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10300">
-          <caret line="862" column="37" lean-forward="false" selection-start-line="862" selection-start-column="28" selection-end-line="862" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/sectional.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20100">
-          <caret line="1005" column="51" lean-forward="false" selection-start-line="1003" selection-start-column="44" selection-end-line="1005" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buttons.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17420">
@@ -517,6 +481,224 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="231" column="33" lean-forward="false" selection-start-line="231" selection-start-column="33" selection-end-line="231" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ueditor/ueditor.all.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ueditor/dialogs/map/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ueditor/php/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ueditor/ueditor.all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="8015" column="81" lean-forward="false" selection-start-line="8015" selection-start-column="67" selection-end-line="8015" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ueditor/php/Uploader.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ueditor/ueditor.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="42" column="34" lean-forward="false" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ueditor/umeditor.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="158" column="23" lean-forward="false" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form-editors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="1021" column="53" lean-forward="false" selection-start-line="1021" selection-start-column="8" selection-end-line="1021" selection-end-column="53" />
+          <folding>
+            <marker date="1510664659645" expanded="true" signature="53981:54013" ph="..." />
+            <marker date="1510664659645" expanded="true" signature="55531:55538" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/editors/summernote/lang/summernote-ar-AR.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/editors/summernote/lang/summernote-zh-CN.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/beyond.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1334" lean-forward="false" selection-start-line="0" selection-start-column="1333" selection-end-line="0" selection-end-column="1334" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/editors/summernote/summernote.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="636" column="35" lean-forward="true" selection-start-line="636" selection-start-column="7" selection-end-line="636" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/editors/summernote/lang/summernote-zh-CN.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/dataTables.bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/demo.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/beyond.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10150">
+          <caret line="0" column="16655" lean-forward="false" selection-start-line="0" selection-start-column="16655" selection-end-line="0" selection-end-column="16655" />
+          <folding>
+            <element signature="e#61902#62533#2" expanded="true" />
+            <element signature="e#80226#80857#2" expanded="true" />
+            <element signature="e#86651#87282#2" expanded="true" />
+            <element signature="e#114183#114814#2" expanded="true" />
+            <element signature="e#115878#116509#2" expanded="true" />
+            <element signature="e#117803#118434#2" expanded="true" />
+            <element signature="e#119781#120412#2" expanded="true" />
+            <element signature="e#121779#122410#2" expanded="true" />
+            <element signature="e#123792#124423#2" expanded="true" />
+            <element signature="e#125776#126407#2" expanded="true" />
+            <element signature="e#127731#128362#2" expanded="true" />
+            <element signature="e#129681#130312#2" expanded="true" />
+            <element signature="e#131689#132320#2" expanded="true" />
+            <element signature="e#133768#134399#2" expanded="true" />
+            <element signature="e#135799#136430#2" expanded="true" />
+            <element signature="e#137880#138511#2" expanded="true" />
+            <element signature="e#139904#140535#2" expanded="true" />
+            <element signature="e#141911#142542#2" expanded="true" />
+            <element signature="e#196884#197515#2" expanded="true" />
+            <element signature="e#210825#211254#1" expanded="true" />
+            <element signature="e#211506#211935#1" expanded="true" />
+            <element signature="e#231349#231980#2" expanded="true" />
+            <element signature="e#274485#275116#2" expanded="true" />
+            <element signature="e#301136#301393#1" expanded="true" />
+            <element signature="e#301583#301840#1" expanded="true" />
+            <element signature="e#313062#313693#2" expanded="true" />
+            <element signature="e#316043#316674#2" expanded="true" />
+            <element signature="e#344532#345163#2" expanded="true" />
+            <element signature="e#346793#347424#2" expanded="true" />
+            <element signature="e#352613#353244#2" expanded="true" />
+            <element signature="e#353719#354350#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/editors/summernote/summernote.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="0" column="917" lean-forward="false" selection-start-line="0" selection-start-column="917" selection-end-line="0" selection-end-column="917" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/summernote.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="0" column="152" lean-forward="false" selection-start-line="0" selection-start-column="152" selection-end-line="0" selection-end-column="152" />
+          <folding>
+            <element signature="e#8200#8457#1" expanded="true" />
+            <element signature="e#8756#9013#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/editors/summernote/summernote.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="2074" lean-forward="false" selection-start-line="5" selection-start-column="2074" selection-end-line="5" selection-end-column="2074" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_proset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="443" column="13" lean-forward="true" selection-start-line="443" selection-start-column="13" selection-end-line="443" selection-end-column="13" />
+          <folding>
+            <element signature="e#21897#22645#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

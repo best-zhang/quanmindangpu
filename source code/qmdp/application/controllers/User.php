@@ -44,14 +44,25 @@ class User extends CI_Controller
 
         $user = $this->session->userdata('user_info');
 
-        $sqladd = "INSERT INTO user(username,password,name,sex,age,tel,superior,createby,dtinsert) " .
-            "VALUES('{$username}','123456','{$uname}','{$sex}','{$age}','{$tel}',{$superior},'{$user}',NOW());";
+        $exist = null;
+        $sqlselect = "SELECT * FROM user WHERE username = '{$username}' ;";
+        $query = $this->db->query($sqlselect);
 
-        $this->db->query($sqladd);
-        if ($this->db->affected_rows() > 0) {
-            echo "保存成功";
+        foreach ($query->result() as $row) {
+            $exist = $row;
+        }
+        if ($exist) {
+            echo "该用户名已存在.";
         } else {
-            echo "保存失败";
+            $sqladd = "INSERT INTO user(username,password,name,sex,age,tel,superior,createby,dtinsert) " .
+                "VALUES('{$username}','123456','{$uname}','{$sex}','{$age}','{$tel}',{$superior},'{$user}',NOW());";
+
+            $this->db->query($sqladd);
+            if ($this->db->affected_rows() > 0) {
+                echo "保存成功";
+            } else {
+                echo "保存失败";
+            }
         }
     }
 
