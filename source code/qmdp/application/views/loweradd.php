@@ -209,6 +209,7 @@ Purchase: http://wrapbootstrap.com
 
                         </tbody>
                     </table>
+					<div class="text-center padding-10" style="color:#666666;">(注：只能修改A级用户。)</div>
                 </div>
             </div>
         </div>
@@ -242,6 +243,9 @@ Purchase: http://wrapbootstrap.com
                                    placeholder="请输入用户名"
                                    data-bv-notempty="true"
                                    data-bv-notempty-message="用户名不能为空"
+								   data-bv-regexp="true"
+                                   data-bv-regexp-regexp="[0-9a-z_-]{1,}"
+                                   data-bv-regexp-message="用户名只能填写数字,小写字母和下划线组合"
                                    data-bv-stringlength="true"
                                    data-bv-stringlength-min="1"
                                    data-bv-stringlength-max="20"
@@ -282,7 +286,7 @@ Purchase: http://wrapbootstrap.com
                         <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">年龄:</label>
                         <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
                             <input type="text" class="form-control input-sm" name="age" id="age"
-                                   placeholder=""
+                                   placeholder="请输入年龄"
                                    data-bv-message="年龄填写不正确"
                                    data-bv-notempty="false"
                                    data-bv-notempty-message="年龄不能为空"
@@ -299,7 +303,7 @@ Purchase: http://wrapbootstrap.com
                         <label class="col-lg-3 col-md-3 col-sm-3 control-label padding-right-5">联系方式:</label>
                         <div class="col-lg-6 col-md-6 col-sm-6 padding-left-5 no-padding-right">
                             <input type="text" class="form-control input-sm" name="tel" id="tel"
-                                   placeholder=""
+                                   placeholder="请输入联系方式"
                                    data-bv-message="联系方式格式不正确"
                                    data-bv-stringlength="true"
                                    data-bv-stringlength-min="1"
@@ -316,7 +320,36 @@ Purchase: http://wrapbootstrap.com
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">
                     取消
+                </button>				
+				<input type="hidden" id="userid" value="" />
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- 模态框（Modal） 删除用户-->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true"
+     data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
                 </button>
+                <h4 class="modal-title" id="delModalLabel">
+                    删除用户
+                </h4>
+            </div>
+            <div class="modal-body text-center">
+                你确定要删除该用户吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="delUser();">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>				
+				<input type="hidden" id="delid" value="" />
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -333,7 +366,6 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/datatable/ZeroClipboard.js"></script>
 <script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
 <script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
-<script src="assets/js/bootbox/bootbox.js"></script>
 <script src="assets/js/validation/bootstrapValidator.js"></script>
 <script src="assets/js/_js/home.common.js"></script>
 
@@ -345,16 +377,30 @@ Purchase: http://wrapbootstrap.com
             excluded: [":disabled"]//关键配置，表示只对于禁用域不进行验证，其他的表单元素都要验证
         });
         $("#myModal").modal('hide');
+		$("#delModal").modal('hide');
 
         $('#myModal').on('hide.bs.modal', function () {
-            $('#inputform').bootstrapValidator('resetForm');
+			$("#userid").val("");
+			$("#username").val("");
+			$("#uname").val("");
+			$("#age").val("");
+			$("#tel").val("");
+			$("input[name='sex'][value=0]").prop("checked",true);
+			
+			getlist();
+            $('#inputform').bootstrapValidator('resetForm');			
+        });
+		
+		$('#delModal').on('hide.bs.modal', function () {			
+			getlist();
         });
     });
 
     function inittable() {
         //Datatable Initiating
         var oTable = $('#simpledatatable').dataTable({
-            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            //"sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+			"retrieve":true,
             "bPaginate": false,//显示（使用）分页器
             "iDisplayLength": 15,
             "oTableTools": {
@@ -415,7 +461,9 @@ Purchase: http://wrapbootstrap.com
                             '<td>' + data[i]["age"] + ' </td>' +
                             '<td>' + data[i]["tel"] + '</td>' +
                             '<td>' + (data[i]["level"] ? data[i]["level"] : "") + '</td>' +
-                            '<td>' + data[i]["id"] + '</td>' +
+							(data[i]["level"]=="A"?
+                            ('<td> <a href="javascript:void(0);" onclick="update(' + data[i]["id"] + ',\'' + data[i]["username"] + '\',\'' + data[i]["name"] + '\',\'' + data[i]["sex"] + '\',' + data[i]["age"] + ',\'' + data[i]["tel"] + '\')">修改</a>/<a href="javascript:void(0);" onclick="del(' + data[i]["id"] + ')">删除</a></td>')
+							: "<td>不可操作</td>") +
                             '</tr>';
                     }
                 }
@@ -446,7 +494,7 @@ Purchase: http://wrapbootstrap.com
             type: 'POST',
             url: '../loweradd/save',//路径
             data: {
-                "id": "",
+                "id": $("#userid").val(),
                 "username": $("#username").val(),
                 "uname": $("#uname").val(),
                 "sex": $('input:radio:checked').val(),
@@ -456,6 +504,9 @@ Purchase: http://wrapbootstrap.com
             success: function (data) {
                 if (data) {
                     alert(data);
+					if(data.indexOf("成功") >= 0){
+						$('#myModal').modal('hide');
+					}
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -463,6 +514,47 @@ Purchase: http://wrapbootstrap.com
             }
         });
     }
+	
+	function update(id,username,uname,sex,age,tel){
+		$('#myModal').modal('show');
+		
+		$("#userid").val(id);
+		$("#username").val(username);
+		$("#uname").val(uname);
+		$("#age").val(age);
+		$("#tel").val(tel);
+		
+		if(sex=="男"){
+			$("input[name='sex'][value=0]").prop("checked",true);
+			//$("input[name='sex'][value=1]").removeAttr("checked");
+		}else{
+			$("input[name='sex'][value=1]").prop("checked",true);
+			//$("input[name='sex'][value=0]").removeAttr("checked");
+		}
+	}
+	function del(id){
+		$("#delid").val(id);
+		$('#delModal').modal('show');
+	}
+	
+	function delUser(){
+		$.ajax({
+            type: 'POST',
+            url: '../loweradd/delUser',//路径
+            data: {
+                "id": $("#delid").val()
+            },
+            success: function (data) {
+                if (data) {
+                    alert(data);
+					$('#delModal').modal('hide');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("删除用户出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+	}
 
 </script>
 </body>

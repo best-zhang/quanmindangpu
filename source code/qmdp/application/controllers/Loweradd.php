@@ -37,12 +37,12 @@ class Loweradd extends CI_Controller
     function getLowerList()
     {
         $session_user = $this->session->userdata('user_info_home');
-        $sqlselect = "SELECT id,name,age,if(sex=0,'男','女') AS sex,tel,level FROM ("
+        $sqlselect = "SELECT id,username,name,age,if(sex=0,'男','女') AS sex,tel,level FROM ("
 
-            . " SELECT id,name,sex,age,tel,'A' as level FROM user WHERE superior = {$session_user->id}"
+            . " SELECT id,username,name,sex,age,tel,'A' as level FROM user WHERE superior = {$session_user->id}"
             . " UNION ALL"
 
-            . " SELECT id,name,sex,age,tel,'B' as level"
+            . " SELECT id,username,name,sex,age,tel,'B' as level"
             . " FROM user WHERE id in ("
             . " select t1.id from user t1"
             . " inner join user  t2  on t1.superior = t2.id"
@@ -50,7 +50,7 @@ class Loweradd extends CI_Controller
             . " )"
             . " UNION ALL"
 
-            . " SELECT id,name,sex,age,tel,'C' as level"
+            . " SELECT id,username,name,sex,age,tel,'C' as level"
             . " FROM user WHERE id in("
             . " select t1.id from user t1"
             . " inner join ("
@@ -64,6 +64,62 @@ class Loweradd extends CI_Controller
         $query = $this->db->query($sqlselect);
 
         $this->response_data($query->result());
+    }
+	
+	function save()
+    {
+		$id = trim($_POST['id']);
+        $username = trim($_POST['username']);
+        $uname = trim($_POST['uname']);
+        $sex = trim($_POST['sex']);
+        $age = trim($_POST['age']);
+        $tel = trim($_POST['tel']);
+
+        $user = $this->session->userdata('user_info_home');
+
+		$exist = null;
+		if(!$id){
+			$sqlselect = "SELECT * FROM user WHERE username = '{$username}' ;";
+			$query = $this->db->query($sqlselect);			
+			
+			foreach ($query->result() as $row) {
+				$exist = $row;
+			}			
+		}
+		if ($exist) {
+			echo "该用户名已存在.";
+		}
+		else{
+			$sql = "";
+			if(!$id){
+				$sql = "INSERT INTO user(username,password,name,sex,age,tel,superior,createby,dtinsert) " .
+					"VALUES('{$username}','123456','{$uname}','{$sex}','{$age}','{$tel}',{$user->id},'{$user->name}',NOW());";
+			}else{
+				$sql = "UPDATE user SET username='{$username}',name='{$uname}',sex='{$sex}',age='{$age}',tel='{$tel}' WHERE id = {$id} AND superior = {$user->id} ;";
+			}
+
+			$this->db->query($sql);
+			if ($this->db->affected_rows() > 0) {
+				echo "保存成功";
+			} else {
+				echo "保存失败";
+			}
+		}
+    }
+	
+	function delUser()
+    {
+		$id = trim($_POST['id']);
+        $user = $this->session->userdata('user_info_home');		
+
+		$sql = "DELETE FROM user WHERE id = {$id} AND superior = {$user->id} ;";
+			
+		$this->db->query($sql);
+		if ($this->db->affected_rows() > 0) {
+			echo "删除成功";
+		} else {
+			echo "删除失败";
+		}
     }
 
     /**
