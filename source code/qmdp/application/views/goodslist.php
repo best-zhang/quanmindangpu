@@ -95,7 +95,7 @@ Purchase: http://wrapbootstrap.com
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="login.html">
+                                    <a href="../login">
                                         退 出
                                     </a>
                                 </li>
@@ -359,7 +359,7 @@ Purchase: http://wrapbootstrap.com
                     for (i = 0; i < data.length; i++) {
                         data = eval(data);
                         str += '<tr>' +
-                            '<td> title="' + data[i]["proname"] + '">' + (data[i]["proname"] ? data[i]["proname"] : "") + '</td>' +
+                            '<td title="' + data[i]["proname"] + '">' + (data[i]["proname"] ? data[i]["proname"] : "") + '</td>' +
                             '<td title="' + data[i]["name"] + '">' + data[i]["name"].substr(0, 20) + '</td>' +
                             '<td>' + (data[i]["goodscode"] ? data[i]["goodscode"].substr(0, 15) : "") + '</td>' +
                             '<td>' + data[i]["price"] + ' </td>' +
