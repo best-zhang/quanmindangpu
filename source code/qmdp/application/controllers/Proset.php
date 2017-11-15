@@ -53,6 +53,27 @@ class Proset extends CI_Controller
 
     }
 
+    public function uploaddetailimg()
+    {
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 10*1024;
+        $config['max_width'] = 2000;
+        $config['max_height'] = 2000;
+        $config['file_name'] = time(); //文件名不使用原始名
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('files')) {
+            $error = array('error' => $this->upload->display_errors());
+            $this->response_data($error);
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+            $this->response_data($data);
+        }
+
+    }
+
     function save()
     {
         $name = trim($_POST['proname']);

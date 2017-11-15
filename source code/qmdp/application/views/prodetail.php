@@ -122,6 +122,19 @@ Purchase: http://wrapbootstrap.com
             background-color: #1e1e1e;
             color: #eeeeee;
         }
+
+        #toast-container > div {
+            padding: 0px;
+            width: auto;
+            -webkit-opacity: 1;
+            -moz-opacity: 1;
+            opacity: 1;
+        }
+
+        .toast-top-right {
+            top: 120px;
+            right: 30px;
+        }
     </style>
 </head>
 <!-- /Head -->
@@ -130,7 +143,7 @@ Purchase: http://wrapbootstrap.com
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header margin-right-50">
-            <a class="navbar-brand" href="#">全民当铺</a>
+            <a class="navbar-brand" href="home">全民当铺</a>
         </div>
         <div>
             <ul class="nav navbar-nav">
@@ -162,7 +175,7 @@ Purchase: http://wrapbootstrap.com
                     <i class="fa fa-map-marker"></i> 地址：<?php echo $proinfo->title ?>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-left-20">
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 padding-left-20">
                 <div class="font-200 padding-bottom-10"><?php echo $proinfo->name ?></div>
                 <div class="font-110 padding-bottom-10"><?php echo $proinfo->instruction ?></div>
                 <div class="progress">
@@ -190,17 +203,8 @@ Purchase: http://wrapbootstrap.com
         </div>
         <div class="row margin-top-20">
             <div class="font-140 padding-10">关于这个项目</div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                 <?php echo $proinfo->detail ?>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <div class="well bg-blue padding-left-50">
-                    <div class="font-160">项目咨询</div>
-                    <div class="font-120 padding-top-10 margin-top-10">电话号码：<span><?php echo $proinfo->tel ?></span>
-                    </div>
-                    <div class="font-120 padding-top-5">微信：<span><?php echo $proinfo->weixin ?></span></div>
-                    <div class="font-120 padding-top-5">QQ：<span><?php echo $proinfo->qq ?></span></div>
-                </div>
             </div>
         </div>
     </div>
@@ -212,8 +216,7 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <ul class="list-unstyled">
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">关于我们</a></li>
+                    <li><a href="bout">关于我们</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
@@ -229,7 +232,20 @@ Purchase: http://wrapbootstrap.com
         Copyright © 2017 qmdp168.com
     </div>
 </div>
-
+<div id="toast-container" class="toast-top-right">
+    <div class="toast toast-blue">
+        <div class="toast-message">
+            <div class="well bg-blue padding-left-40 padding-right-30">
+                <div class="font-160">项目咨询</div>
+                <div class="font-120 padding-top-10 margin-top-10">
+                    电话号码：<span><?php echo $proinfo->tel ?></span>
+                </div>
+                <div class="font-120 padding-top-5">微信：<span><?php echo $proinfo->weixin ?></span></div>
+                <div class="font-120 padding-top-5">QQ：<span><?php echo $proinfo->qq ?></span></div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--Basic Scripts-->
 <script src="assets/js/jquery-2.0.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>

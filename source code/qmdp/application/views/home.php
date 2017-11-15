@@ -109,6 +109,10 @@ Purchase: http://wrapbootstrap.com
             padding: 8px;
         }
 
+        .well {
+            box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+        }
+
         .well .row div {
             font-size: 14px;
         }
@@ -372,7 +376,7 @@ Purchase: http://wrapbootstrap.com
                             '<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">' +
                             '<div class="margin-top-5">剩余时间</div>' +
                             '<div>' +
-                            '<span class="item-day">' + data[i]["remianday"] + '</span>天' +
+                            '<span class="item-day">' + (Number(data[i]["remianday"]) >= 0 ? data[i]["remianday"] : "0") + '</span>天' +
                             '</div>' +
                             '</div>' +
                             '</div>' +

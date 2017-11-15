@@ -399,9 +399,6 @@ Purchase: http://wrapbootstrap.com
                             </div>
                         </div>
                         <div class="form-group">
-                            <input id="discrible" class="select2-display-none" name="discrible" value="">
-                        </div>
-                        <div class="form-group">
                             <div class="col-lg-offset-4 col-lg-8">
                                 <input class="btn btn-palegreen" type="button" onclick="toVaild();" value="提 交"/>
                             </div>
@@ -441,9 +438,15 @@ Purchase: http://wrapbootstrap.com
             fontNames: ['微软雅黑', '宋体', '黑体', '新宋体', '楷体', '隶书', '幼圆', '华文细黑',
                 '华文行楷', '华文新魏', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
             fontSizes: ["8", "9", "10", "11", "12", "13", "14", "18", "24", "36", "48", "56"],
-            toolbar: [["style", ["style"]], ["font", ["bold", "italic", "strikethrough", "underline", "clear"]], ["fontname", ["fontname"]], ['fontsize', ['fontsize']], ["color", ["color"]], ["para", ["ul", "ol", "paragraph"]], ["table", ["table"]], ["insert", ["hr", "link", "picture"]], ["view", ["fullscreen", "codeview", "help"]]]
+            toolbar: [["style", ["style"]], ["font", ["bold", "italic", "strikethrough", "underline", "clear"]], ["fontname", ["fontname"]], ['fontsize', ['fontsize']], ["color", ["color"]], ["para", ["ul", "ol", "paragraph"]], ["table", ["table"]], ["insert", ["hr", "link", "picture"]], ["view", ["fullscreen", "codeview", "help"]]],
+            callbacks: {
+                onImageUpload: function (files, editor, $editable) {
+                    sendFile(files);
+                }
+            }
         });
     });
+
     //初始化上传插件
     $("#img_url").fileinput({
         language: 'zh',
@@ -501,8 +504,6 @@ Purchase: http://wrapbootstrap.com
     }
 
     function toVaild() {
-        $("#discrible").val($("#editor").html());
-
         $('#inputform').data('bootstrapValidator').validate();
         if (!$('#inputform').data('bootstrapValidator').isValid()) {
             alert("数据填写不正确,请检查");
@@ -526,7 +527,7 @@ Purchase: http://wrapbootstrap.com
                 "frommoney": $("#frommoney").val(),
                 "imgs": $("#imgs").val(),
                 "remainday": $("#remainday").val(),
-                "discrible": $("#discrible").val()
+                "discrible": $('#summernote').summernote('code')
             },
             success: function (data) {
                 if (data) {
@@ -535,6 +536,28 @@ Purchase: http://wrapbootstrap.com
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("保存数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function sendFile(files, editor, $editable) {
+        var data = new FormData();
+        data.append("files", files[0]);
+        $.ajax({
+            data: data,
+            type: "POST",
+            url: "../proset/uploaddetailimg", //上传图片请求的路径
+            cache: false,
+            contentType: false,
+            processData: false,
+            //dataType : "json",
+            success: function (data) {//data是返回的hash,key之类的值，key是定义的文件名
+                if (data && data.upload_data) {
+                    $('#summernote').summernote('insertImage', "../uploads/" + data.upload_data.file_name);
+                }
+            },
+            error: function () {
+                alert("上传失败");
             }
         });
     }

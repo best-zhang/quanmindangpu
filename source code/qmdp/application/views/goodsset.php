@@ -38,6 +38,7 @@ Purchase: http://wrapbootstrap.com
     <script src="assets/js/skins.min.js"></script>
 
     <link href="assets/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/summernote.css" rel="stylesheet" type="text/css">
 
     <style type="text/css">
         .page-body {
@@ -406,70 +407,9 @@ Purchase: http://wrapbootstrap.com
                         <div class="input-group-title">商品描述</div>
                         <div class="form-group">
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                            <div class="col-lg-10">
-                                <div id="alerts"></div>
-                                <div class="btn-toolbar wysiwyg-toolbar" data-role="editor-toolbar"
-                                     data-target="#editor">
-                                    <div class="btn-group">
-                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                           title="字体"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                        <ul class="dropdown-menu"></ul>
-                                    </div>
-                                    <div class="btn-group">
-                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                           title="字号"><i class="fa fa-text-height"></i>&nbsp;<b
-                                                    class="caret"></b></a>
-                                        <ul class="dropdown-menu dropdown-default">
-                                            <li><a data-edit="fontSize 5"><font size="5">大</font></a></li>
-                                            <li><a data-edit="fontSize 3"><font size="3">中</font></a></li>
-                                            <li><a data-edit="fontSize 1"><font size="1">小</font></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="btn-group">
-                                        <a class="btn btn-default" data-edit="bold" title="粗体 (Ctrl/Cmd+B)"><i
-                                                    class="fa fa-bold"></i></a>
-                                        <a class="btn btn-default" data-edit="italic" title="斜体 (Ctrl/Cmd+I)"><i
-                                                    class="fa fa-italic"></i></a>
-                                        <a class="btn btn-default" data-edit="strikethrough" title="删除线"><i
-                                                    class="fa fa-strikethrough"></i></a>
-                                        <a class="btn btn-default" data-edit="underline" title="下划线 (Ctrl/Cmd+U)"><i
-                                                    class="fa fa-underline"></i></a>
-                                    </div>
-                                    <div class="btn-group">
-                                        <a class="btn btn-default" data-edit="insertunorderedlist"
-                                           title="圆点编号"><i class="fa fa-list-ul"></i></a>
-                                        <a class="btn btn-default" data-edit="insertorderedlist" title="数字编号"><i
-                                                    class="fa fa-list-ol"></i></a>
-                                        <a class="btn btn-default" data-edit="outdent"
-                                           title="去掉缩进 (Shift+Tab)"><i class="fa fa-outdent"></i></a>
-                                        <a class="btn btn-default" data-edit="indent" title="增加缩进 (Tab)"><i
-                                                    class="fa fa-indent"></i></a>
-                                    </div>
-                                    <div class="btn-group">
-                                        <a class="btn btn-default" data-edit="justifyleft"
-                                           title="居左 (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                        <a class="btn btn-default" data-edit="justifycenter"
-                                           title="居中 (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                        <a class="btn btn-default" data-edit="justifyright"
-                                           title="居右 (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                        <a class="btn btn-default" data-edit="justifyfull" title="自适应 (Ctrl/Cmd+J)"><i
-                                                    class="fa fa-align-justify"></i></a>
-                                    </div>
-                                    <div class="btn-group">
-                                        <a class="btn btn-default" data-edit="undo" title="撤销 (Ctrl/Cmd+Z)"><i
-                                                    class="fa fa-undo"></i></a>
-                                        <a class="btn btn-default" data-edit="redo" title="前进 (Ctrl/Cmd+Y)"><i
-                                                    class="fa fa-repeat"></i></a>
-                                    </div>
-                                    <input type="text" data-edit="inserttext" class="wysiwyg-voiceBtn" id="voiceBtn"
-                                           x-webkit-speech="">
-                                </div>
-                                <div class="wysiwyg-editor" id="editor">
-                                </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-10">
+                                <div id="summernote"></div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <input id="discrible" class="select2-display-none" name="discrible" value="">
                         </div>
                         <div class="form-group">
                             <div class="col-lg-offset-5 col-lg-8 col-md-offset-5 col-md-8">
@@ -495,66 +435,9 @@ Purchase: http://wrapbootstrap.com
 <script src="assets/js/beyond.min.js"></script>
 
 <!--Page Related Scripts-->
-<!--Bootstrap  wysiwig Scripts-->
-<script src="assets/js/editors/wysiwyg/jquery.hotkeys.js"></script>
-<script src="assets/js/editors/wysiwyg/prettify.js"></script>
-<script src="assets/js/editors/wysiwyg/bootstrap-wysiwyg.js"></script>
-<script>
-    $(function () {
-        function initToolbarBootstrapBindings() {
-            var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
-                    'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
-                    'Times New Roman', 'Verdana'],
-                fontTarget = $('[title=Font]').siblings('.dropdown-menu');
-            $.each(fonts, function (idx, fontName) {
-                fontTarget.append($('<li><a data-edit="fontName ' + fontName + '" style="font-family:\'' + fontName + '\'">' + fontName + '</a></li>'));
-            });
-            $('a[title]').tooltip({container: 'body'});
-            $('.dropdown-menu input').click(function () {
-                return false;
-            })
-                .change(function () {
-                    $(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');
-                })
-                .keydown('esc', function () {
-                    this.value = '';
-                    $(this).change();
-                });
-
-            $('[data-role=magic-overlay]').each(function () {
-                var overlay = $(this), target = $(overlay.data('target'));
-                overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
-            });
-            if ("onwebkitspeechchange" in document.createElement("input")) {
-                var editorOffset = $('#editor').offset();
-                $('#voiceBtn').css('position', 'absolute').offset({
-                    top: editorOffset.top,
-                    left: editorOffset.left + $('#editor').innerWidth() - 35
-                });
-            } else {
-                $('#voiceBtn').hide();
-            }
-        };
-
-        function showErrorAlert(reason, detail) {
-            var msg = '';
-            if (reason === 'unsupported-file-type') {
-                msg = "Unsupported format " + detail;
-            }
-            else {
-                console.log("error uploading file", reason, detail);
-            }
-            $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
-        };
-        initToolbarBootstrapBindings();
-        $('.wysiwyg-editor').wysiwyg({fileUploadError: showErrorAlert});
-        window.prettyPrint && prettyPrint();
-    });
-</script>
-
 <!--Summernote Scripts-->
-<script src="assets/js/editors/summernote/summernote.js"></script>
+<script src="assets/js/editors/summernote/summernote.min.js"></script>
+<script src="assets/js/editors/summernote/lang/summernote-zh-CN.min.js"></script>
 <script src="assets/js/validation/bootstrapValidator.js"></script>
 
 <script src="assets/js/fileinput/fileinput.min.js"></script>
@@ -565,6 +448,20 @@ Purchase: http://wrapbootstrap.com
         getpros();
         getgtype();
         getbasetype();
+
+        //设置富文本编辑器
+        $('#summernote').summernote({
+            minheight: 300, height: 350, lang: 'zh-CN',
+            fontNames: ['微软雅黑', '宋体', '黑体', '新宋体', '楷体', '隶书', '幼圆', '华文细黑',
+                '华文行楷', '华文新魏', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+            fontSizes: ["8", "9", "10", "11", "12", "13", "14", "18", "24", "36", "48", "56"],
+            toolbar: [["style", ["style"]], ["font", ["bold", "italic", "strikethrough", "underline", "clear"]], ["fontname", ["fontname"]], ['fontsize', ['fontsize']], ["color", ["color"]], ["para", ["ul", "ol", "paragraph"]], ["table", ["table"]], ["insert", ["hr", "link", "picture"]], ["view", ["fullscreen", "codeview", "help"]]],
+            callbacks: {
+                onImageUpload: function (files, editor, $editable) {
+                    sendFile(files);
+                }
+            }
+        });
     });
     //初始化上传插件
     $("#img_url").fileinput({
@@ -623,8 +520,6 @@ Purchase: http://wrapbootstrap.com
     }
 
     function toVaild() {
-        $("#discrible").val($("#editor").html());
-
         $('#inputform').data('bootstrapValidator').validate();
         if (!$('#inputform').data('bootstrapValidator').isValid()) {
             alert("数据填写不正确,请检查");
@@ -651,7 +546,7 @@ Purchase: http://wrapbootstrap.com
                 "weight": $("#weight").val(),
                 "material": $("#material").val(),
                 "imgs": $("#imgs").val(),
-                "discrible": $("#discrible").val()
+                "discrible": $('#summernote').summernote('code')
             },
             success: function (data) {
                 if (data) {
@@ -723,6 +618,28 @@ Purchase: http://wrapbootstrap.com
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("获取项目数据出错：" + XMLHttpRequest.status + "," + textStatus);
+            }
+        });
+    }
+
+    function sendFile(files, editor, $editable) {
+        var data = new FormData();
+        data.append("files", files[0]);
+        $.ajax({
+            data: data,
+            type: "POST",
+            url: "../proset/uploaddetailimg", //上传图片请求的路径
+            cache: false,
+            contentType: false,
+            processData: false,
+            //dataType : "json",
+            success: function (data) {//data是返回的hash,key之类的值，key是定义的文件名
+                if (data && data.upload_data) {
+                    $('#summernote').summernote('insertImage', "../uploads/" + data.upload_data.file_name);
+                }
+            },
+            error: function () {
+                alert("上传失败");
             }
         });
     }

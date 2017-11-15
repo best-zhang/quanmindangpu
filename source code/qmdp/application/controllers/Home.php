@@ -35,7 +35,7 @@ class Home extends CI_Controller
 
     function getProList0()
     {
-        $sqlselect = "SELECT id,name,title,target,minimum,DATEDIFF(dtend,NOW()) AS remianday,cover,completed,prostatus FROM raise WHERE prostatus = 0; ";
+        $sqlselect = "SELECT id,name,title,target,minimum,DATEDIFF(dtend,NOW()) AS remianday,cover,completed,prostatus FROM raise WHERE prostatus = 0 ORDER BY id DESC ; ";
 
         $query = $this->db->query($sqlselect);
 
@@ -44,7 +44,7 @@ class Home extends CI_Controller
 
     function getProList1()
     {
-        $sqlselect = "SELECT id,name,title,target,minimum,DATEDIFF(dtend,NOW()) AS remianday,cover,completed,prostatus FROM raise WHERE prostatus = 1; ";
+        $sqlselect = "SELECT id,name,title,target,minimum,DATEDIFF(dtend,NOW()) AS remianday,cover,completed,prostatus FROM raise WHERE prostatus = 1 ORDER BY id DESC ; ";
 
         $query = $this->db->query($sqlselect);
 
@@ -53,7 +53,7 @@ class Home extends CI_Controller
 
     function getProList2()
     {
-        $sqlselect = "SELECT id,name,title,target,minimum,DATEDIFF(dtend,NOW()) AS remianday,cover,completed,prostatus FROM raise WHERE prostatus = 2; ";
+        $sqlselect = "SELECT id,name,title,target,minimum,DATEDIFF(dtend,NOW()) AS remianday,cover,completed,prostatus FROM raise WHERE prostatus = 2 ORDER BY id DESC ; ";
 
         $query = $this->db->query($sqlselect);
 

@@ -302,7 +302,7 @@ Purchase: http://wrapbootstrap.com
         var oTable = $('#simpledatatable').dataTable({
             "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
             "bPaginate": true,//显示（使用）分页器
-            "iDisplayLength": 10,
+            "iDisplayLength": 15,
             "oTableTools": {
                 "aButtons": [],
                 "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
@@ -357,12 +357,13 @@ Purchase: http://wrapbootstrap.com
                 var str = "";
                 if (data) {
                     for (i = 0; i < data.length; i++) {
-                        str += '<tr lid="' + data[i]["id"] + '">' +
-                            '<td>' + data[i]["name"] + '</td>' +
-                            '<td>' + (data[i]["goodscode"] ? data[i]["goodscode"] : "") + '</td>' +
+                        data = eval(data);
+                        str += '<tr>' +
+                            '<td> title="' + data[i]["proname"] + '">' + (data[i]["proname"] ? data[i]["proname"] : "") + '</td>' +
+                            '<td title="' + data[i]["name"] + '">' + data[i]["name"].substr(0, 20) + '</td>' +
+                            '<td>' + (data[i]["goodscode"] ? data[i]["goodscode"].substr(0, 15) : "") + '</td>' +
                             '<td>' + data[i]["price"] + ' </td>' +
                             '<td>' + data[i]["integral"] + '</td>' +
-                            '<td>' + (data[i]["proname"] ? data[i]["proname"] : "") + '</td>' +
                             '<td>' + (data[i]["protype"] ? data[i]["protype"] : "") + '</td>' +
                             '<td>' + (data[i]["basetype"] ? data[i]["basetype"] : "") + '</td>' +
                             '<td><a href="javascript:void(0)" onclick="del(' + data[i]["id"] + ')">删除</a>' + '</td>' +
