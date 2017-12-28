@@ -368,7 +368,7 @@ Purchase: http://wrapbootstrap.com
                             + 'style="background-image: url(uploads/' + img + ');">'
                             + '</div>'
                             + '</a>'
-                            + '<div class="text-center font-120 goods-name">'
+                            + '<div title="' + data[i]["name"] + '" class="text-center font-120 goods-name">'
                             + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 13) + "...") : data[i]["name"])
                             + '</div>'
                             + '<div class="padding-5 text-center goods-price">'

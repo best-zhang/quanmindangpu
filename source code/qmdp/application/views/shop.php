@@ -152,6 +152,16 @@ Purchase: http://wrapbootstrap.com
             background-color: #1e1e1e;
             color: #eeeeee;
         }
+
+        .goods-name {
+            padding-top: 10px;
+        }
+
+        .goods-price {
+            padding-top: 10px;
+            color: #ff000c;
+            font-weight: bold;
+        }
     </style>
 </head>
 <!-- /Head -->
@@ -366,8 +376,10 @@ Purchase: http://wrapbootstrap.com
                             + 'style="background-image: url(uploads/' + img + ');">'
                             + '</div>'
                             + '</a>'
-                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
-                            + '<div class="padding-5 text-center goods-price">'
+                            + '<div title="' + data[i]["name"] + '" class="text-center font-120 goods-name">'
+                            + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 13) + "...") : data[i]["name"])
+                            + '</div>'
+                            + '<div class="padding-10 text-center goods-price">'
                             + '￥<span>' + data[i]["price"] + '</span>'
                             + '</div>'
                             + '</div>'
@@ -405,8 +417,10 @@ Purchase: http://wrapbootstrap.com
                             + 'style="background-image: url(uploads/' + img + ');">'
                             + '</div>'
                             + '</a>'
-                            + '<div class="text-center font-120 goods-name">' + data[i]["name"] + '</div>'
-                            + '<div class="padding-5 text-center goods-price">'
+                            + '<div title="' + data[i]["name"] + '" class="text-center font-120 goods-name">'
+                            + (data[i]["name"].length > 15 ? (data[i]["name"].substr(0, 13) + "...") : data[i]["name"])
+                            + '</div>'
+                            + '<div class="padding-10 text-center goods-price">'
                             + '￥<span>' + data[i]["price"] + '</span>'
                             + '</div>'
                             + '</div>'

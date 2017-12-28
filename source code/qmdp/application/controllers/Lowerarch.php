@@ -40,33 +40,31 @@ class Lowerarch extends CI_Controller
     function getLowerData()
     {
         $session_user = $this->session->userdata('user_info_home');
-        $sqlselect = "SELECT name,superior,ROUND(SUM(money),2) as money,id FROM ("
-
-            . " SELECT t1.money * 0.05 as money,t2.name,t2.superior,t2.id"
-            . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
-            . " AND t2.superior = {$session_user->id}"
+        $sqlselect = "SELECT name,superior,IFNULL(ROUND(money,2),'0') as money,id FROM("
+            . " SELECT t1.id,t1.name,t1.superior,SUM(t2.money)*0.05 AS money"
+            . " FROM user t1 LEFT OUTER JOIN raisedeal t2 ON t1.id = t2.userid"
+            . " WHERE t1.superior = 1"
+            . " GROUP BY t1.id,t1.name,t1.superior"
             . " UNION ALL"
-
-            . " SELECT t1.money * 0.03 as money,t2.name,t2.superior,t2.id"
-            . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
-            . " AND t2.id in ("
-            . " select t1.id from user t1"
-            . " inner join user  t2  on t1.superior = t2.id"
-            . " where t2.superior= {$session_user->id}"
-            . " )"
+            . " SELECT t1.id,t1.name,t1.superior,SUM(t2.money)*0.03 AS money FROM user t1 "
+            . " LEFT OUTER JOIN raisedeal t2 ON t1.id = t2.userid"
+            . " WHERE t1.id IN("
+            . " SELECT t1.id FROM	user t1"
+            . " INNER JOIN user t2 ON t1.superior = t2.id"
+            . " WHERE	t2.superior = 1"
+            . " )GROUP BY t1.id,t1.name,t1.superior"
             . " UNION ALL"
-
-            . " SELECT t1.money * 0.02 as money,t2.name,t2.superior,t2.id"
-            . " FROM raisedeal t1,user t2 WHERE t1.userid=t2.id"
-            . " AND t2.id in("
+            . " SELECT t1.id,t1.name,t1.superior,SUM(t2.money)*0.02 AS money FROM user t1"
+            . " LEFT OUTER JOIN raisedeal t2 ON t1.id = t2.userid"
+            . " WHERE t1.id IN("
             . " select t1.id from user t1"
             . " inner join ("
             . " select t1.id,t1.superior from user t1"
             . " inner join user  t2 on t1.superior = t2.id"
-            . " where t2.superior= {$session_user->id}"
+            . " where t2.superior= 1"
             . " ) t2 on t1.superior = t2.id"
-            . " )"
-            . " )m GROUP BY id,superior,name ;";
+            . " )GROUP BY t1.id,t1.name,t1.superior"
+            . " )t;";
 
         $query = $this->db->query($sqlselect);
 
@@ -80,7 +78,7 @@ class Lowerarch extends CI_Controller
         }
         $res .= $config . "];";
 
-        $arr = array("data" => $res, "all" => sprintf("%.2f",$all));
+        $arr = array("data" => $res, "all" => sprintf("%.2f", $all));
         return $arr;
     }
 
