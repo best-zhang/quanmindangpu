@@ -14,8 +14,8 @@
       <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="372" column="54" lean-forward="false" selection-start-line="372" selection-start-column="54" selection-end-line="372" selection-end-column="54" />
+            <state relative-caret-position="260">
+              <caret line="373" column="52" lean-forward="false" selection-start-line="373" selection-start-column="45" selection-end-line="373" selection-end-column="52" />
               <folding>
                 <marker date="1515426222299" expanded="true" signature="11048:11104" ph="..." />
                 <marker date="1515426222299" expanded="true" signature="11810:11817" ph="..." />
@@ -32,8 +32,8 @@
       <file leaf-file-name="goodsdetail.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/goodsdetail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="167" column="57" lean-forward="true" selection-start-line="167" selection-start-column="57" selection-end-line="167" selection-end-column="57" />
+            <state relative-caret-position="421">
+              <caret line="173" column="77" lean-forward="true" selection-start-line="173" selection-start-column="77" selection-end-line="173" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -78,8 +78,8 @@
       <find>discrible</find>
       <find>image_data</find>
       <find>colored</find>
-      <find>class=&quot;colored&quot;</find>
       <find>goods-info-more</find>
+      <find>class=&quot;colored&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;../../styles/</replace>
@@ -271,12 +271,12 @@
       <workItem from="1510752486038" duration="10625000" />
       <workItem from="1514465671781" duration="3159000" />
       <workItem from="1514859683327" duration="19000" />
-      <workItem from="1515422519698" duration="4294000" />
+      <workItem from="1515422519698" duration="5005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193814000" />
+    <option name="totallyTimeSpent" value="194525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -679,8 +679,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="372" column="54" lean-forward="false" selection-start-line="372" selection-start-column="54" selection-end-line="372" selection-end-column="54" />
+        <state relative-caret-position="260">
+          <caret line="373" column="52" lean-forward="false" selection-start-line="373" selection-start-column="45" selection-end-line="373" selection-end-column="52" />
           <folding>
             <marker date="1515426222299" expanded="true" signature="11048:11104" ph="..." />
             <marker date="1515426222299" expanded="true" signature="11810:11817" ph="..." />
@@ -695,8 +695,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/goodsdetail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="167" column="57" lean-forward="true" selection-start-line="167" selection-start-column="57" selection-end-line="167" selection-end-column="57" />
+        <state relative-caret-position="421">
+          <caret line="173" column="77" lean-forward="true" selection-start-line="173" selection-start-column="77" selection-end-line="173" selection-end-column="77" />
           <folding />
         </state>
       </provider>

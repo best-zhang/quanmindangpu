@@ -99,6 +99,10 @@ Purchase: http://wrapbootstrap.com
             background-color: #1e1e1e;
             color: #eeeeee;
         }
+
+        .colored {
+            color: red;
+        }
     </style>
 </head>
 <!-- /Head -->
@@ -154,8 +158,8 @@ Purchase: http://wrapbootstrap.com
                 <div class="goods-info-name font-150 padding-bottom-10 padding-left-10">
                     <b><span><?php echo $goodsinfo->name ?></b></span></div>
                 <div class="well font-120 goods-info-price">
-                    <div class="padding-bottom-5">价格：<span>￥<?php echo $goodsinfo->price ?></span></div>
-                    <div class="padding-top-5">积分：<span><?php echo $goodsinfo->integral ?></span></div>
+                    <div class="padding-bottom-5">价格：<b><span class="colored">￥<?php echo $goodsinfo->price ?></span></b></div>
+                    <div class="padding-top-5">积分：<b><span><?php echo $goodsinfo->integral ?></span></b></div>
                 </div>
                 <div class="well margin-bottom-5 font-120 goods-info-more">
                     <div class="padding-bottom-5">产品编号：<span><?php echo $goodsinfo->goodscode ?></span></div>
