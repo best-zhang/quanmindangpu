@@ -151,20 +151,20 @@ Purchase: http://wrapbootstrap.com
                 </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 padding-left-50">
-                <div class="goods-info-name font-130 padding-bottom-10 padding-left-10">
-                    名称：<span><?php echo $goodsinfo->name ?></span></div>
-                <div class="well font-110 goods-info-price">
+                <div class="goods-info-name font-150 padding-bottom-10 padding-left-10">
+                    <b><span><?php echo $goodsinfo->name ?></b></span></div>
+                <div class="well font-120 goods-info-price">
                     <div class="padding-bottom-5">价格：<span>￥<?php echo $goodsinfo->price ?></span></div>
                     <div class="padding-top-5">积分：<span><?php echo $goodsinfo->integral ?></span></div>
                 </div>
-                <div class="well margin-bottom-5 font-110 goods-info-more">
+                <div class="well margin-bottom-5 font-120 goods-info-more">
                     <div class="padding-bottom-5">产品编号：<span><?php echo $goodsinfo->goodscode ?></span></div>
                     <div class="padding-bottom-5">大小：<span><?php echo $goodsinfo->size ?></span></div>
                     <div class="padding-bottom-5">重量：<span><?php echo $goodsinfo->weight ?></span></div>
                     <div class="padding-bottom-5">材质：<span><?php echo $goodsinfo->material ?></span></div>
                     <div class="padding-bottom-5">证书：<span><?php echo $goodsinfo->certificate ?></span></div>
                 </div>
-                <div class="padding-left-10 padding-bottom-10 font-130">线下交易</div>
+                <div class="padding-left-10 padding-bottom-10 font-120">线下交易</div>
                 <div class="padding-left-10 text-center">
                     <a href="javascript:void(0);" class="btn btn-danger" data-container="body"
                        data-titleclass="" data-class="" data-toggle="popover"
@@ -172,7 +172,7 @@ Purchase: http://wrapbootstrap.com
                        data-title=""
                        data-content="<img src='assets/img/ewm1.jpg' width=100 height=100 />"
                        data-original-title=""
-                       title="" aria-describedby=""> <span class="font-120">立即购买</span> </a>
+                       title="" aria-describedby=""> <span class="font-130">立即购买</span> </a>
                 </div>
             </div>
         </div>

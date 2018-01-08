@@ -169,6 +169,10 @@ Purchase: http://wrapbootstrap.com
         .dropdown .dropdown-menu li a {
             color: #1e1e1e;
         }
+
+        .colored {
+            color: red;
+        }
     </style>
 </head>
 <!-- /Head -->
@@ -301,8 +305,8 @@ Purchase: http://wrapbootstrap.com
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <ul class="list-unstyled">
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">关于我们</a></li>
+                    <li><a href="about">关于我们</a></li>
+                    <li><a href="shopindex">当铺商城</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
@@ -361,23 +365,23 @@ Purchase: http://wrapbootstrap.com
                             '<div class="progress margin-top-5 no-margin-bottom">' +
                             '<div class="progress-bar progress-bar-info" role="progressbar"' +
                             ' aria-valuenow="' + progress + '" aria-valuemin="0" aria-valuemax="100"' +
-                            ' style="width: ' + progress + '%"><span>' + progress + '%</span>' +
+                            ' style="width: ' + progress + '%"><span>' + data[i]["completed"] + '</span>' +
                             '</div>' +
                             '</div>' +
                             '<div class="row padding-left-10">' +
                             '<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">' +
-                            '<div class="margin-top-10">' +
-                            '目标：￥<span>' + data[i]["target"] + '</span>' +
-                            '</div>' +
-                            '<div class="margin-top-5">' +
-                            '起投：￥<span>' + data[i]["minimum"] + '</span>' +
-                            '</div>' +
+                            '<div class="margin-top-10"><b>' +
+                            '目标：<span class="colored">￥' + toThousands(data[i]["target"]) + '</span>' +
+                            '</b></div>' +
+                            '<div class="margin-top-5"><b>' +
+                            '起投：<span class="colored">￥' + toThousands(data[i]["minimum"]) + '</span>' +
+                            '</b></div>' +
                             '</div>' +
                             '<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-align-right padding-right-50">' +
-                            '<div class="margin-top-5">剩余时间</div>' +
-                            '<div>' +
+                            '<div class="margin-top-5"><b>剩余时间</b></div>' +
+                            '<div><b>' +
                             '<span class="item-day">' + (Number(data[i]["remianday"]) >= 0 ? data[i]["remianday"] : "0") + '</span>天' +
-                            '</div>' +
+                            '</b></div>' +
                             '</div>' +
                             '</div>' +
                             '</div>' +
@@ -426,12 +430,12 @@ Purchase: http://wrapbootstrap.com
                             '</div>' +
                             '<div class="row padding-left-10 padding-bottom-10">' +
                             '<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">' +
-                            '<div class="margin-top-10">' +
-                            '目标：￥<span>' + data[i]["target"] + '</span>' +
-                            '</div>' +
-                            '<div class="margin-top-5">' +
-                            '起投：￥<span>' + data[i]["minimum"] + '</span>' +
-                            '</div>' +
+                            '<div class="margin-top-10"><b>' +
+                            '目标：<span class="colored">￥' + toThousands(data[i]["target"]) + '</span>' +
+                            '</b></div>' +
+                            '<div class="margin-top-5"><b>' +
+                            '起投：<span class="colored">￥' + toThousands(data[i]["minimum"]) + '</span>' +
+                            '</b></div>' +
                             '</div>' +
                             '</div>' +
                             '</div>' +
@@ -457,11 +461,15 @@ Purchase: http://wrapbootstrap.com
             data: {},
             //dataType: 'json',//加上会报错
             success: function (data) {
+                console.info(data);
                 var progress = "";
                 var str = "";
+
                 if (data) {
                     for (i = 0; i < data.length; i++) {
                         progress = (data[i]["completed"] / data[i]["target"]) * 100;
+                        var tar = data[i]["target"];
+                        var mini = data[i]["minimum"];
                         str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
                             '<div class="well no-padding padding-bpttpm-20">' +
                             '<a href="prodetail?id=' + data[i]["id"] + '">' +
@@ -473,19 +481,19 @@ Purchase: http://wrapbootstrap.com
                             '<div class="margin-top-5 margin-left-10 item-pname">' + data[i]["name"] + '</div>' +
                             '<div class="margin-top-5 margin-left-10 item-title">' + data[i]["title"] + '</div>' +
                             '<div class="progress margin-top-5 no-margin-bottom">' +
-                            '<div class="progress-bar progress-bar-info" role="progressbar"' +
+                            '<div class="progress-bar progress-bar-success" role="progressbar"' +
                             ' aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"' +
-                            ' style="width: 100%"><span>100%(已完成)</span>' +
+                            ' style="width: 100%"><span>' + data[i]["completed"] + '</span>' +
                             '</div>' +
                             '</div>' +
                             '<div class="row padding-left-10 padding-bottom-10">' +
                             '<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">' +
-                            '<div class="margin-top-10">' +
-                            '目标：￥<span>' + data[i]["target"] + '</span>' +
-                            '</div>' +
-                            '<div class="margin-top-5">' +
-                            '起投：￥<span>' + data[i]["minimum"] + '</span>' +
-                            '</div>' +
+                            '<div class="margin-top-10"><b>' +
+                            '目标：<span class="colored">￥' + toThousands(tar) + '</span>' +
+                            '</b></div>' +
+                            '<div class="margin-top-5"><b>' +
+                            '起投：<span class="colored">￥' + toThousands(mini) + '</span>' +
+                            '</b></div>' +
                             '</div>' +
                             '</div>' +
                             '</div>' +
