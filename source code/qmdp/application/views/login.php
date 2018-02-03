@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="login-container animated fadeInDown">
     <div class="loginbox bg-white">
-        <div class="loginbox-icon"><img height="100" width="100" src="../../assets/img/avatars/bing.png"/></div>
+        <div class="loginbox-icon padding-top-20"><img height="100" width="100" src="../../assets/img/logo.jpg"/></div>
 
         <div class="loginbox-title">后台管理系统登录</div>
 

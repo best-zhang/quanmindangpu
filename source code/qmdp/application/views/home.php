@@ -48,7 +48,7 @@ Purchase: http://wrapbootstrap.com
         }
 
         .navbar {
-            background-color: rgba(230, 230, 230);
+            background-color: rgba(230, 230, 230, 1);
             font-size: 17px;
             height: auto;
         }
@@ -178,10 +178,10 @@ Purchase: http://wrapbootstrap.com
 <!-- /Head -->
 <!-- Body -->
 <body>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top hidden-xs" role="navigation">
     <div class="container">
-        <div class="navbar-header margin-right-50">
-            <a class="navbar-brand" href="home">全民当铺</a>
+        <div class="navbar-header margin-right-50 no-padding">
+            <a class="navbar-brand no-padding" href="home"><img title="全民当铺" src="assets/img/logo.jpg" width="50" height="50"></a>
         </div>
         <div>
             <ul class="nav navbar-nav navbar-main">
@@ -300,7 +300,7 @@ Purchase: http://wrapbootstrap.com
 
     <div class="row padding-50 footer">
         <div class="container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h2>全民当铺众筹网</h2>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -309,13 +309,6 @@ Purchase: http://wrapbootstrap.com
                     <li><a href="shopindex">当铺商城</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
-                <div>
-                    <img class="margin-right-10" src="assets/img/ewm1.jpg"> <img
-                            class="margin-left-10" src="assets/img/ewm1.jpg">
-                </div>
-            </div>
-            <div></div>
         </div>
     </div>
     <div class="padding-10 text-align-center beian">蜀ICP备12569350号
@@ -352,8 +345,8 @@ Purchase: http://wrapbootstrap.com
                 if (data) {
                     for (i = 0; i < data.length; i++) {
                         progress = (data[i]["completed"] / data[i]["target"]) * 100;
-                        str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
-                            '<div class="well no-padding padding-bpttpm-20">' +
+                        str += '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">' +
+                            '<div class="well no-padding padding-bottom-20">' +
                             '<a href="prodetail?id=' + data[i]["id"] + '">' +
                             '<div class="img-project"' +
                             'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
@@ -412,8 +405,8 @@ Purchase: http://wrapbootstrap.com
                 if (data) {
                     for (i = 0; i < data.length; i++) {
                         progress = (data[i]["completed"] / data[i]["target"]) * 100;
-                        str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
-                            '<div class="well no-padding padding-bpttpm-20">' +
+                        str += '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">' +
+                            '<div class="well no-padding padding-bottom-20">' +
                             '<a href="prodetail?id=' + data[i]["id"] + '">' +
                             '<div class="img-project"' +
                             'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +
@@ -470,8 +463,8 @@ Purchase: http://wrapbootstrap.com
                         progress = (data[i]["completed"] / data[i]["target"]) * 100;
                         var tar = data[i]["target"];
                         var mini = data[i]["minimum"];
-                        str += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">' +
-                            '<div class="well no-padding padding-bpttpm-20">' +
+                        str += '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">' +
+                            '<div class="well no-padding padding-bottom-20">' +
                             '<a href="prodetail?id=' + data[i]["id"] + '">' +
                             '<div class="img-project"' +
                             'style="background-image: url(uploads/' + data[i]["cover"] + ');">' +

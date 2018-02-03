@@ -131,10 +131,6 @@ Purchase: http://wrapbootstrap.com
             opacity: 1;
         }
 
-        .toast-top-right {
-            top: 120px;
-            right: 30px;
-        }
     </style>
 </head>
 <!-- /Head -->
@@ -168,16 +164,16 @@ Purchase: http://wrapbootstrap.com
 <div class="page-body no-padding margin-top-50">
     <div class="container padding-30">
         <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <div class="img-pro-main"
                      style="background-image: url(<?php echo 'uploads/' . $proinfo->cover ?>);"></div>
                 <div class="font-110 padding-top-5">
                     <i class="fa fa-map-marker"></i> 地址：<?php echo $proinfo->title ?>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 padding-left-20">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="font-200 padding-bottom-10"><?php echo $proinfo->name ?></div>
-                <div class="font-110 padding-bottom-10"><?php echo $proinfo->instruction ?></div>
+                <div class="font-110 padding-bottom-20"><?php echo $proinfo->instruction ?></div>
                 <div class="progress">
                     <div class="progress-bar progress-bar-info" role="progressbar"
                          aria-valuenow="<?php echo $proinfo->progress ?>" aria-valuemin="0" aria-valuemax="100"
@@ -185,12 +181,28 @@ Purchase: http://wrapbootstrap.com
                         <span><?php echo $proinfo->progress ?>%</span>
                     </div>
                 </div>
-                <div class="font-110 padding-bottom-10">目标：￥<span><?php echo $proinfo->target ?></span></div>
-                <div class="font-110 padding-bottom-10">起投：￥<span><?php echo $proinfo->minimum ?></span></div>
+                <div class="font-110 padding-bottom-30 padding-top-20">目标： ￥<span><?php echo $proinfo->target ?></span>
+                </div>
+                <div class="font-110 padding-bottom-30">起投： ￥<span><?php echo $proinfo->minimum ?></span></div>
                 <div class="font-110 padding-bottom-10">
                     截止时间：<span><?php echo date("Y年n月j日", strtotime($proinfo->dtend)) ?></span>
                 </div>
-                <div class="padding-top-10"><span class="label label-info">
+                <div class="padding-top-10">
+                    <a class="label label-info" href="javascript:void(0);" data-container="body"
+                       data-titleclass="" data-class="" data-toggle="popover"
+                       data-placement="bottom"
+                       data-title=""
+                       data-content='<div class="padding-10">
+                            <div class="font-150">项目咨询</div>
+                            <div class="font-120 padding-top-10">
+                                电话：<span><?php echo $proinfo->tel ?></span>
+                            </div>
+                            <div class="font-120 padding-top-5">微信：<span><?php echo $proinfo->weixin ?></span></div>
+                            <div class="font-120 padding-top-5">QQ：<span><?php echo $proinfo->qq ?></span></div>
+                            </div>'
+                       data-original-title=""
+                       title="" aria-describedby="">
+                        <span class="font-110">
                         <?php if ($proinfo->prostatus == 0) {
                             echo "计划中";
                         } else if ($proinfo->prostatus == 1) {
@@ -198,12 +210,14 @@ Purchase: http://wrapbootstrap.com
                         } else {
                             echo "已完成";
                         } ?>
-                    </span></div>
+                    </span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="row margin-top-20">
+        <div class="row padding-top-20">
             <div class="font-140 padding-10">关于这个项目</div>
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                 <?php echo $proinfo->detail ?>
             </div>
         </div>
@@ -211,41 +225,22 @@ Purchase: http://wrapbootstrap.com
 
     <div class="row padding-50 footer">
         <div class="container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h2>全民当铺众筹网</h2>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <ul class="list-unstyled">
-                    <li><a href="bout">关于我们</a></li>
+                    <li><a href="about">关于我们</a></li>
+                    <li><a href="shopindex">当铺商城</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
-                <div>
-                    <img class="margin-right-10" src="assets/img/ewm1.jpg"> <img
-                            class="margin-left-10" src="assets/img/ewm1.jpg">
-                </div>
-            </div>
-            <div></div>
         </div>
     </div>
     <div class="padding-10 text-align-center beian">蜀ICP备12569350号
         Copyright © 2017 qmdp168.com
     </div>
 </div>
-<div id="toast-container" class="toast-top-right">
-    <div class="toast toast-blue">
-        <div class="toast-message">
-            <div class="well bg-blue padding-left-40 padding-right-30">
-                <div class="font-160">项目咨询</div>
-                <div class="font-120 padding-top-10 margin-top-10">
-                    电话号码：<span><?php echo $proinfo->tel ?></span>
-                </div>
-                <div class="font-120 padding-top-5">微信：<span><?php echo $proinfo->weixin ?></span></div>
-                <div class="font-120 padding-top-5">QQ：<span><?php echo $proinfo->qq ?></span></div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!--Basic Scripts-->
 <script src="assets/js/jquery-2.0.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>

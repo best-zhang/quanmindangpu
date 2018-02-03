@@ -110,11 +110,7 @@ Purchase: http://wrapbootstrap.com
 <body>
 <div class="padding-5 info-hello">欢迎来到当铺商城</div>
 
-<div class="container">
-    <a class="font-200" href="shopindex">LOGO</a>
-</div>
-
-<div class="container">
+<div class="container margin-top-20">
     <!-- Page Breadcrumb -->
     <div class="page-breadcrumbs">
         <ul class="breadcrumb no-margin">
@@ -131,10 +127,10 @@ Purchase: http://wrapbootstrap.com
     <!-- /Page Breadcrumb -->
 </div>
 
-<div class="page-body no-padding margin-top-40">
+<div class="page-body no-padding margin-top-20">
     <div class="container">
         <div class="row">
-            <div class="picZoomer col-lg-5 col-md-5 col-sm-5 col-xs-6 no-padding">
+            <div class="picZoomer col-lg-5 col-md-5 col-sm-5 col-xs-12 no-padding">
                 <div>
                     <img id="picZoomer-pic" src="<?php echo 'uploads/' . $img1 ?>"
                          data-magnify-src="<?php echo 'uploads/' . $img1 ?>">
@@ -154,22 +150,24 @@ Purchase: http://wrapbootstrap.com
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 padding-left-50">
-                <div class="goods-info-name font-150 padding-bottom-10 padding-left-10">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-left-50">
+                <div class="goods-info-name font-140 padding-bottom-10">
                     <b><span><?php echo $goodsinfo->name ?></b></span></div>
                 <div class="well font-120 goods-info-price">
-                    <div class="padding-bottom-5">价格：<b><span class="colored">￥<?php echo $goodsinfo->price ?></span></b></div>
-                    <div class="padding-top-5">积分：<b><span><?php echo $goodsinfo->integral ?></span></b></div>
+                    <div class="padding-bottom-5"><b>价格： <span
+                                    class="colored font-150">￥<?php echo $goodsinfo->price ?></span></b></div>
+                    <div class="padding-top-5"><b>积分： <span
+                                    class="colored font-150"><?php echo $goodsinfo->integral ?></span></b></div>
                 </div>
-                <div class="well margin-bottom-5 font-120 goods-info-more">
-                    <div class="padding-bottom-5">产品编号：<span><?php echo $goodsinfo->goodscode ?></span></div>
-                    <div class="padding-bottom-5">大小：<span><?php echo $goodsinfo->size ?></span></div>
-                    <div class="padding-bottom-5">重量：<span><?php echo $goodsinfo->weight ?></span></div>
-                    <div class="padding-bottom-5">材质：<span><?php echo $goodsinfo->material ?></span></div>
-                    <div class="padding-bottom-5">证书：<span><?php echo $goodsinfo->certificate ?></span></div>
+                <div class="well margin-bottom-10 font-120 goods-info-more">
+                    <div class="padding-bottom-10">产品编号：<span><?php echo $goodsinfo->goodscode ?></span></div>
+                    <div class="padding-bottom-10">大小：<span><?php echo $goodsinfo->size ?></span></div>
+                    <div class="padding-bottom-10">重量：<span><?php echo $goodsinfo->weight ?></span></div>
+                    <div class="padding-bottom-10">材质：<span><?php echo $goodsinfo->material ?></span></div>
+                    <div>证书：<span><?php echo $goodsinfo->certificate ?></span></div>
                 </div>
-                <div class="padding-left-10 padding-bottom-10 font-120">线下交易</div>
-                <div class="padding-left-10 text-center">
+                <div class="padding-left-10 padding-bottom-10 font-110">线下交易</div>
+                <div class="padding-left-10 text-center padding-top-10">
                     <a href="javascript:void(0);" class="btn btn-danger" data-container="body"
                        data-titleclass="" data-class="" data-toggle="popover"
                        data-placement="bottom"
@@ -190,16 +188,16 @@ Purchase: http://wrapbootstrap.com
 
     <div class="row footer">
         <div class="container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <h2>全民当铺商城</h2>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <ul class="list-unstyled">
-                    <li><a href="home">众筹网</a></li>
-                    <li><a href="about">关于我们</a></li>
+                    <li><a href="home.php">众筹网</a></li>
+                    <li><a href="#">关于我们</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-align-right">
                         <i class="fa fa-phone font-200"></i>
@@ -208,11 +206,6 @@ Purchase: http://wrapbootstrap.com
                         <strong class="font-150">服务咨询热线</strong>
                         <div class="font-160">028-35622332</div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding text-center">
-                <div>
-                    <img class="margin-right-10 ewm" src="assets/img/ewm1.jpg">
                 </div>
             </div>
         </div>

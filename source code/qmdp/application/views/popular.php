@@ -56,6 +56,7 @@ Purchase: http://wrapbootstrap.com
             font-size: 18px;
             height: auto;
             min-height: 0;
+            border-bottom: solid 2px #ff000c;
         }
 
         .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover,
@@ -66,7 +67,6 @@ Purchase: http://wrapbootstrap.com
 
         .navbar-default .navbar-nav > li > a:hover {
             color: #ff000c;
-            border-bottom: solid 2px #16caff;
         }
 
         .navbar-default .navbar-nav > li > a {
@@ -170,13 +170,13 @@ Purchase: http://wrapbootstrap.com
 <body>
 <div class="padding-5 info-hello">欢迎来到当铺商城</div>
 
-<div class="container">
-    <a class="font-200" href="shopindex">LOGO</a>
-</div>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
+        <div class="navbar-header margin-right-20 no-padding">
+            <a class="navbar-brand no-padding" href="home"><img title="全民当铺" src="assets/img/logo.jpg" width="45" height="45"></a>
+        </div>
         <div>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav margin-top-10">
                 <li class="dropdown margin-right-50">
                     <a href="javascript:void(0);"
                        class="dropdown-toggle no-padding-left no-padding-right no-margin-left" data-toggle="dropdown">
@@ -278,16 +278,16 @@ Purchase: http://wrapbootstrap.com
 
     <div class="row footer">
         <div class="container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <h2>全民当铺商城</h2>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <ul class="list-unstyled">
                     <li><a href="home.php">众筹网</a></li>
                     <li><a href="#">关于我们</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-align-right">
                         <i class="fa fa-phone font-200"></i>
@@ -296,11 +296,6 @@ Purchase: http://wrapbootstrap.com
                         <strong class="font-150">服务咨询热线</strong>
                         <div class="font-160">028-35622332</div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding text-center">
-                <div>
-                    <img class="margin-right-10 ewm" src="assets/img/ewm1.jpg">
                 </div>
             </div>
         </div>

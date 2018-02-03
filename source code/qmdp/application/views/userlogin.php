@@ -31,7 +31,8 @@ Purchase: http://wrapbootstrap.com
     <script src="assets/js/skins.min.js"></script>
     <style type="text/css">
         body:before {
-            background-color: #0099FF;
+            /*background-color: #0099FF;*/
+            background-image:url(assets/img/loginbg.jpg);
         }
 
         .loginbox-copyright {
